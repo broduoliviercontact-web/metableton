@@ -1,0 +1,23 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#F6F3ED"/>
+  <rect x="86" y="92" width="1228" height="716" rx="18" fill="#FBFAF6" stroke="#191919" stroke-opacity="0.09"/>
+  <rect x="124" y="132" width="280" height="636" rx="10" fill="#F1EEE7"/>
+  <rect x="434" y="132" width="840" height="636" rx="10" fill="#FFFFFF"/>
+  <rect x="462" y="168" width="236" height="22" rx="11" fill="#1A1A1A" fill-opacity="0.1"/>
+  <rect x="462" y="214" width="328" height="14" rx="7" fill="#1A1A1A" fill-opacity="0.08"/>
+  <rect x="462" y="244" width="284" height="14" rx="7" fill="#1A1A1A" fill-opacity="0.08"/>
+  <rect x="462" y="328" width="772" height="68" rx="12" fill="#F6F3ED" stroke="#191919" stroke-opacity="0.08"/>
+  <rect x="462" y="420" width="772" height="68" rx="12" fill="#F6F3ED" stroke="#191919" stroke-opacity="0.08"/>
+  <rect x="462" y="512" width="772" height="68" rx="12" fill="#F6F3ED" stroke="#191919" stroke-opacity="0.08"/>
+  <rect x="462" y="604" width="772" height="68" rx="12" fill="#F6F3ED" stroke="#191919" stroke-opacity="0.08"/>
+  <rect x="150" y="168" width="162" height="16" rx="8" fill="#1A1A1A" fill-opacity="0.12"/>
+  <rect x="150" y="212" width="218" height="12" rx="6" fill="#1A1A1A" fill-opacity="0.08"/>
+  <rect x="150" y="246" width="194" height="12" rx="6" fill="#1A1A1A" fill-opacity="0.08"/>
+  <rect x="150" y="326" width="228" height="322" rx="12" fill="#FFFFFF" stroke="#191919" stroke-opacity="0.08"/>
+  <rect x="174" y="354" width="128" height="12" rx="6" fill="#1A1A1A" fill-opacity="0.08"/>
+  <rect x="174" y="390" width="162" height="12" rx="6" fill="#1A1A1A" fill-opacity="0.08"/>
+  <rect x="174" y="442" width="180" height="30" rx="15" fill="#1A1A1A" fill-opacity="0.06"/>
+  <circle cx="1000" cy="638" r="78" fill="#111111" fill-opacity="0.06"/>
+  <path d="M978 638L998 658L1030 618" stroke="#111111" stroke-opacity="0.45" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="462" y="730" fill="#111111" fill-opacity="0.52" font-family="Arial, sans-serif" font-size="26" letter-spacing="3">GIF PLACEHOLDER / ORGANISER UN DOSSIER DE SAMPLES</text>
+</svg>
