@@ -67,6 +67,39 @@ npm run build
 npm run preview
 ```
 
+## Deploiement Vercel
+
+Le projet peut etre deploye directement sur Vercel comme une application Vite statique.
+
+Configuration importante :
+
+- le site utilise un routeur maison avec `window.history.pushState`
+- un fichier [`vercel.json`](./vercel.json) est present pour rediriger toutes les routes vers `index.html`
+- cela permet aux URLs comme `/guides-ableton-live`, `/editor` ou `/max-for-live/mon-article` de fonctionner aussi apres refresh
+
+### Deploiement le plus simple
+
+1. pousser le repo sur GitHub
+2. importer le repo dans Vercel
+3. laisser Vercel detecter Vite automatiquement
+4. verifier les parametres suivants :
+   - Build Command : `npm run build`
+   - Output Directory : `dist`
+5. lancer le deploiement
+
+### Avec la CLI Vercel
+
+```bash
+npm i -g vercel
+vercel
+```
+
+Puis pour la production :
+
+```bash
+vercel --prod
+```
+
 ## Structure du projet
 
 ```text
@@ -158,8 +191,15 @@ Types de blocs actuellement supportes :
 - `list`
 - `image`
 - `gif`
+- `youtube`
 - `quote`
 - `callout`
+
+Fonctionnalites editoriales utiles :
+
+- liens inline dans les textes avec la syntaxe `[texte](url)`
+- rendu des videos YouTube via un bloc `youtube`
+- recadrage visuel simple des images via un point focal
 
 ### `src/components/ArticleEditorPage.jsx`
 
@@ -222,7 +262,9 @@ Chaque article peut contenir par exemple :
 - `title`
 - `summary`
 - `heroImage`
+- `heroImagePosition`
 - `thumbnail`
+- `thumbnailPosition`
 - `imageAlt`
 - `content`
 
@@ -373,7 +415,9 @@ L'editeur prend en charge :
 - `title`
 - `summary`
 - `heroImage`
+- `heroImagePosition`
 - `thumbnail`
+- `thumbnailPosition`
 - `imageAlt`
 - `tags`
 - `content`
@@ -387,6 +431,7 @@ Types de blocs supportes dans l'editeur :
 - `callout`
 - `image`
 - `gif`
+- `youtube`
 
 Notes utiles :
 
@@ -395,7 +440,71 @@ Notes utiles :
 - `tags` se saisissent separes par des virgules
 - `list` est converti en `items: []`
 - `image` et `gif` utilisent `src`, `alt`, `caption`
+- `youtube` utilise `url` et `caption`
 - `callout` accepte `label` et `content`
+- les liens hypertexte dans le texte utilisent la syntaxe `[texte](url)`
+- le recadrage hero, vignette, image et gif se regle via un point focal
+
+### Liens hypertexte dans un article
+
+Les blocs texte (`paragraph`, `quote`, `callout`, `list`) acceptent les liens inline.
+
+Exemple :
+
+```text
+Consulte [Ableton](https://www.ableton.com/) pour plus d'informations.
+```
+
+Le rendu transforme automatiquement cette syntaxe en lien cliquable dans les pages article et dans l'apercu de `/editor`.
+
+### Ajouter une video YouTube dans un article
+
+Dans le `content` d'un article, utiliser un bloc comme :
+
+```js
+{
+  type: "youtube",
+  url: "https://www.youtube.com/watch?v=...",
+  caption: "Legende optionnelle"
+}
+```
+
+Formats supportes :
+
+- `https://www.youtube.com/watch?v=...`
+- `https://youtu.be/...`
+- `https://www.youtube.com/shorts/...`
+- `https://www.youtube.com/embed/...`
+
+### Recadrage des images
+
+Le projet supporte un recadrage simple par point focal.
+
+Champs possibles :
+
+- `heroImagePosition`
+- `thumbnailPosition`
+- `position` pour les blocs `image` et `gif`
+
+Format :
+
+```text
+50% 50%
+```
+
+Exemple :
+
+```js
+heroImage: "/articles/guides-ableton/mon-image.jpg",
+heroImagePosition: "50% 30%",
+thumbnail: "/articles/guides-ableton/mon-image.jpg",
+thumbnailPosition: "40% 50%",
+```
+
+Dans `/editor`, ce reglage se fait avec deux sliders :
+
+- horizontal
+- vertical
 
 ## Ajouter un GIF dans un article
 

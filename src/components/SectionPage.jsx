@@ -73,6 +73,7 @@ function SectionPage({ page, currentPath, onNavigate }) {
                     src={article.thumbnail || article.heroImage}
                     alt={article.imageAlt}
                     className="aspect-[16/10] h-full w-full object-cover transition-transform duration-200 group-hover:scale-[1.01]"
+                    style={{ objectPosition: article.thumbnailPosition || article.heroImagePosition || "50% 50%" }}
                     loading="lazy"
                   />
                 </div>

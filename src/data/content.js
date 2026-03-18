@@ -60,6 +60,451 @@ const articles = [
     }
   ]
 },
+{
+  "id": "tous-les-oscillateurs-du-meld",
+  "slug": "tous-les-oscillateurs-du-meld",
+  "section": "guides-ableton-live",
+  "type": "Guide",
+  "label": "Guide",
+  "title": "Tous les Oscillateurs du MELD",
+  "summary": "",
+  "heroImage": "/articles/guides-ableton/Meld-main.jpg",
+  "heroImagePosition": "58% 50%",
+  "thumbnail": "/articles/guides-ableton/Meld-main.jpg",
+  "thumbnailPosition": "50% 50%",
+  "imageAlt": "Visuel d’article pour Ableton Live",
+  "tags": [
+    "device",
+    "meld",
+    "synthétiseur"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "content": "Depuis la version d'Ableton Live 12, nous avons un nouveau synthétiseur ; Le Meld. Tous les synthétiseur d'ableton sont des déclarations d'amour, des hommages à des synthétiseur, l’Opérator c’est le Yahama DX7, l’Electric c’est le fender Rhodes etc…\nA mon avis Meld c'est un clin d'œil à Emilie Gillet et ses deux merveilleux modules de synthétiseur modulaire ; [Braids](https://pichenettes.github.io/mutable-instruments-documentation/modules/braids/) et [plaits](https://pichenettes.github.io/mutable-instruments-documentation/modules/plaits/). C’est deux Oscillateur on la même logique, une dizaine de forme d’onde très bien pensée. Avec pour chaque oscillateur deux paramètre modulable différent par oscillateur.\nDans Meld c’est pareille 25 formes d’ondes les plus malines les une que les autres.\nDans cette articles on va voirs ensemble en détails chaque forme d’onde d’oscillateur."
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/ALL-OSC.png",
+      "alt": "",
+      "position": "0% 100%"
+    },
+    {
+      "type": "heading",
+      "content": "Dans cette articles on va voirs ensemble en détails chaque forme d’onde d’oscillateur"
+    },
+    {
+      "type": "heading",
+      "content": "OSC ∿⎍▲🪚",
+      "align": "center"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/Basic shapes.png",
+      "alt": "",
+      "align": "center"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Shape : change la forme d’onde",
+        "•Tone : enrichisseur de forme d’onde"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "2 OSC+DETUNE ∿⎍▲🪚"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/DualBasicShape.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Shape : change la forme d’onde",
+        "•Detune : detune le 2eme osc"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "⎍OSC⎍ SYNC"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/Square Sync.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Freq 1 : change freq. de l’osc carré 1",
+        "•Freq 2 : change freq. de l’osc carré 2"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "⎍OSC⎍ 5TH"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/Square 5th.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•5th Amt : ajoute l’osc en quinte",
+        "•P. Width : pulse width modulation"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "OSC ∿⎍▲🪚 \n+\nWAVESHAPER/NOISE"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/Noisy shapes.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Shape : change la forme d’onde",
+        "•Rough : noise + waveshaper"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "∿OSC∿ SUB"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/sub.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Tone : morphe entre sine et carré",
+        "•Aux : ajoute osc subharmonic"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "∿∿MULTIPLE OSC∿∿"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/swamesine.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Motion : random pitch modulation",
+        "•Spacing : chord osc volume + chord osc invert"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "▲▲MULTIPLE OSC▲▲"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/Swaretriangle.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Motion : random pitch modulation",
+        "•Spacing : chord osc volume + chord osc invert"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "🪚 🪚MULTIPLE OSC 🪚 🪚"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/swarmsaw.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Motion : random pitch modulation",
+        "•Spacing : chord osc volume + chord osc invert"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "⎍⎍MULTIPLE OSC⎍⎍"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/swarmesqaure.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Motion : random pitch modulation",
+        "•Spacing : chord osc volume + chord osc invert"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "∿HARMONIC FM OSC∿"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/harmonicfm.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Amount : FM amount",
+        "Ratio : FM ratio"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "∿FM WAVESHAPER OSC∿"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/foldfm.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Amount : FM amount",
+        "•Shape : wavefolder"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "∿FM FEEDBACK OSC∿"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/Squelch.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Amount : FM amount",
+        "•Feedback : feedback"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "∿FM OSC∿"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/fm.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Amount : FM amount",
+        "•Ratio : FM ratio"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "⎍CHIPTUNE OSC⎍"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/chip.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Tone : pulse width modulation & pitch 2eme osc",
+        "•Rate : pitch modulation rate"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "∿SHEPARD TONE OSC∿"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/shepard.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•0 => 49 Shepard tone down",
+        "•50 => no Shepard tone"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "💣KICK OSC💣"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/tarp.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Decay : volume decay",
+        "•Tone : pitch modulation amount"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "🔥EXTRATONE OSC🔥"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/extra.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Pitch : pitch",
+        "•Env Amt : envelope amount modulation"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "⚠NOISE LOOP OSC⚠"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/noiseloop.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Rate : rate noise modulation",
+        "Fade : grain noise fade"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "⚠NOISE FILTER OSC⚠"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/noisefiltre.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Freq : filter frequency",
+        "•Narrow : filter bandwidth"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "⚠DIGITAL NOISE OSC⚠"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/bitgrung.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Freq : square osc frequency",
+        "Mult : subharmonic multiple"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "⚙CRACK OSC⚙"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/crackle.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Density : density of crack",
+        "•Intensity : tone"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "☂RAIN OSC☂"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/rain.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Tone : noise resonance",
+        "•Rate : rain rate"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "⊛BUBBLE OSC⊛"
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/bubble.png",
+      "alt": "",
+      "position": "50% 50%"
+    },
+    {
+      "type": "list",
+      "items": [
+        "•Density : bubble generation",
+        "•Spread : bubble size"
+      ]
+    }
+  ]
+},
+
 
   {
     id: "blog-produire-vite",
@@ -658,13 +1103,18 @@ export const secondaryPages = secondaryPageEntries.reduce((accumulator, page) =>
   return accumulator;
 }, {});
 
+export const allArticles = articles.map((article) => {
+  const section = sections.find((currentSection) => currentSection.id === article.section);
+  const sectionSlug = section?.slug || article.section;
+
+  return {
+    ...article,
+    path: `/${sectionSlug}/${article.slug}`,
+  };
+});
+
 export const articlesBySection = sections.reduce((accumulator, section) => {
-  accumulator[section.id] = articles
-    .filter((article) => article.section === section.id)
-    .map((article) => ({
-      ...article,
-      path: `/${section.slug}/${article.slug}`,
-    }));
+  accumulator[section.id] = allArticles.filter((article) => article.section === section.id);
 
   return accumulator;
 }, {});
@@ -673,13 +1123,11 @@ export const sectionPages = sections.reduce((accumulator, section) => {
   accumulator[`/${section.slug}`] = {
     ...section,
     path: `/${section.slug}`,
-    items: articlesBySection[section.id],
+    items: section.id === "blog-news" ? allArticles : articlesBySection[section.id],
   };
 
   return accumulator;
 }, {});
-
-export const allArticles = Object.values(articlesBySection).flat();
 
 export const articlesByPath = allArticles.reduce((accumulator, article) => {
   accumulator[article.path] = article;

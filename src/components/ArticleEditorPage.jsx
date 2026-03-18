@@ -14,6 +14,25 @@ const PLACEHOLDER_IMAGE =
       <text x="80" y="228" fill="#5f6368" font-family="Arial, sans-serif" font-size="28">Ajoute un chemin d'image locale pour remplacer ce visuel</text>
     </svg>
   `);
+const DEFAULT_IMAGE_POSITION = "50% 50%";
+const DEFAULT_BLOCK_ALIGN = "left";
+
+function clampPercentage(value) {
+  return Math.min(100, Math.max(0, Number(value) || 0));
+}
+
+function formatImagePosition(x, y) {
+  return `${clampPercentage(x)}% ${clampPercentage(y)}%`;
+}
+
+function parseImagePosition(position = DEFAULT_IMAGE_POSITION) {
+  const [rawX = "50", rawY = "50"] = String(position).split(" ");
+
+  return {
+    x: clampPercentage(rawX.replace("%", "")),
+    y: clampPercentage(rawY.replace("%", "")),
+  };
+}
 
 function slugify(value) {
   return value
@@ -32,24 +51,41 @@ function parseTags(value) {
     .slice(0, 3);
 }
 
+function parseExtraSections(value, primarySection = "") {
+  return [...new Set(
+    value
+      .split(",")
+      .map((section) => section.trim())
+      .filter(Boolean)
+      .filter((section) => section !== primarySection),
+  )];
+}
+
 function createBlock(type = "paragraph") {
   if (type === "list") {
-    return { type, items: [""] };
+    return { type, items: [""], align: DEFAULT_BLOCK_ALIGN };
   }
 
   if (type === "callout") {
-    return { type, label: "Note", content: "" };
+    return { type, label: "Note", content: "", align: DEFAULT_BLOCK_ALIGN };
   }
 
   if (type === "youtube") {
-    return { type, url: "", caption: "" };
+    return { type, url: "", caption: "", align: DEFAULT_BLOCK_ALIGN };
   }
 
   if (type === "image" || type === "gif") {
-    return { type, src: "", alt: "", caption: "" };
+    return {
+      type,
+      src: "",
+      alt: "",
+      caption: "",
+      position: DEFAULT_IMAGE_POSITION,
+      align: DEFAULT_BLOCK_ALIGN,
+    };
   }
 
-  return { type, content: "" };
+  return { type, content: "", align: DEFAULT_BLOCK_ALIGN };
 }
 
 function createTemplateArticle() {
@@ -57,13 +93,16 @@ function createTemplateArticle() {
     id: "guide-nouvel-article",
     slug: "nouvel-article-ableton-live",
     section: "guides-ableton-live",
+    extraSections: [],
     type: "Guide",
     label: "Guide",
     featured: false,
     title: "Nouveau guide Ableton Live",
     summary: "Un résumé court et clair pour présenter rapidement le contenu de l’article.",
     heroImage: "/articles/guides-ableton/ableton-live-overview.jpg",
+    heroImagePosition: DEFAULT_IMAGE_POSITION,
     thumbnail: "/articles/guides-ableton/ableton-live-overview.jpg",
+    thumbnailPosition: DEFAULT_IMAGE_POSITION,
     imageAlt: "Visuel d’article pour Ableton Live",
     tags: ["ableton", "workflow"],
     content: [
@@ -80,13 +119,16 @@ function createEmptyArticle() {
     id: "",
     slug: "",
     section: "",
+    extraSections: [],
     type: "Guide",
     label: "",
     featured: false,
     title: "",
     summary: "",
     heroImage: "",
+    heroImagePosition: DEFAULT_IMAGE_POSITION,
     thumbnail: "",
+    thumbnailPosition: DEFAULT_IMAGE_POSITION,
     imageAlt: "",
     tags: [],
     content: [],
@@ -140,7 +182,13 @@ function sanitizeContent(content = []) {
       const items = (block.items || []).map((item) => item.trim()).filter(Boolean);
 
       if (items.length) {
-        accumulator.push({ type: "list", items });
+        const nextBlock = { type: "list", items };
+
+        if (block.align && block.align !== DEFAULT_BLOCK_ALIGN) {
+          nextBlock.align = block.align;
+        }
+
+        accumulator.push(nextBlock);
       }
 
       return accumulator;
@@ -154,6 +202,10 @@ function sanitizeContent(content = []) {
 
       if (block.label?.trim()) {
         nextBlock.label = block.label.trim();
+      }
+
+      if (block.align && block.align !== DEFAULT_BLOCK_ALIGN) {
+        nextBlock.align = block.align;
       }
 
       if (nextBlock.content || nextBlock.label) {
@@ -174,6 +226,14 @@ function sanitizeContent(content = []) {
         nextBlock.caption = block.caption.trim();
       }
 
+      if (block.position?.trim()) {
+        nextBlock.position = block.position.trim();
+      }
+
+      if (block.align && block.align !== DEFAULT_BLOCK_ALIGN) {
+        nextBlock.align = block.align;
+      }
+
       if (nextBlock.src || nextBlock.alt || nextBlock.caption) {
         accumulator.push(nextBlock);
       }
@@ -191,6 +251,10 @@ function sanitizeContent(content = []) {
         nextBlock.caption = block.caption.trim();
       }
 
+      if (block.align && block.align !== DEFAULT_BLOCK_ALIGN) {
+        nextBlock.align = block.align;
+      }
+
       if (nextBlock.url || nextBlock.caption) {
         accumulator.push(nextBlock);
       }
@@ -201,10 +265,16 @@ function sanitizeContent(content = []) {
     const contentValue = (block.content || "").trim();
 
     if (contentValue) {
-      accumulator.push({
+      const nextBlock = {
         type: block.type,
         content: contentValue,
-      });
+      };
+
+      if (block.align && block.align !== DEFAULT_BLOCK_ALIGN) {
+        nextBlock.align = block.align;
+      }
+
+      accumulator.push(nextBlock);
     }
 
     return accumulator;
@@ -221,11 +291,22 @@ function buildArticleObject(draftArticle, tagsInput) {
     title: draftArticle.title.trim(),
     summary: draftArticle.summary.trim(),
     heroImage: draftArticle.heroImage.trim(),
+    heroImagePosition: draftArticle.heroImagePosition || DEFAULT_IMAGE_POSITION,
     thumbnail: draftArticle.thumbnail.trim(),
+    thumbnailPosition: draftArticle.thumbnailPosition || DEFAULT_IMAGE_POSITION,
     imageAlt: draftArticle.imageAlt.trim(),
     tags: parseTags(tagsInput),
     content: sanitizeContent(draftArticle.content),
   };
+
+  const extraSections = parseExtraSections(
+    Array.isArray(draftArticle.extraSections) ? draftArticle.extraSections.join(", ") : "",
+    article.section,
+  );
+
+  if (extraSections.length) {
+    article.extraSections = extraSections;
+  }
 
   if (draftArticle.featured) {
     article.featured = true;
@@ -309,6 +390,81 @@ function TextareaInput(props) {
   );
 }
 
+function ImagePositionFields({ label = "Recadrage", position, onChange }) {
+  const { x, y } = parseImagePosition(position);
+
+  return (
+    <div className="grid gap-3 rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-muted)] p-3">
+      <div className="flex items-center justify-between gap-3">
+        <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[var(--text-muted)]">
+          {label}
+        </span>
+        <span className="text-[13px] text-[var(--text-secondary)]">{formatImagePosition(x, y)}</span>
+      </div>
+
+      <label className="grid gap-2">
+        <span className="text-[13px] text-[var(--text-secondary)]">Horizontal</span>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          step="1"
+          value={x}
+          onChange={(event) => onChange(formatImagePosition(event.target.value, y))}
+        />
+      </label>
+
+      <label className="grid gap-2">
+        <span className="text-[13px] text-[var(--text-secondary)]">Vertical</span>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          step="1"
+          value={y}
+          onChange={(event) => onChange(formatImagePosition(x, event.target.value))}
+        />
+      </label>
+    </div>
+  );
+}
+
+function AlignmentFields({ value = DEFAULT_BLOCK_ALIGN, onChange }) {
+  const options = [
+    { value: "left", label: "Gauche" },
+    { value: "center", label: "Centre" },
+    { value: "right", label: "Droite" },
+  ];
+
+  return (
+    <div className="grid gap-2">
+      <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[var(--text-muted)]">
+        Alignement
+      </span>
+      <div className="flex flex-wrap gap-2">
+        {options.map((option) => {
+          const isActive = value === option.value;
+
+          return (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() => onChange(option.value)}
+              className={`inline-flex h-9 items-center rounded-[10px] border px-3 text-[13px] transition-colors ${
+                isActive
+                  ? "border-[color:var(--border-strong)] text-[var(--text-primary)]"
+                  : "border-[color:var(--border-soft)] text-[var(--text-secondary)] hover:border-[color:var(--border-strong)] hover:text-[var(--text-primary)]"
+              }`}
+            >
+              {option.label}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function BlockEditor({ block, index, onChange, onMoveUp, onMoveDown, onRemove }) {
   const handleListChange = (value) => {
     onChange(index, {
@@ -342,6 +498,11 @@ function BlockEditor({ block, index, onChange, onMoveUp, onMoveDown, onRemove })
           </button>
         </div>
       </div>
+
+      <AlignmentFields
+        value={block.align || DEFAULT_BLOCK_ALIGN}
+        onChange={(nextAlign) => onChange(index, { ...block, align: nextAlign })}
+      />
 
       {(block.type === "heading" || block.type === "paragraph" || block.type === "quote") && (
         <Field label="Contenu">
@@ -403,6 +564,12 @@ function BlockEditor({ block, index, onChange, onMoveUp, onMoveDown, onRemove })
               onChange={(event) => onChange(index, { ...block, caption: event.target.value })}
             />
           </Field>
+
+          <ImagePositionFields
+            label="Recadrage visuel"
+            position={block.position || DEFAULT_IMAGE_POSITION}
+            onChange={(nextPosition) => onChange(index, { ...block, position: nextPosition })}
+          />
         </div>
       )}
 
@@ -691,6 +858,22 @@ function ArticleEditorPage() {
                 </select>
               </Field>
 
+              <Field
+                label="Sections supplémentaires"
+                help="Optionnel. Sépare les ids par des virgules, par exemple : blog-news, freebies"
+              >
+                <TextInput
+                  value={(draftArticle.extraSections || []).join(", ")}
+                  onChange={(event) =>
+                    updateField(
+                      "extraSections",
+                      parseExtraSections(event.target.value, draftArticle.section),
+                    )
+                  }
+                  placeholder="blog-news, freebies"
+                />
+              </Field>
+
               <Field label="Id">
                 <TextInput
                   value={draftArticle.id}
@@ -750,6 +933,12 @@ function ArticleEditorPage() {
                 />
               </Field>
 
+              <ImagePositionFields
+                label="Recadrage hero"
+                position={draftArticle.heroImagePosition || DEFAULT_IMAGE_POSITION}
+                onChange={(nextPosition) => updateField("heroImagePosition", nextPosition)}
+              />
+
               <Field label="Thumbnail" help="Souvent identique à heroImage dans ce projet.">
                 <TextInput
                   value={draftArticle.thumbnail}
@@ -757,6 +946,12 @@ function ArticleEditorPage() {
                   placeholder="/articles/guides-ableton/hero.jpg"
                 />
               </Field>
+
+              <ImagePositionFields
+                label="Recadrage vignette"
+                position={draftArticle.thumbnailPosition || DEFAULT_IMAGE_POSITION}
+                onChange={(nextPosition) => updateField("thumbnailPosition", nextPosition)}
+              />
 
               <Field label="Image Alt">
                 <TextInput
@@ -868,6 +1063,7 @@ function ArticleEditorPage() {
               <ul className="grid gap-2 text-[14px] leading-6 text-[var(--text-secondary)]">
                 <li>Utilise des chemins locaux du type `/articles/guides-ableton/mon-image.jpg`.</li>
                 <li>`heroImage` et `thumbnail` sont souvent identiques dans ce projet.</li>
+                <li>Le recadrage fonctionne avec un point focal simple : horizontal + vertical.</li>
                 <li>Le snippet JS téléchargé ou copié peut être collé directement dans `data/content.js`.</li>
                 <li>La route `/editor` est un outil local de rédaction, sans backend ni CMS.</li>
               </ul>

@@ -87,7 +87,9 @@ L'editeur gere ces champs :
 - `title`
 - `summary`
 - `heroImage`
+- `heroImagePosition`
 - `thumbnail`
+- `thumbnailPosition`
 - `imageAlt`
 - `tags`
 - `content`
@@ -157,6 +159,7 @@ L'editeur supporte les memes types que `ArticlePage.jsx` :
 - `callout`
 - `image`
 - `gif`
+- `youtube`
 
 ## Comment remplir chaque type de bloc
 
@@ -171,6 +174,18 @@ Champ :
 Champ :
 
 - `content`
+
+Les liens hypertexte inline sont supportes avec la syntaxe :
+
+```text
+[texte du lien](https://exemple.com)
+```
+
+Exemple :
+
+```text
+Consulte [Ableton](https://www.ableton.com/) pour plus d'informations.
+```
 
 ### `list`
 
@@ -207,6 +222,7 @@ Champs :
 - `src`
 - `alt`
 - `caption`
+- `position`
 
 ### `gif`
 
@@ -215,6 +231,21 @@ Champs :
 - `src`
 - `alt`
 - `caption`
+- `position`
+
+### `youtube`
+
+Champs :
+
+- `url`
+- `caption`
+
+Formats supportes :
+
+- `https://www.youtube.com/watch?v=...`
+- `https://youtu.be/...`
+- `https://www.youtube.com/shorts/...`
+- `https://www.youtube.com/embed/...`
 
 ## Gestion des blocs
 
@@ -251,6 +282,56 @@ Organisation actuelle des visuels :
 - `public/articles/guides-ableton/`
 - `public/articles/max-for-live/`
 - `public/articles/freebies/`
+
+## Recadrage des images
+
+L'editeur propose un recadrage simple par point focal.
+
+Tu peux regler :
+
+- le recadrage du hero
+- le recadrage de la thumbnail
+- le recadrage des blocs `image`
+- le recadrage des blocs `gif`
+
+Le systeme ne decoupe pas physiquement le fichier.
+Il regle seulement la zone visible avec `object-position`.
+
+### Format stocke
+
+Le format exporte est :
+
+```text
+50% 50%
+```
+
+Exemples :
+
+```js
+heroImagePosition: "50% 30%",
+thumbnailPosition: "40% 50%",
+```
+
+Pour un bloc image :
+
+```js
+{
+  type: "image",
+  src: "/articles/guides-ableton/mon-image.jpg",
+  alt: "Description image",
+  caption: "Legende optionnelle",
+  position: "50% 20%"
+}
+```
+
+### Comment l'utiliser
+
+Dans `/editor`, le recadrage se fait avec deux sliders :
+
+- horizontal
+- vertical
+
+Le resultat est visible dans l'apercu live.
 
 ## Validation
 
@@ -307,11 +388,13 @@ Utile pour :
 3. Choisis la `section`
 4. Complete `summary`
 5. Ajoute `heroImage`, `thumbnail`, `imageAlt`
-6. Saisis les `tags`
-7. Ajoute les blocs de contenu
-8. Verifie l'apercu live
-9. Clique sur `Copier le snippet JS`
-10. Colle l'objet dans `src/data/content.js`
+6. Regle le point focal si l'image doit etre recadree
+7. Saisis les `tags`
+8. Ajoute les blocs de contenu
+9. Si besoin, ajoute des liens inline ou un bloc `youtube`
+10. Verifie l'apercu live
+11. Clique sur `Copier le snippet JS`
+12. Colle l'objet dans `src/data/content.js`
 
 ## Exemple d'objet produit
 
@@ -325,13 +408,15 @@ Utile pour :
   title: "Guide nouveau",
   summary: "Resume...",
   heroImage: "/articles/guides-ableton/hero.jpg",
+  heroImagePosition: "50% 50%",
   thumbnail: "/articles/guides-ableton/hero.jpg",
+  thumbnailPosition: "50% 50%",
   imageAlt: "Description image",
   tags: ["ableton", "workflow"],
   content: [
     {
       type: "paragraph",
-      content: "Texte..."
+      content: "Texte avec un [lien](https://exemple.com)..."
     }
   ]
 }
@@ -344,6 +429,7 @@ Utile pour :
 - il prepare des objets compatibles avec le format actuel
 - le rendu de preview repose sur `ArticlePage.jsx`
 - le routeur du projet reste le routeur maison de `App.jsx`
+- les liens inline, les blocs YouTube et le point focal restent compatibles avec le format actuel des articles
 
 ## Fichiers lies a `/editor`
 
@@ -351,4 +437,3 @@ Utile pour :
 - `src/components/ArticleEditorPage.jsx`
 - `src/components/ArticlePage.jsx`
 - `src/data/content.js`
-

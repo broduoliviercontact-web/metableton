@@ -63,10 +63,12 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
     safeSlides.findIndex((slide) => slide.slug === article.slug),
     0,
   );
+  const viewportRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(featuredIndex);
   const [trackIndex, setTrackIndex] = useState(hasMultipleSlides ? featuredIndex + 1 : 0);
   const [isAnimating, setIsAnimating] = useState(true);
   const [imageErrors, setImageErrors] = useState({});
+  const [viewportWidth, setViewportWidth] = useState(0);
   const isTransitionLockedRef = useRef(false);
 
   const carouselSlides = useMemo(() => {
@@ -83,6 +85,34 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
     setIsAnimating(true);
     isTransitionLockedRef.current = false;
   }, [featuredIndex, hasMultipleSlides]);
+
+  useEffect(() => {
+    const element = viewportRef.current;
+
+    if (!element) {
+      return undefined;
+    }
+
+    const updateWidth = () => {
+      setViewportWidth(element.getBoundingClientRect().width);
+    };
+
+    updateWidth();
+
+    if (typeof ResizeObserver === "undefined") {
+      window.addEventListener("resize", updateWidth);
+
+      return () => window.removeEventListener("resize", updateWidth);
+    }
+
+    const observer = new ResizeObserver(() => {
+      updateWidth();
+    });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!hasMultipleSlides) {
@@ -117,9 +147,10 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
   }, [isAnimating]);
 
   const activeSlide = safeSlides[activeIndex] || article;
-  const trackWidth = `${carouselSlides.length * 100}%`;
-  const slideWidth = `${100 / carouselSlides.length}%`;
-  const trackTranslate = `translate3d(-${(trackIndex * 100) / carouselSlides.length}%, 0, 0)`;
+  const safeViewportWidth = Math.max(viewportWidth, 1);
+  const trackWidth = `${carouselSlides.length * safeViewportWidth}px`;
+  const slideWidth = `${safeViewportWidth}px`;
+  const trackTranslate = `translate3d(-${trackIndex * safeViewportWidth}px, 0, 0)`;
 
   const handleImageError = (path) => {
     setImageErrors((currentErrors) => ({
@@ -186,7 +217,10 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
       aria-labelledby="hero-title"
       className="flex w-full max-w-none flex-col gap-4 lg:h-full lg:min-h-0 lg:gap-0"
     >
-      <div className="relative overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-transparent lg:h-full lg:min-h-0">
+      <div
+        ref={viewportRef}
+        className="relative overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-transparent lg:h-full lg:min-h-0"
+      >
         <div
           className={`flex h-full ${isAnimating ? "transition-transform duration-500 ease-out" : "transition-none"} will-change-transform`}
           style={{ width: trackWidth, transform: trackTranslate }}
@@ -208,6 +242,7 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
                       className="block h-[340px] w-full object-cover object-center sm:h-[500px] lg:h-full"
                       src={slide.heroImage}
                       alt={slide.imageAlt}
+                      style={{ objectPosition: slide.heroImagePosition || "50% 50%" }}
                       onError={() => handleImageError(slide.path)}
                     />
                   ) : (
