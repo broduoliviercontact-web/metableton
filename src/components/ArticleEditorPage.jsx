@@ -41,6 +41,10 @@ function createBlock(type = "paragraph") {
     return { type, label: "Note", content: "" };
   }
 
+  if (type === "youtube") {
+    return { type, url: "", caption: "" };
+  }
+
   if (type === "image" || type === "gif") {
     return { type, src: "", alt: "", caption: "" };
   }
@@ -171,6 +175,23 @@ function sanitizeContent(content = []) {
       }
 
       if (nextBlock.src || nextBlock.alt || nextBlock.caption) {
+        accumulator.push(nextBlock);
+      }
+
+      return accumulator;
+    }
+
+    if (block.type === "youtube") {
+      const nextBlock = {
+        type: "youtube",
+        url: (block.url || "").trim(),
+      };
+
+      if (block.caption?.trim()) {
+        nextBlock.caption = block.caption.trim();
+      }
+
+      if (nextBlock.url || nextBlock.caption) {
         accumulator.push(nextBlock);
       }
 
@@ -373,6 +394,28 @@ function BlockEditor({ block, index, onChange, onMoveUp, onMoveDown, onRemove })
             <TextInput
               value={block.alt || ""}
               onChange={(event) => onChange(index, { ...block, alt: event.target.value })}
+            />
+          </Field>
+
+          <Field label="Caption">
+            <TextareaInput
+              value={block.caption || ""}
+              onChange={(event) => onChange(index, { ...block, caption: event.target.value })}
+            />
+          </Field>
+        </div>
+      )}
+
+      {block.type === "youtube" && (
+        <div className="grid gap-4">
+          <Field
+            label="URL YouTube"
+            help="Colle un lien YouTube classique, youtu.be, shorts ou embed."
+          >
+            <TextInput
+              value={block.url || ""}
+              onChange={(event) => onChange(index, { ...block, url: event.target.value })}
+              placeholder="https://www.youtube.com/watch?v=..."
             />
           </Field>
 
@@ -754,7 +797,7 @@ function ArticleEditorPage() {
             </div>
 
             <div className="mb-4 flex flex-wrap gap-2">
-              {["heading", "paragraph", "list", "quote", "callout", "image", "gif"].map((type) => (
+              {["heading", "paragraph", "list", "quote", "callout", "image", "gif", "youtube"].map((type) => (
                 <button
                   key={type}
                   className="inline-flex h-9 items-center rounded-[10px] border border-[color:var(--border-soft)] px-3 text-[13px] text-[var(--text-secondary)] transition-colors hover:border-[color:var(--border-strong)] hover:text-[var(--text-primary)]"

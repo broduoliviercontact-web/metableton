@@ -1,5 +1,40 @@
 import EditorialTag from "./EditorialTag";
 
+function getYouTubeEmbedUrl(url) {
+  if (!url) {
+    return "";
+  }
+
+  try {
+    const parsedUrl = new URL(url);
+
+    if (parsedUrl.hostname.includes("youtu.be")) {
+      const id = parsedUrl.pathname.replace("/", "");
+      return id ? `https://www.youtube.com/embed/${id}` : "";
+    }
+
+    if (parsedUrl.hostname.includes("youtube.com")) {
+      if (parsedUrl.pathname === "/watch") {
+        const id = parsedUrl.searchParams.get("v");
+        return id ? `https://www.youtube.com/embed/${id}` : "";
+      }
+
+      if (parsedUrl.pathname.startsWith("/shorts/")) {
+        const id = parsedUrl.pathname.split("/shorts/")[1];
+        return id ? `https://www.youtube.com/embed/${id}` : "";
+      }
+
+      if (parsedUrl.pathname.startsWith("/embed/")) {
+        return url;
+      }
+    }
+  } catch {
+    return "";
+  }
+
+  return "";
+}
+
 function ArticleBlock({ block }) {
   if (block.type === "heading") {
     return (
@@ -53,6 +88,41 @@ function ArticleBlock({ block }) {
           alt={block.alt}
           loading="lazy"
         />
+        {block.caption ? (
+          <figcaption className="text-[13px] leading-6 text-[var(--text-muted)]">{block.caption}</figcaption>
+        ) : null}
+      </figure>
+    );
+  }
+
+  if (block.type === "youtube") {
+    const embedUrl = getYouTubeEmbedUrl(block.url);
+
+    return (
+      <figure className="grid gap-3 py-2">
+        {embedUrl ? (
+          <div className="overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)]">
+            <div className="aspect-video w-full">
+              <iframe
+                className="h-full w-full"
+                src={embedUrl}
+                title={block.caption || "Vidéo YouTube"}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        ) : (
+          <a
+            className="inline-flex w-fit rounded-[10px] border border-[color:var(--border-soft)] px-4 py-3 text-[15px] text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+            href={block.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ouvrir la vidéo YouTube
+          </a>
+        )}
         {block.caption ? (
           <figcaption className="text-[13px] leading-6 text-[var(--text-muted)]">{block.caption}</figcaption>
         ) : null}
