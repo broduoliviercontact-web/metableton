@@ -111,134 +111,138 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
   };
 
   return (
-    <section aria-labelledby="hero-title" className="w-full">
-      <div className="grid gap-4 lg:gap-5">
-        <div className="relative overflow-hidden rounded-[10px] border border-black/10 bg-neutral-50 p-2">
-          <div
-            className={`flex ${isAnimating ? "transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]" : "transition-none"}`}
-            style={{
-              transform: `translateX(-${renderIndex * 100}%)`,
-            }}
-            onTransitionEnd={handleTransitionEnd}
-          >
-            {carouselSlides.map((slide, index) => {
-              const hasImage = Boolean(slide.heroImage) && !imageErrors[slide.path];
-
-              return (
-                <div className="min-w-full shrink-0" key={`${slide.path}-${index}`}>
-                  <AppLink
-                    className="block"
-                    currentPath={currentPath}
-                    href={slide.path}
-                    onNavigate={onNavigate}
-                  >
-                    {hasImage ? (
-                      <img
-                        className="block h-[320px] w-full rounded-[8px] border border-black/10 object-cover object-center sm:h-[380px] lg:h-[clamp(440px,60vh,680px)]"
-                        src={slide.heroImage}
-                        alt={slide.imageAlt}
-                        onError={() => handleImageError(slide.path)}
-                      />
-                    ) : (
-                      <div
-                        className="relative flex h-[320px] w-full items-end rounded-[8px] border border-black/10 bg-white p-4 sm:h-[380px] lg:h-[clamp(440px,60vh,680px)]"
-                        aria-label="Image éditoriale à venir"
-                      >
-                        <div className="grid gap-1 rounded-[8px] border border-black/10 bg-neutral-50 px-3 py-2">
-                          <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-black/50">
-                            METABLETON
-                          </span>
-                          <span className="text-sm leading-5 text-black/70">
-                            Image éditoriale à remplacer
-                          </span>
-                        </div>
-                      </div>
-                    )}
-                  </AppLink>
-                </div>
-              );
-            })}
-          </div>
-
-          {hasMultipleSlides ? (
-            <div
-              className="pointer-events-none absolute inset-y-0 left-4 right-4 flex items-center justify-between"
-              aria-label="Navigation principale du carousel"
-            >
-              <button
-                className="pointer-events-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-black/12 bg-white/96 text-[24px] text-black/80 transition hover:border-black/22 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
-                type="button"
-                onClick={goToPrevious}
-                aria-label="Slide précédente"
-              >
-                <span aria-hidden="true">‹</span>
-              </button>
-
-              <button
-                className="pointer-events-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-black/12 bg-white/96 text-[24px] text-black/80 transition hover:border-black/22 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
-                type="button"
-                onClick={goToNext}
-                aria-label="Slide suivante"
-              >
-                <span aria-hidden="true">›</span>
-              </button>
-            </div>
-          ) : null}
-        </div>
-
-        <AppLink
-          className="block"
-          currentPath={currentPath}
-          href={activeSlide.path}
-          onNavigate={onNavigate}
+    <section aria-labelledby="hero-title" className="flex w-full max-w-none flex-col gap-4 lg:gap-5">
+      <div className="relative overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-transparent">
+        <div
+          className={`flex ${isAnimating ? "transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]" : "transition-none"}`}
+          style={{
+            transform: `translateX(-${renderIndex * 100}%)`,
+          }}
+          onTransitionEnd={handleTransitionEnd}
         >
-          <article className="mx-auto grid w-full max-w-[760px] gap-3 px-1 text-center">
-            <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-black/52">
-              {activeSectionTitle}
-            </p>
-            <h1
-              className="mx-auto max-w-[16ch] font-serif text-[clamp(2.1rem,4.6vw,4.8rem)] leading-[0.96] tracking-[-0.045em] text-black"
-              id="hero-title"
-            >
-              {activeSlide.title}
-            </h1>
-            {activeSlide.summary ? (
-              <p className="mx-auto max-w-[40rem] text-[15px] leading-7 text-black/68 sm:text-base">
-                {activeSlide.summary}
-              </p>
-            ) : null}
-          </article>
-        </AppLink>
+          {carouselSlides.map((slide, index) => {
+            const hasImage = Boolean(slide.heroImage) && !imageErrors[slide.path];
+
+            return (
+              <div className="min-w-full shrink-0" key={`${slide.path}-${index}`}>
+                <AppLink
+                  className="relative block overflow-hidden rounded-[10px] bg-transparent"
+                  currentPath={currentPath}
+                  href={slide.path}
+                  onNavigate={onNavigate}
+                >
+                  {hasImage ? (
+                    <img
+                      className="block h-[340px] w-full object-cover object-center sm:h-[500px] lg:h-[72vh] lg:min-h-[680px] lg:max-h-[820px]"
+                      src={slide.heroImage}
+                      alt={slide.imageAlt}
+                      onError={() => handleImageError(slide.path)}
+                    />
+                  ) : (
+                    <div
+                      className="flex h-[340px] items-end border border-[color:var(--border-soft)] bg-[var(--panel-bg)] p-4 sm:h-[500px] lg:h-[72vh] lg:min-h-[680px] lg:max-h-[820px]"
+                      aria-label="Image éditoriale à venir"
+                    >
+                      <div className="grid gap-1 rounded-[8px] border border-black/10 bg-stone-50 px-3 py-3">
+                        <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                          METABLETON
+                        </span>
+                        <span className="text-sm leading-6 text-[var(--text-secondary)]">
+                          Image éditoriale à remplacer
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                </AppLink>
+              </div>
+            );
+          })}
+        </div>
 
         {hasMultipleSlides ? (
           <div
-            className="mx-auto flex w-full max-w-[760px] items-center justify-center gap-4 border-t border-black/8 pt-3"
-            aria-label="Navigation du carousel hero"
+            className="pointer-events-none absolute inset-y-0 left-6 right-6 flex items-center justify-between sm:left-8 sm:right-8"
+            aria-label="Navigation principale du carousel"
           >
-            <div className="flex items-center gap-2" aria-label="Indicateur de slide">
-              {safeSlides.map((slide, index) => (
-                <button
-                  key={slide.path}
-                  className={`h-[7px] w-[7px] rounded-full transition ${
-                    index === activeIndex ? "bg-black/80" : "bg-black/18 hover:bg-black/34"
-                  }`}
-                  type="button"
-                  onClick={() => goToSlide(index)}
-                  aria-label={`Aller au slide ${index + 1}`}
-                  aria-current={index === activeIndex ? "true" : undefined}
-                />
-              ))}
-            </div>
-
-            <p
-              className="text-[11px] font-medium uppercase tracking-[0.14em] text-black/50"
-              aria-label="Position dans le carousel"
+            <button
+              className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center rounded-[10px] border border-[color:var(--border-strong)] bg-[var(--control-bg)] text-[var(--control-text)] transition-colors duration-150 hover:bg-[var(--control-bg-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--control-ring)] lg:h-12 lg:w-12"
+              type="button"
+              onClick={goToPrevious}
+              aria-label="Slide précédente"
             >
-              {activeIndex + 1} / {safeSlides.length}
-            </p>
+              <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 16 16" fill="none">
+                <path d="M9.5 3.5 5 8l4.5 4.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="square" />
+              </svg>
+            </button>
+
+            <button
+              className="pointer-events-auto inline-flex h-11 w-11 items-center justify-center rounded-[10px] border border-[color:var(--border-strong)] bg-[var(--control-bg)] text-[var(--control-text)] transition-colors duration-150 hover:bg-[var(--control-bg-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--control-ring)] lg:h-12 lg:w-12"
+              type="button"
+              onClick={goToNext}
+              aria-label="Slide suivante"
+            >
+              <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 16 16" fill="none">
+                <path d="M6.5 3.5 11 8l-4.5 4.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="square" />
+              </svg>
+            </button>
           </div>
         ) : null}
       </div>
+
+      <AppLink
+        className="block"
+        currentPath={currentPath}
+        href={activeSlide.path}
+        onNavigate={onNavigate}
+      >
+        <article className="mx-auto grid w-full max-w-[760px] gap-2 text-center">
+          <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
+            {activeSectionTitle}
+          </p>
+          <h1
+            className="mx-auto max-w-[13ch] font-[var(--font-display)] text-[38px] leading-[0.96] tracking-[-0.045em] text-[var(--text-primary)] sm:text-[52px] lg:text-[62px]"
+            id="hero-title"
+          >
+            {activeSlide.title}
+          </h1>
+          {activeSlide.summary ? (
+            <p className="mx-auto max-w-[620px] text-[15px] leading-7 text-[var(--text-secondary)] sm:text-base">
+              {activeSlide.summary}
+            </p>
+          ) : null}
+        </article>
+      </AppLink>
+
+      {hasMultipleSlides ? (
+        <div
+          className="mx-auto flex w-full max-w-[760px] items-center justify-center gap-4 border-t border-[color:var(--border-soft)] pt-3"
+          aria-label="Navigation du carousel hero"
+        >
+          <div className="flex items-center gap-2" aria-label="Indicateur de slide">
+            {safeSlides.map((slide, index) => (
+              <button
+                key={slide.path}
+                className={`h-[7px] w-[7px] rounded-full transition-colors duration-150 ${
+                  index === activeIndex
+                    ? "bg-[var(--dot-active)]"
+                    : "bg-[var(--dot-muted)] hover:bg-[var(--dot-hover)]"
+                }`}
+                type="button"
+                onClick={() => goToSlide(index)}
+                aria-label={`Aller au slide ${index + 1}`}
+                aria-current={index === activeIndex ? "true" : undefined}
+              />
+            ))}
+          </div>
+
+          <p
+            className="text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]"
+            aria-label="Position dans le carousel"
+          >
+            {activeIndex + 1} / {safeSlides.length}
+          </p>
+        </div>
+      ) : null}
     </section>
   );
 }

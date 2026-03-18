@@ -24,6 +24,15 @@ function normalizePath(pathname) {
 
 function App() {
   const [currentPath, setCurrentPath] = useState(() => normalizePath(window.location.pathname));
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = window.localStorage.getItem("metableton-theme");
+
+    if (savedTheme === "light" || savedTheme === "dark") {
+      return savedTheme;
+    }
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  });
 
   useEffect(() => {
     const handlePopState = () => {
@@ -34,6 +43,11 @@ function App() {
 
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("metableton-theme", theme);
+    document.documentElement.style.colorScheme = theme;
+  }, [theme]);
 
   const handleNavigate = (href) => {
     const nextPath = normalizePath(href);
@@ -57,20 +71,18 @@ function App() {
     ? currentSection.path
     : currentSecondaryPage
       ? currentSecondaryPage.path
-    : articleSection
-      ? `/${articleSection.slug}`
-      : currentPath;
+      : articleSection
+        ? `/${articleSection.slug}`
+        : currentPath;
 
   return (
-    <div className="site-shell">
-      <Sidebar
-        currentPath={navigationPath}
-        navigationGroups={navigationGroups}
-        onNavigate={handleNavigate}
-      />
-
+    <div
+      className={`theme-shell min-h-screen bg-[var(--app-bg)] text-[var(--text-primary)] transition-colors duration-200 lg:grid lg:grid-cols-[minmax(0,1fr)_256px] ${
+        theme === "dark" ? "theme-dark" : "theme-light"
+      }`}
+    >
       <main
-        className={`content-area ${currentSection || currentArticle ? "content-area--section" : ""}`}
+        className="min-w-0 px-4 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-8"
         aria-label="Contenu principal"
       >
         {currentArticle ? (
@@ -93,6 +105,14 @@ function App() {
           />
         )}
       </main>
+
+      <Sidebar
+        currentPath={navigationPath}
+        navigationGroups={navigationGroups}
+        onNavigate={handleNavigate}
+        onToggleTheme={() => setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"))}
+        theme={theme}
+      />
     </div>
   );
 }
