@@ -477,6 +477,13 @@ a {
   color: var(--color-text-soft);
 }
 
+.article-page__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
 .article-page__body {
   width: min(640px, 100%);
 }
@@ -616,6 +623,46 @@ a {
   color: var(--color-text-soft);
 }
 
+.section-page__search-wrap {
+  width: min(420px, 100%);
+  margin-top: 1.45rem;
+}
+
+.section-page__search-label {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.52);
+}
+
+.section-page__search-input {
+  width: 100%;
+  padding: 0.82rem 0.95rem;
+  border: 1px solid rgba(17, 17, 17, 0.09);
+  border-radius: 10px;
+  background: rgba(251, 250, 246, 0.76);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.96rem;
+  line-height: 1.4;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.section-page__search-input::placeholder {
+  color: rgba(17, 17, 17, 0.45);
+}
+
+.section-page__search-input:focus {
+  outline: none;
+  border-color: rgba(17, 17, 17, 0.22);
+  background: rgba(255, 255, 255, 0.9);
+}
+
 .section-list {
   display: grid;
 }
@@ -707,6 +754,34 @@ a {
   font-size: 0.97rem;
   line-height: 1.68;
   color: var(--color-text-soft);
+}
+
+.section-list__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+.editorial-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  padding: 0.18rem 0.5rem 0.16rem;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 999px;
+  background: rgba(251, 250, 246, 0.8);
+  font-size: 0.72rem;
+  line-height: 1;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+.section-page__empty {
+  margin: 0;
+  padding: 1rem 0 0;
+  color: var(--color-text-soft);
+  font-size: 0.97rem;
+  line-height: 1.68;
 }
 
 .secondary-page {
@@ -894,6 +969,11 @@ a {
     grid-template-columns: 148px minmax(0, 1fr);
   }
 
+  .section-page__search-wrap {
+    width: 100%;
+    max-width: 420px;
+  }
+
   .secondary-page__panels {
     grid-template-columns: 1fr;
   }
@@ -1039,6 +1119,15 @@ a {
     line-height: 1.68;
   }
 
+  .section-page__search-wrap {
+    margin-top: 1.15rem;
+  }
+
+  .section-page__search-input {
+    padding: 0.78rem 0.88rem;
+    font-size: 0.94rem;
+  }
+
   .secondary-page__header {
     margin-bottom: 1.65rem;
     padding-bottom: 1.2rem;
@@ -1095,5 +1184,9 @@ a {
   .section-list__description {
     font-size: 0.95rem;
     line-height: 1.62;
+  }
+
+  .editorial-tag {
+    font-size: 0.7rem;
   }
 }

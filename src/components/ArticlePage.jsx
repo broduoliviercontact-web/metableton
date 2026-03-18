@@ -68,6 +68,15 @@ function ArticlePage({ article, sectionTitle }) {
           {article.title}
         </h1>
         <p className="article-page__summary">{article.summary}</p>
+        {article.tags?.length ? (
+          <div className="article-page__tags" aria-label="Tags de l'article">
+            {article.tags.map((tag) => (
+              <span className="editorial-tag" key={tag}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        ) : null}
       </header>
 
       <div className="article-page__body">

@@ -42,6 +42,7 @@ const articles = [
     heroImage: "/articles/blog-news/ableton-interface-closeup.jpg",
     thumbnail: "/articles/blog-news/ableton-interface-closeup.jpg",
     imageAlt: "Gros plan sur l’interface d’Ableton Live",
+    tags: ["workflow", "composition", "ableton"],
     content: [
       {
         type: "paragraph",
@@ -73,6 +74,7 @@ const articles = [
     heroImage: "/articles/blog-news/home-studio-ableton.jpg",
     thumbnail: "/articles/blog-news/home-studio-ableton.jpg",
     imageAlt: "Home studio avec Ableton Live ouvert sur l’écran principal",
+    tags: ["studio", "workflow", "production"],
     content: [
       {
         type: "paragraph",
@@ -104,6 +106,7 @@ const articles = [
     heroImage: "/articles/blog-news/arrangement-overview.jpg",
     thumbnail: "/articles/blog-news/arrangement-overview.jpg",
     imageAlt: "Vue Arrangement d’Ableton Live avec une structure de morceau",
+    tags: ["arrangement", "workflow", "production"],
     content: [
       {
         type: "paragraph",
@@ -135,6 +138,7 @@ const articles = [
     heroImage: "/articles/guides-ableton/ableton-live-overview.jpg",
     thumbnail: "/articles/guides-ableton/ableton-live-overview.jpg",
     imageAlt: "Interface d’Ableton Live pour un guide de prise en main",
+    tags: ["debutant", "workflow", "ableton"],
     content: [
       {
         type: "paragraph",
@@ -209,6 +213,7 @@ const articles = [
     thumbnail: "/articles/guides-ableton/browser-and-session-view.jpg",
     imageAlt:
       "Interface Ableton Live utilisée pour illustrer un guide d’organisation",
+    tags: ["samples", "organisation", "workflow"],
     content: [
       {
         type: "paragraph",
@@ -312,6 +317,7 @@ const articles = [
     heroImage: "/articles/guides-ableton/session-view.jpg",
     thumbnail: "/articles/guides-ableton/session-view.jpg",
     imageAlt: "Capture d’écran de la Session View d’Ableton Live",
+    tags: ["session view", "arrangement", "workflow"],
     content: [
       {
         type: "paragraph",
@@ -342,6 +348,7 @@ const articles = [
     heroImage: "/articles/guides-ableton/clean-project-view.jpg",
     thumbnail: "/articles/guides-ableton/clean-project-view.jpg",
     imageAlt: "Template Ableton Live bien organisé",
+    tags: ["organisation", "template", "workflow"],
     content: [
       {
         type: "paragraph",
@@ -377,6 +384,7 @@ const articles = [
     heroImage: "/articles/max-for-live/max-like-interface.jpg",
     thumbnail: "/articles/max-for-live/max-like-interface.jpg",
     imageAlt: "Interface d’un device Max for Live",
+    tags: ["max for live", "debutant", "devices"],
     content: [
       {
         type: "paragraph",
@@ -407,6 +415,7 @@ const articles = [
     heroImage: "/articles/max-for-live/device-workflow.jpg",
     thumbnail: "/articles/max-for-live/device-workflow.jpg",
     imageAlt: "Configuration Ableton Live et contrôleurs pour un workflow créatif",
+    tags: ["max for live", "devices", "workflow"],
     content: [
       {
         type: "paragraph",
@@ -437,6 +446,7 @@ const articles = [
     heroImage: "/articles/max-for-live/creative-ableton-view.jpg",
     thumbnail: "/articles/max-for-live/creative-ableton-view.jpg",
     imageAlt: "Vue Ableton Live utilisée pour illustrer une approche créative",
+    tags: ["max for live", "creativite", "workflow"],
     content: [
       {
         type: "paragraph",
@@ -467,6 +477,7 @@ const articles = [
     heroImage: "/articles/freebies/template-session.jpg",
     thumbnail: "/articles/freebies/template-session.jpg",
     imageAlt: "Template Ableton Live préparé comme point de départ",
+    tags: ["template", "gratuit", "workflow"],
     content: [
       {
         type: "paragraph",
@@ -497,6 +508,7 @@ const articles = [
     heroImage: "/articles/freebies/rack-demo.jpg",
     thumbnail: "/articles/freebies/rack-demo.jpg",
     imageAlt: "Gros plan sur une interface Ableton Live pour illustrer un rack",
+    tags: ["rack", "gratuit", "mix"],
     content: [
       {
         type: "paragraph",
