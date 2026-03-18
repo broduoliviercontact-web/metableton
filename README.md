@@ -18,6 +18,7 @@ Le site contient actuellement :
 
 - une homepage avec hero carousel editorial
 - une sidebar de navigation
+- une route locale `/editor` pour rediger des articles
 - 4 pages de section :
   - `Blog / News`
   - `Guides Ableton Live`
@@ -80,6 +81,7 @@ METABLETON FINAL/
 ├── src/
 │   ├── components/
 │   │   ├── AppLink.jsx
+│   │   ├── ArticleEditorPage.jsx
 │   │   ├── ArticlePage.jsx
 │   │   ├── HeroFeature.jsx
 │   │   ├── SecondaryPage.jsx
@@ -159,6 +161,20 @@ Types de blocs actuellement supportes :
 - `quote`
 - `callout`
 
+### `src/components/ArticleEditorPage.jsx`
+
+Editeur local pour creer ou preparer un article directement dans l'application.
+
+Fonctionnalites principales :
+
+- route locale `/editor`
+- edition des metadonnees
+- edition bloc par bloc du `content`
+- apercu live via `ArticlePage`
+- autosave dans `localStorage`
+- export JSON
+- export JS pret a coller dans `src/data/content.js`
+
 ### `src/components/SecondaryPage.jsx`
 
 Template simple pour :
@@ -168,6 +184,27 @@ Template simple pour :
 - `Contact / Reseaux sociaux`
 
 ## Contenus et zones a modifier
+
+### Utiliser l'editeur local `/editor`
+
+Route :
+
+- `/editor`
+
+L'editeur sert a :
+
+- rediger un article au bon format
+- preparer ses blocs `content`
+- verifier le rendu avant collage
+- exporter un objet compatible avec `src/data/content.js`
+
+Le brouillon est sauve automatiquement dans le navigateur via :
+
+- `metableton-article-editor-draft`
+
+Guide detaille :
+
+- [`EDITOR_GUIDE.md`](./EDITOR_GUIDE.md)
 
 ### Modifier les articles
 
@@ -307,6 +344,59 @@ Le gros du style vit dans :
 3. La route article sera creee automatiquement
 4. La page de section l'affichera automatiquement
 
+### Workflow recommande avec `/editor`
+
+1. Ouvrir `/editor`
+2. Remplir :
+   - `title`
+   - `section`
+   - `summary`
+   - `heroImage`
+   - `thumbnail`
+   - `imageAlt`
+3. Ajouter les blocs de contenu necessaires
+4. Verifier l'apercu live a droite
+5. Copier le snippet JS ou telecharger le `.js`
+6. Coller l'objet dans le tableau `articles` de [`src/data/content.js`](./src/data/content.js)
+7. Si besoin, ajouter `featured: true` pour en faire l'article vedette
+
+### Champs geres par `/editor`
+
+L'editeur prend en charge :
+
+- `id`
+- `slug`
+- `section`
+- `type`
+- `label`
+- `featured`
+- `title`
+- `summary`
+- `heroImage`
+- `thumbnail`
+- `imageAlt`
+- `tags`
+- `content`
+
+Types de blocs supportes dans l'editeur :
+
+- `heading`
+- `paragraph`
+- `list`
+- `quote`
+- `callout`
+- `image`
+- `gif`
+
+Notes utiles :
+
+- `slug` se genere automatiquement depuis le titre tant qu'il n'a pas ete modifie a la main
+- `id` suit la meme logique au depart
+- `tags` se saisissent separes par des virgules
+- `list` est converti en `items: []`
+- `image` et `gif` utilisent `src`, `alt`, `caption`
+- `callout` accepte `label` et `content`
+
 ## Ajouter un GIF dans un article
 
 Dans le `content` d'un article, utiliser un bloc comme :
@@ -328,6 +418,7 @@ Puis placer le fichier dans `public/articles/...`.
 - le projet contient aussi `node_modules/` localement
 - le routing est intentionnellement simple et sans dependance externe
 - la plupart des evolutions passent par `content.js` et `global.css`
+- la route `/editor` est un outil local de travail, sans backend ni CMS
 
 ## Scripts disponibles
 

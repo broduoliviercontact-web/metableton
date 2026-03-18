@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ArticlePage from "./components/ArticlePage";
+import ArticleEditorPage from "./components/ArticleEditorPage";
 import HeroFeature from "./components/HeroFeature";
 import SecondaryPage from "./components/SecondaryPage";
 import SectionPage from "./components/SectionPage";
@@ -63,6 +64,8 @@ function App() {
   const currentSection = sectionPages[currentPath];
   const currentSecondaryPage = secondaryPages[currentPath];
   const currentArticle = articlesByPath[currentPath];
+  const isEditorPage = currentPath === "/editor";
+  const isHomepage = !isEditorPage && !currentSection && !currentSecondaryPage && !currentArticle;
   const articleSection = currentArticle
     ? sections.find((section) => section.id === currentArticle.section)
     : null;
@@ -79,14 +82,16 @@ function App() {
     <div
       className={`theme-shell min-h-screen bg-[var(--app-bg)] text-[var(--text-primary)] transition-colors duration-200 lg:grid lg:grid-cols-[minmax(0,1fr)_256px] ${
         theme === "dark" ? "theme-dark" : "theme-light"
-      }`}
+      } ${isHomepage ? "lg:h-screen lg:overflow-hidden" : ""}`}
     >
       <main
-        className="min-w-0 px-4 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-8"
+        className={`min-w-0 px-4 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-8 ${isHomepage ? "lg:h-screen lg:overflow-hidden" : ""}`}
         aria-label="Contenu principal"
       >
         {currentArticle ? (
           <ArticlePage article={currentArticle} sectionTitle={articleSection?.title} />
+        ) : isEditorPage ? (
+          <ArticleEditorPage />
         ) : currentSection ? (
           <SectionPage
             currentPath={currentPath}

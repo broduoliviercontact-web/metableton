@@ -4,7 +4,7 @@ function Sidebar({ navigationGroups, currentPath, onNavigate, theme, onToggleThe
   return (
     <aside className="border-b border-[color:var(--border-soft)] bg-[var(--panel-subtle)] lg:border-b-0 lg:border-l">
       <div className="flex gap-6 px-4 py-4 sm:px-6 lg:sticky lg:top-0 lg:min-h-screen lg:flex-col lg:px-6 lg:py-8">
-        <div className="shrink-0 text-center">
+        <div className="shrink-0 ">
           <AppLink
             className="inline-flex justify-center"
             currentPath={currentPath}
@@ -15,7 +15,9 @@ function Sidebar({ navigationGroups, currentPath, onNavigate, theme, onToggleThe
             <img
               src="/logos/metableton-logo-full.svg"
               alt="METABLETON"
-              className="h-auto w-[136px] sm:w-[148px]"
+              className={`h-auto w-[136px] transition-[filter] duration-150 sm:w-[148px] ${
+                theme === "dark" ? "invert" : ""
+              }`}
             />
           </AppLink>
         </div>

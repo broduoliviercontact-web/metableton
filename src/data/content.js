@@ -31,6 +31,37 @@ export const sections = [
 
 const articles = [
   {
+  "id": "meld",
+  "slug": "meld",
+  featured: true,
+  "section": "guides-ableton-live",
+  "type": "Guide",
+  "label": "Guide",
+  "title": "MELD Le synthétiseur couteau suisse",
+  "summary": "Meld Le synthétiseur boite à outils",
+  "heroImage": "/articles/guides-ableton/Meld-main.jpg",
+  "thumbnail": "/articles/guides-ableton/Meld-main.jpg",
+  "imageAlt": "Visuel d’article pour Ableton Live",
+  "tags": [
+    "device",
+    "meld",
+    "synthétiseur"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "content": "Quand Ableton a sorti Meld, j’ai tout de suite eu l’impression qu’ils n’avaient pas simplement ajouté “un synthé de plus” à Live.\nMeld, c’est plutôt un instrument qui condense plusieurs philosophies de synthèse dans une interface très musicale : formes de base, empilements d’oscillateurs, FM, waveshaping, oscillateurs percussifs, textures bruitées… Le tout dans un deux moteurs séparé."
+    },
+    {
+      "type": "image",
+      "src": "/articles/guides-ableton/MELD/meld-osc.jpg",
+      "alt": "/articles/guides-ableton/Meld-main.jpg",
+      "caption": "meld oascillator"
+    }
+  ]
+},
+
+  {
     id: "blog-produire-vite",
     slug: "pourquoi-ableton-live-pour-produire-vite",
     section: "blog-news",
@@ -131,12 +162,12 @@ const articles = [
     section: "guides-ableton-live",
     type: "Guide",
     label: "Guide",
-    featured: true,
+
     title: "Bien démarrer sur Ableton Live",
     summary:
       "Un guide simple et concret pour comprendre l’interface, le workflow et les bases de la production dans Ableton Live.",
-    heroImage: "/articles/guides-ableton/ableton-live-overview.jpg",
-    thumbnail: "/articles/guides-ableton/ableton-live-overview.jpg",
+    heroImage: "/articles/guides-ableton/max-for-live-PATCH.jpg",
+    thumbnail: "/articles/guides-ableton/max-for-live-PATCH.jpg",
     imageAlt: "Interface d’Ableton Live pour un guide de prise en main",
     tags: ["debutant", "workflow", "ableton"],
     content: [
@@ -659,8 +690,8 @@ export const featuredArticle =
   allArticles.find((article) => article.featured) || allArticles[0];
 
 const heroCarouselSlugs = [
+  "meld",
   "bien-demarrer-sur-ableton-live",
-  "organiser-ses-samples-dans-ableton-live",
   "max-for-live-par-ou-commencer",
   "freebie-template-ableton-live",
 ];
