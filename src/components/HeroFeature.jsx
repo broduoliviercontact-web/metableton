@@ -269,13 +269,14 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
         <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden lg:block">
           <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-end px-8 pb-8">
             <div className="max-w-[420px]">
-              <h1
-                className="text-left font-[var(--font-ui)] text-[22px] font-normal leading-[1.12] tracking-[-0.02em] text-white"
-                id="hero-title"
-                style={{ textShadow: "0 1px 10px rgba(0,0,0,0.28)" }}
-              >
-                {activeSlide.title}
-              </h1>
+              <div className="inline-flex max-w-full rounded-[10px] border border-white/14 bg-black/58 px-4 py-3 backdrop-blur-[2px]">
+                <h1
+                  className="text-left font-[var(--font-ui)] text-[22px] font-normal leading-[1.12] tracking-[-0.02em] text-white"
+                  id="hero-title"
+                >
+                  {activeSlide.title}
+                </h1>
+              </div>
             </div>
 
             {hasMultipleSlides ? (

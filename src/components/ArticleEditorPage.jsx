@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { sections } from "../data/content";
+import { articleEntries, sections } from "../data/content";
 import ArticlePage from "./ArticlePage";
 
 const STORAGE_KEY = "metableton-article-editor-draft";
@@ -135,6 +135,20 @@ function createEmptyArticle() {
   };
 }
 
+function normalizeEditorArticle(article = {}) {
+  const template = createEmptyArticle();
+
+  return {
+    ...template,
+    ...article,
+    extraSections: Array.isArray(article.extraSections) ? article.extraSections : [],
+    tags: Array.isArray(article.tags) ? article.tags : [],
+    content: Array.isArray(article.content) ? article.content : [],
+    heroImagePosition: article.heroImagePosition || DEFAULT_IMAGE_POSITION,
+    thumbnailPosition: article.thumbnailPosition || DEFAULT_IMAGE_POSITION,
+  };
+}
+
 function loadInitialEditorState() {
   const template = createTemplateArticle();
 
@@ -151,7 +165,9 @@ function loadInitialEditorState() {
     }
 
     const parsed = JSON.parse(raw);
-    const draftArticle = parsed?.draftArticle ? { ...template, ...parsed.draftArticle } : template;
+    const draftArticle = parsed?.draftArticle
+      ? normalizeEditorArticle({ ...template, ...parsed.draftArticle })
+      : template;
 
     return {
       draftArticle: {
@@ -600,10 +616,20 @@ function BlockEditor({ block, index, onChange, onMoveUp, onMoveDown, onRemove })
 
 function ArticleEditorPage() {
   const initialState = useMemo(() => loadInitialEditorState(), []);
+  const existingArticles = useMemo(
+    () =>
+      articleEntries.map((article) => ({
+        id: article.id,
+        title: article.title,
+        section: article.section,
+      })),
+    [],
+  );
   const [draftArticle, setDraftArticle] = useState(initialState.draftArticle);
   const [tagsInput, setTagsInput] = useState(initialState.tagsInput);
   const [slugTouched, setSlugTouched] = useState(initialState.slugTouched);
   const [idTouched, setIdTouched] = useState(initialState.idTouched);
+  const [selectedExistingArticleId, setSelectedExistingArticleId] = useState("");
   const [feedback, setFeedback] = useState("");
 
   useEffect(() => {
@@ -746,6 +772,27 @@ function ArticleEditorPage() {
     setFeedback("Brouillon réinitialisé.");
   };
 
+  const handleLoadExistingArticle = () => {
+    if (!selectedExistingArticleId) {
+      setFeedback("Choisis un article à charger.");
+      return;
+    }
+
+    const selectedArticle = articleEntries.find((article) => article.id === selectedExistingArticleId);
+
+    if (!selectedArticle) {
+      setFeedback("Article introuvable.");
+      return;
+    }
+
+    const normalizedArticle = normalizeEditorArticle(selectedArticle);
+    setDraftArticle(normalizedArticle);
+    setTagsInput((normalizedArticle.tags || []).join(", "));
+    setSlugTouched(true);
+    setIdTouched(true);
+    setFeedback("Article chargé dans l’éditeur.");
+  };
+
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(jsSnippet);
@@ -825,6 +872,47 @@ function ArticleEditorPage() {
 
       <div className="grid gap-6 xl:grid-cols-[minmax(420px,520px)_minmax(0,1fr)]">
         <div className="grid gap-6">
+          <section className={panelClass}>
+            <div className="mb-4 grid gap-1">
+              <h2 className="text-[16px] font-medium text-[var(--text-primary)]">Articles existants</h2>
+              <p className="text-[14px] text-[var(--text-secondary)]">
+                Charge un article présent dans `content.js` pour le modifier dans l’éditeur.
+              </p>
+            </div>
+
+            <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+              <Field label="Choisir un article">
+                <select
+                  className="h-10 w-full rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)] px-3 text-[15px] text-[var(--text-primary)] outline-none transition-colors focus:border-[color:var(--border-strong)]"
+                  value={selectedExistingArticleId}
+                  onChange={(event) => setSelectedExistingArticleId(event.target.value)}
+                >
+                  <option value="">Choisir un article existant</option>
+                  {existingArticles.map((article) => {
+                    const sectionTitle =
+                      sections.find((section) => section.id === article.section)?.title || article.section;
+
+                    return (
+                      <option key={article.id} value={article.id}>
+                        {article.title} · {sectionTitle}
+                      </option>
+                    );
+                  })}
+                </select>
+              </Field>
+
+              <div className="lg:pb-[1px]">
+                <button
+                  className={`${actionButtonClass} w-full justify-center lg:w-auto`}
+                  onClick={handleLoadExistingArticle}
+                  type="button"
+                >
+                  Charger
+                </button>
+              </div>
+            </div>
+          </section>
+
           <section className={panelClass}>
             <div className="mb-4 grid gap-1">
               <h2 className="text-[16px] font-medium text-[var(--text-primary)]">Métadonnées</h2>

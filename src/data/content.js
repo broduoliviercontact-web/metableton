@@ -29,7 +29,7 @@ export const sections = [
   },
 ];
 
-const articles = [
+export const articleEntries = [
   {
   "id": "meld",
   "slug": "meld",
@@ -39,8 +39,8 @@ const articles = [
   "label": "Guide",
   "title": "MELD Le synthétiseur couteau suisse",
   "summary": "Meld Le synthétiseur boite à outils",
-  "heroImage": "/articles/guides-ableton/Meld-main.jpg",
-  "thumbnail": "/articles/guides-ableton/Meld-main.jpg",
+  "heroImage": "/articles/guides-ableton/MELD/MelD_HEADER.gif",
+  "thumbnail": "/articles/MELD/MelD_HEADER.gif",
   "imageAlt": "Visuel d’article pour Ableton Live",
   "tags": [
     "device",
@@ -64,6 +64,7 @@ const articles = [
   "id": "tous-les-oscillateurs-du-meld",
   "slug": "tous-les-oscillateurs-du-meld",
   "section": "guides-ableton-live",
+  
   "type": "Guide",
   "label": "Guide",
   "title": "Tous les Oscillateurs du MELD",
@@ -848,37 +849,43 @@ const articles = [
       },
     ],
   },
-  {
-    id: "m4l-par-ou-commencer",
-    slug: "max-for-live-par-ou-commencer",
-    section: "max-for-live",
-    type: "Introduction",
-    label: "Guide",
-    title: "Max for Live : par où commencer sans se perdre",
-    summary:
-      "Une porte d’entrée simple pour comprendre ce qu’est Max for Live, à quoi il sert, et comment l’utiliser sans complexifier ton setup.",
-    heroImage: "/articles/max-for-live/max-like-interface.jpg",
-    thumbnail: "/articles/max-for-live/max-like-interface.jpg",
-    imageAlt: "Interface d’un device Max for Live",
-    tags: ["max for live", "debutant", "devices"],
-    content: [
-      {
-        type: "paragraph",
-        content:
-          "Max for Live peut sembler intimidant au départ parce qu’il ouvre énormément de possibilités. Pourtant, son usage le plus intéressant est souvent très concret : ajouter un outil précis à un workflow déjà stable.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "Le plus simple est de commencer par quelques devices utilitaires, bien identifiés, puis d’observer ceux qui apportent réellement quelque chose à ta façon de produire ou de jouer.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "L’objectif n’est pas de tout explorer. Il s’agit d’apprendre à reconnaître les devices qui clarifient un geste, un son ou une méthode de travail.",
-      },
-    ],
-  },
+ {
+  "id": "m4l-par-ou-commencer",
+  "slug": "max-for-live-par-ou-commencer",
+  "section": "max-for-live",
+  "type": "Introduction",
+  "label": "Guide",
+  "title": "Max for Live The Best Free Device : STING 1.0",
+  "summary": "Une porte d’entrée simple pour comprendre ce qu’est Max for Live, à quoi il sert, et comment l’utiliser sans complexifier ton setup.",
+  "heroImage": "/articles/max-for-live/sting-1.0_hero.gif",
+  "heroImagePosition": "50% 50%",
+  "thumbnail": "/articles/max-for-live/max-like-interface.jpg",
+  "thumbnailPosition": "50% 50%",
+  "imageAlt": "Interface d’un device Max for Live",
+  "tags": [
+    "max for live",
+    "debutant",
+    "devices"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "content": "Max for Live peut sembler intimidant au départ parce qu’il ouvre énormément de possibilités. Pourtant, son usage le plus intéressant est souvent très concret : ajouter un outil précis à un workflow déjà stable."
+    },
+    {
+      "type": "paragraph",
+      "content": "Le plus simple est de commencer par quelques devices utilitaires, bien identifiés, puis d’observer ceux qui apportent réellement quelque chose à ta façon de produire ou de jouer."
+    },
+    {
+      "type": "paragraph",
+      "content": "L’objectif n’est pas de tout explorer. Il s’agit d’apprendre à reconnaître les devices qui clarifient un geste, un son ou une méthode de travail."
+    }
+  ],
+  "extraSections": [
+    "freebies"
+  ]
+},
+
   {
     id: "m4l-trois-devices-utiles",
     slug: "3-devices-max-for-live-utiles",
@@ -1103,7 +1110,7 @@ export const secondaryPages = secondaryPageEntries.reduce((accumulator, page) =>
   return accumulator;
 }, {});
 
-export const allArticles = articles.map((article) => {
+export const allArticles = articleEntries.map((article) => {
   const section = sections.find((currentSection) => currentSection.id === article.section);
   const sectionSlug = section?.slug || article.section;
 
