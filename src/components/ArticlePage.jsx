@@ -46,6 +46,16 @@ function getObjectPosition(position) {
   return position || "50% 50%";
 }
 
+function getImageZoom(zoom) {
+  const numericZoom = Number(zoom);
+
+  if (Number.isNaN(numericZoom)) {
+    return 1;
+  }
+
+  return Math.min(2, Math.max(1, numericZoom));
+}
+
 function getBlockAlign(align) {
   return align || "left";
 }
@@ -90,6 +100,40 @@ function getFlexAlignClass(align) {
   }
 
   return "justify-start";
+}
+
+function getMediaWidthClass(width) {
+  if (width === "full") {
+    return "max-w-none";
+  }
+
+  if (width === "wide") {
+    return "max-w-[760px]";
+  }
+
+  return "max-w-[640px]";
+}
+
+function getAspectRatioClass(aspectRatio, fallback = "16/10") {
+  const resolvedRatio = aspectRatio || fallback;
+
+  if (resolvedRatio === "16/9") {
+    return "aspect-video";
+  }
+
+  if (resolvedRatio === "4/3") {
+    return "aspect-[4/3]";
+  }
+
+  if (resolvedRatio === "1/1") {
+    return "aspect-square";
+  }
+
+  if (resolvedRatio === "3/4") {
+    return "aspect-[3/4]";
+  }
+
+  return "aspect-[16/10]";
 }
 
 function getYouTubeEmbedUrl(url) {
@@ -206,16 +250,25 @@ function ArticleBlock({ block }) {
   }
 
   if (block.type === "image" || block.type === "gif") {
+    const objectPosition = getObjectPosition(block.position);
+    const imageZoom = getImageZoom(block.zoom);
+    const mediaWidthClass = getMediaWidthClass(block.width);
+    const aspectRatioClass = getAspectRatioClass(block.aspectRatio, "16/10");
+
     return (
       <div className={`flex w-full ${flexAlignClass}`}>
-        <figure className={`grid w-full max-w-[640px] gap-3 py-2 ${textAlignClass}`}>
+        <figure className={`grid w-full ${mediaWidthClass} gap-3 py-2 ${textAlignClass}`}>
           <div className="overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)]">
-            <div className="relative aspect-[16/10] w-full">
+            <div className={`relative w-full ${aspectRatioClass}`}>
               <img
                 className="absolute inset-0 h-full w-full object-cover"
                 src={block.src}
                 alt={block.alt}
-                style={{ objectPosition: getObjectPosition(block.position) }}
+                style={{
+                  objectPosition,
+                  transform: `scale(${imageZoom})`,
+                  transformOrigin: objectPosition,
+                }}
                 loading="lazy"
               />
             </div>
@@ -230,13 +283,15 @@ function ArticleBlock({ block }) {
 
   if (block.type === "youtube") {
     const embedUrl = getYouTubeEmbedUrl(block.url);
+    const mediaWidthClass = getMediaWidthClass(block.width);
+    const aspectRatioClass = getAspectRatioClass(block.aspectRatio, "16/9");
 
     return (
       <div className={`flex w-full ${flexAlignClass}`}>
-        <figure className={`grid w-full max-w-[640px] gap-3 py-2 ${textAlignClass}`}>
+        <figure className={`grid w-full ${mediaWidthClass} gap-3 py-2 ${textAlignClass}`}>
           {embedUrl ? (
             <div className="overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)]">
-              <div className="aspect-video w-full">
+              <div className={`w-full ${aspectRatioClass}`}>
                 <iframe
                   className="h-full w-full"
                   src={embedUrl}
@@ -261,6 +316,80 @@ function ArticleBlock({ block }) {
             <figcaption className="text-[13px] leading-6 text-[var(--text-muted)]">{block.caption}</figcaption>
           ) : null}
         </figure>
+      </div>
+    );
+  }
+
+  if (block.type === "link") {
+    const href = block.url || "#";
+    const isExternal = /^https?:\/\//i.test(href);
+    const mediaWidthClass = getMediaWidthClass(block.width);
+
+    return (
+      <div className={`flex w-full ${flexAlignClass}`}>
+        <div className={`grid w-full ${mediaWidthClass} gap-3 py-2 ${textAlignClass}`}>
+          <a
+            className="grid gap-2 rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)] px-4 py-4 transition-colors hover:border-[color:var(--border-strong)]"
+            href={href}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noreferrer" : undefined}
+          >
+            <span className="text-[15px] font-medium leading-6 text-[var(--text-primary)]">
+              {block.label || block.url || "Lien"}
+            </span>
+            {block.description ? (
+              <span className="text-[14px] leading-6 text-[var(--text-secondary)]">
+                {block.description}
+              </span>
+            ) : null}
+            {block.url ? (
+              <span className="text-[12px] leading-5 text-[var(--text-muted)]">
+                {block.url}
+              </span>
+            ) : null}
+          </a>
+        </div>
+      </div>
+    );
+  }
+
+  if (block.type === "source") {
+    const href = block.url || "";
+    const isExternal = /^https?:\/\//i.test(href);
+    const mediaWidthClass = getMediaWidthClass(block.width);
+
+    return (
+      <div className={`flex w-full ${flexAlignClass}`}>
+        <div className={`grid w-full ${mediaWidthClass} gap-3 py-2 ${textAlignClass}`}>
+          <div className="grid gap-2 rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)] px-4 py-4">
+            <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
+              Source
+            </span>
+
+            {href ? (
+              <a
+                className="text-[15px] font-medium leading-6 text-[var(--text-primary)] underline decoration-[color:var(--border-strong)] underline-offset-4 transition-colors hover:text-[var(--text-secondary)]"
+                href={href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noreferrer" : undefined}
+              >
+                {block.title || block.url}
+              </a>
+            ) : (
+              <span className="text-[15px] font-medium leading-6 text-[var(--text-primary)]">
+                {block.title || "Source"}
+              </span>
+            )}
+
+            {block.details ? (
+              <p className="text-[14px] leading-6 text-[var(--text-secondary)]">{block.details}</p>
+            ) : null}
+
+            {block.url ? (
+              <span className="text-[12px] leading-5 text-[var(--text-muted)]">{block.url}</span>
+            ) : null}
+          </div>
+        </div>
       </div>
     );
   }

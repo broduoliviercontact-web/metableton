@@ -16,6 +16,24 @@ const PLACEHOLDER_IMAGE =
   `);
 const DEFAULT_IMAGE_POSITION = "50% 50%";
 const DEFAULT_BLOCK_ALIGN = "left";
+const DEFAULT_IMAGE_ZOOM = 1;
+const DEFAULT_MEDIA_WIDTH = "content";
+const BLOCK_TYPES = [
+  "heading",
+  "paragraph",
+  "list",
+  "quote",
+  "callout",
+  "image",
+  "gif",
+  "youtube",
+  "link",
+  "source",
+];
+
+function getDefaultAspectRatio(type) {
+  return type === "youtube" ? "16/9" : "16/10";
+}
 
 function clampPercentage(value) {
   return Math.min(100, Math.max(0, Number(value) || 0));
@@ -34,6 +52,16 @@ function parseImagePosition(position = DEFAULT_IMAGE_POSITION) {
   };
 }
 
+function clampZoom(value) {
+  const numericValue = Number(value);
+
+  if (Number.isNaN(numericValue)) {
+    return DEFAULT_IMAGE_ZOOM;
+  }
+
+  return Math.min(2, Math.max(1, numericValue));
+}
+
 function slugify(value) {
   return value
     .toLowerCase()
@@ -47,8 +75,7 @@ function parseTags(value) {
   return value
     .split(",")
     .map((tag) => tag.trim())
-    .filter(Boolean)
-    .slice(0, 3);
+    .filter(Boolean);
 }
 
 function parseExtraSections(value, primarySection = "") {
@@ -71,7 +98,36 @@ function createBlock(type = "paragraph") {
   }
 
   if (type === "youtube") {
-    return { type, url: "", caption: "", align: DEFAULT_BLOCK_ALIGN };
+    return {
+      type,
+      url: "",
+      caption: "",
+      width: DEFAULT_MEDIA_WIDTH,
+      aspectRatio: getDefaultAspectRatio(type),
+      align: DEFAULT_BLOCK_ALIGN,
+    };
+  }
+
+  if (type === "link") {
+    return {
+      type,
+      url: "",
+      label: "",
+      description: "",
+      width: DEFAULT_MEDIA_WIDTH,
+      align: DEFAULT_BLOCK_ALIGN,
+    };
+  }
+
+  if (type === "source") {
+    return {
+      type,
+      title: "",
+      url: "",
+      details: "",
+      width: DEFAULT_MEDIA_WIDTH,
+      align: DEFAULT_BLOCK_ALIGN,
+    };
   }
 
   if (type === "image" || type === "gif") {
@@ -81,11 +137,102 @@ function createBlock(type = "paragraph") {
       alt: "",
       caption: "",
       position: DEFAULT_IMAGE_POSITION,
+      zoom: DEFAULT_IMAGE_ZOOM,
+      width: DEFAULT_MEDIA_WIDTH,
+      aspectRatio: getDefaultAspectRatio(type),
       align: DEFAULT_BLOCK_ALIGN,
     };
   }
 
   return { type, content: "", align: DEFAULT_BLOCK_ALIGN };
+}
+
+function extractTextFromBlock(block) {
+  if (!block) {
+    return "";
+  }
+
+  if (typeof block.content === "string" && block.content.trim()) {
+    return block.content;
+  }
+
+  if (Array.isArray(block.items) && block.items.length) {
+    return block.items.join("\n");
+  }
+
+  return (
+    block.caption ||
+    block.description ||
+    block.details ||
+    block.label ||
+    block.title ||
+    ""
+  );
+}
+
+function convertBlockType(block, nextType) {
+  const nextBlock = createBlock(nextType);
+  const align = block?.align || DEFAULT_BLOCK_ALIGN;
+  const textContent = extractTextFromBlock(block);
+
+  nextBlock.align = align;
+
+  if (nextType === "heading" || nextType === "paragraph" || nextType === "quote") {
+    nextBlock.content = textContent;
+    return nextBlock;
+  }
+
+  if (nextType === "list") {
+    nextBlock.items = Array.isArray(block?.items)
+      ? block.items
+      : textContent
+        ? textContent.split("\n")
+        : [""];
+    return nextBlock;
+  }
+
+  if (nextType === "callout") {
+    nextBlock.label = block?.label || block?.title || "Note";
+    nextBlock.content = textContent;
+    return nextBlock;
+  }
+
+  if (nextType === "image" || nextType === "gif") {
+    nextBlock.src = block?.src || "";
+    nextBlock.alt = block?.alt || block?.label || block?.title || "";
+    nextBlock.caption = block?.caption || block?.description || block?.details || "";
+    nextBlock.position = block?.position || DEFAULT_IMAGE_POSITION;
+    nextBlock.zoom = typeof block?.zoom !== "undefined" ? clampZoom(block.zoom) : DEFAULT_IMAGE_ZOOM;
+    nextBlock.width = block?.width || DEFAULT_MEDIA_WIDTH;
+    nextBlock.aspectRatio = block?.aspectRatio || getDefaultAspectRatio(nextType);
+    return nextBlock;
+  }
+
+  if (nextType === "youtube") {
+    nextBlock.url = block?.url || "";
+    nextBlock.caption = block?.caption || block?.description || block?.details || "";
+    nextBlock.width = block?.width || DEFAULT_MEDIA_WIDTH;
+    nextBlock.aspectRatio = block?.aspectRatio || getDefaultAspectRatio(nextType);
+    return nextBlock;
+  }
+
+  if (nextType === "link") {
+    nextBlock.url = block?.url || "";
+    nextBlock.label = block?.label || block?.title || textContent;
+    nextBlock.description = block?.description || block?.details || block?.caption || "";
+    nextBlock.width = block?.width || DEFAULT_MEDIA_WIDTH;
+    return nextBlock;
+  }
+
+  if (nextType === "source") {
+    nextBlock.title = block?.title || block?.label || textContent;
+    nextBlock.url = block?.url || "";
+    nextBlock.details = block?.details || block?.description || block?.caption || "";
+    nextBlock.width = block?.width || DEFAULT_MEDIA_WIDTH;
+    return nextBlock;
+  }
+
+  return nextBlock;
 }
 
 function createTemplateArticle() {
@@ -246,6 +393,18 @@ function sanitizeContent(content = []) {
         nextBlock.position = block.position.trim();
       }
 
+      if (typeof block.zoom !== "undefined" && clampZoom(block.zoom) !== DEFAULT_IMAGE_ZOOM) {
+        nextBlock.zoom = clampZoom(block.zoom);
+      }
+
+      if (block.width?.trim() && block.width !== DEFAULT_MEDIA_WIDTH) {
+        nextBlock.width = block.width.trim();
+      }
+
+      if (block.aspectRatio?.trim() && block.aspectRatio !== getDefaultAspectRatio(block.type)) {
+        nextBlock.aspectRatio = block.aspectRatio.trim();
+      }
+
       if (block.align && block.align !== DEFAULT_BLOCK_ALIGN) {
         nextBlock.align = block.align;
       }
@@ -267,11 +426,80 @@ function sanitizeContent(content = []) {
         nextBlock.caption = block.caption.trim();
       }
 
+      if (block.width?.trim() && block.width !== DEFAULT_MEDIA_WIDTH) {
+        nextBlock.width = block.width.trim();
+      }
+
+      if (block.aspectRatio?.trim() && block.aspectRatio !== getDefaultAspectRatio(block.type)) {
+        nextBlock.aspectRatio = block.aspectRatio.trim();
+      }
+
       if (block.align && block.align !== DEFAULT_BLOCK_ALIGN) {
         nextBlock.align = block.align;
       }
 
       if (nextBlock.url || nextBlock.caption) {
+        accumulator.push(nextBlock);
+      }
+
+      return accumulator;
+    }
+
+    if (block.type === "link") {
+      const nextBlock = {
+        type: "link",
+        url: (block.url || "").trim(),
+      };
+
+      if (block.label?.trim()) {
+        nextBlock.label = block.label.trim();
+      }
+
+      if (block.description?.trim()) {
+        nextBlock.description = block.description.trim();
+      }
+
+      if (block.width?.trim() && block.width !== DEFAULT_MEDIA_WIDTH) {
+        nextBlock.width = block.width.trim();
+      }
+
+      if (block.align && block.align !== DEFAULT_BLOCK_ALIGN) {
+        nextBlock.align = block.align;
+      }
+
+      if (nextBlock.url || nextBlock.label || nextBlock.description) {
+        accumulator.push(nextBlock);
+      }
+
+      return accumulator;
+    }
+
+    if (block.type === "source") {
+      const nextBlock = {
+        type: "source",
+      };
+
+      if (block.title?.trim()) {
+        nextBlock.title = block.title.trim();
+      }
+
+      if (block.url?.trim()) {
+        nextBlock.url = block.url.trim();
+      }
+
+      if (block.details?.trim()) {
+        nextBlock.details = block.details.trim();
+      }
+
+      if (block.width?.trim() && block.width !== DEFAULT_MEDIA_WIDTH) {
+        nextBlock.width = block.width.trim();
+      }
+
+      if (block.align && block.align !== DEFAULT_BLOCK_ALIGN) {
+        nextBlock.align = block.align;
+      }
+
+      if (nextBlock.title || nextBlock.url || nextBlock.details) {
         accumulator.push(nextBlock);
       }
 
@@ -445,6 +673,35 @@ function ImagePositionFields({ label = "Recadrage", position, onChange }) {
   );
 }
 
+function ImageZoomField({ value = DEFAULT_IMAGE_ZOOM, onChange }) {
+  const zoom = clampZoom(value);
+
+  return (
+    <div className="grid gap-3 rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-muted)] p-3">
+      <div className="flex items-center justify-between gap-3">
+        <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[var(--text-muted)]">
+          Zoom
+        </span>
+        <span className="text-[13px] text-[var(--text-secondary)]">
+          {Math.round(zoom * 100)}%
+        </span>
+      </div>
+
+      <label className="grid gap-2">
+        <span className="text-[13px] text-[var(--text-secondary)]">Niveau</span>
+        <input
+          type="range"
+          min="1"
+          max="2"
+          step="0.01"
+          value={zoom}
+          onChange={(event) => onChange(clampZoom(event.target.value))}
+        />
+      </label>
+    </div>
+  );
+}
+
 function AlignmentFields({ value = DEFAULT_BLOCK_ALIGN, onChange }) {
   const options = [
     { value: "left", label: "Gauche" },
@@ -481,7 +738,37 @@ function AlignmentFields({ value = DEFAULT_BLOCK_ALIGN, onChange }) {
   );
 }
 
-function BlockEditor({ block, index, onChange, onMoveUp, onMoveDown, onRemove }) {
+function DisplayModeFields({ label, value, options, onChange }) {
+  return (
+    <div className="grid gap-2">
+      <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[var(--text-muted)]">
+        {label}
+      </span>
+      <div className="flex flex-wrap gap-2">
+        {options.map((option) => {
+          const isActive = value === option.value;
+
+          return (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() => onChange(option.value)}
+              className={`inline-flex h-9 items-center rounded-[10px] border px-3 text-[13px] transition-colors ${
+                isActive
+                  ? "border-[color:var(--border-strong)] text-[var(--text-primary)]"
+                  : "border-[color:var(--border-soft)] text-[var(--text-secondary)] hover:border-[color:var(--border-strong)] hover:text-[var(--text-primary)]"
+              }`}
+            >
+              {option.label}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function BlockEditor({ block, index, onChange, onMoveUp, onMoveDown, onRemove, onDuplicate, onTypeChange }) {
   const handleListChange = (value) => {
     onChange(index, {
       ...block,
@@ -503,6 +790,9 @@ function BlockEditor({ block, index, onChange, onMoveUp, onMoveDown, onRemove })
         </div>
 
         <div className="flex flex-wrap gap-2">
+          <button className={actionButtonClass} onClick={() => onDuplicate(index)} type="button">
+            Copier
+          </button>
           <button className={actionButtonClass} onClick={() => onMoveUp(index)} type="button">
             Monter
           </button>
@@ -514,6 +804,20 @@ function BlockEditor({ block, index, onChange, onMoveUp, onMoveDown, onRemove })
           </button>
         </div>
       </div>
+
+      <Field label="Type">
+        <select
+          className="h-10 rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)] px-3 text-[15px] text-[var(--text-primary)] outline-none transition-colors focus:border-[color:var(--border-strong)]"
+          value={block.type}
+          onChange={(event) => onTypeChange(index, event.target.value)}
+        >
+          {BLOCK_TYPES.map((type) => (
+            <option key={type} value={type}>
+              {type}
+            </option>
+          ))}
+        </select>
+      </Field>
 
       <AlignmentFields
         value={block.align || DEFAULT_BLOCK_ALIGN}
@@ -586,6 +890,35 @@ function BlockEditor({ block, index, onChange, onMoveUp, onMoveDown, onRemove })
             position={block.position || DEFAULT_IMAGE_POSITION}
             onChange={(nextPosition) => onChange(index, { ...block, position: nextPosition })}
           />
+
+          <ImageZoomField
+            value={block.zoom}
+            onChange={(nextZoom) => onChange(index, { ...block, zoom: nextZoom })}
+          />
+
+          <DisplayModeFields
+            label="Largeur"
+            value={block.width || DEFAULT_MEDIA_WIDTH}
+            onChange={(nextWidth) => onChange(index, { ...block, width: nextWidth })}
+            options={[
+              { value: "content", label: "Contenu" },
+              { value: "wide", label: "Large" },
+              { value: "full", label: "Pleine largeur" },
+            ]}
+          />
+
+          <DisplayModeFields
+            label="Format"
+            value={block.aspectRatio || getDefaultAspectRatio(block.type)}
+            onChange={(nextRatio) => onChange(index, { ...block, aspectRatio: nextRatio })}
+            options={[
+              { value: "16/10", label: "16:10" },
+              { value: "16/9", label: "16:9" },
+              { value: "4/3", label: "4:3" },
+              { value: "1/1", label: "Carré" },
+              { value: "3/4", label: "Portrait" },
+            ]}
+          />
         </div>
       )}
 
@@ -608,6 +941,108 @@ function BlockEditor({ block, index, onChange, onMoveUp, onMoveDown, onRemove })
               onChange={(event) => onChange(index, { ...block, caption: event.target.value })}
             />
           </Field>
+
+          <DisplayModeFields
+            label="Largeur"
+            value={block.width || DEFAULT_MEDIA_WIDTH}
+            onChange={(nextWidth) => onChange(index, { ...block, width: nextWidth })}
+            options={[
+              { value: "content", label: "Contenu" },
+              { value: "wide", label: "Large" },
+              { value: "full", label: "Pleine largeur" },
+            ]}
+          />
+
+          <DisplayModeFields
+            label="Format"
+            value={block.aspectRatio || getDefaultAspectRatio(block.type)}
+            onChange={(nextRatio) => onChange(index, { ...block, aspectRatio: nextRatio })}
+            options={[
+              { value: "16/9", label: "16:9" },
+              { value: "16/10", label: "16:10" },
+              { value: "4/3", label: "4:3" },
+              { value: "1/1", label: "Carré" },
+              { value: "3/4", label: "Portrait" },
+            ]}
+          />
+        </div>
+      )}
+
+      {block.type === "link" && (
+        <div className="grid gap-4">
+          <Field label="URL" help="Exemple : https://www.ableton.com/">
+            <TextInput
+              value={block.url || ""}
+              onChange={(event) => onChange(index, { ...block, url: event.target.value })}
+              placeholder="https://..."
+            />
+          </Field>
+
+          <Field label="Libellé">
+            <TextInput
+              value={block.label || ""}
+              onChange={(event) => onChange(index, { ...block, label: event.target.value })}
+              placeholder="Nom du lien"
+            />
+          </Field>
+
+          <Field label="Description">
+            <TextareaInput
+              value={block.description || ""}
+              onChange={(event) => onChange(index, { ...block, description: event.target.value })}
+              placeholder="Texte optionnel sous le lien"
+            />
+          </Field>
+
+          <DisplayModeFields
+            label="Largeur"
+            value={block.width || DEFAULT_MEDIA_WIDTH}
+            onChange={(nextWidth) => onChange(index, { ...block, width: nextWidth })}
+            options={[
+              { value: "content", label: "Contenu" },
+              { value: "wide", label: "Large" },
+              { value: "full", label: "Pleine largeur" },
+            ]}
+          />
+        </div>
+      )}
+
+      {block.type === "source" && (
+        <div className="grid gap-4">
+          <Field label="Titre de la source">
+            <TextInput
+              value={block.title || ""}
+              onChange={(event) => onChange(index, { ...block, title: event.target.value })}
+              placeholder="Nom de l’article, du site ou du document"
+            />
+          </Field>
+
+          <Field label="URL">
+            <TextInput
+              value={block.url || ""}
+              onChange={(event) => onChange(index, { ...block, url: event.target.value })}
+              placeholder="https://..."
+            />
+          </Field>
+
+          <Field label="Détails">
+            <TextareaInput
+              value={block.details || ""}
+              onChange={(event) => onChange(index, { ...block, details: event.target.value })}
+              placeholder="Auteur, date, note ou contexte optionnel"
+            />
+          </Field>
+
+          <DisplayModeFields
+            label="Largeur"
+            value={block.width || DEFAULT_MEDIA_WIDTH}
+            onChange={(nextWidth) => onChange(index, { ...block, width: nextWidth })}
+            options={[
+              { value: "content", label: "Contenu" },
+              { value: "wide", label: "Large" },
+              { value: "full", label: "Pleine largeur" },
+            ]}
+          />
         </div>
       )}
     </article>
@@ -744,6 +1179,34 @@ function ArticleEditorPage() {
     setDraftArticle((currentArticle) => ({
       ...currentArticle,
       content: currentArticle.content.filter((_, blockIndex) => blockIndex !== index),
+    }));
+  };
+
+  const duplicateBlock = (index) => {
+    setDraftArticle((currentArticle) => {
+      const sourceBlock = currentArticle.content[index];
+
+      if (!sourceBlock) {
+        return currentArticle;
+      }
+
+      const nextBlocks = [...currentArticle.content];
+      const duplicatedBlock = JSON.parse(JSON.stringify(sourceBlock));
+      nextBlocks.splice(index + 1, 0, duplicatedBlock);
+
+      return {
+        ...currentArticle,
+        content: nextBlocks,
+      };
+    });
+  };
+
+  const changeBlockType = (index, nextType) => {
+    setDraftArticle((currentArticle) => ({
+      ...currentArticle,
+      content: currentArticle.content.map((block, blockIndex) =>
+        blockIndex === index ? convertBlockType(block, nextType) : block,
+      ),
     }));
   };
 
@@ -1049,7 +1512,7 @@ function ArticleEditorPage() {
                 />
               </Field>
 
-              <Field label="Tags" help="Sépare les tags par des virgules, maximum 3.">
+              <Field label="Tags" help="Sépare les tags par des virgules. Les listings de section n’en affichent que 3.">
                 <TextInput
                   value={tagsInput}
                   onChange={(event) => {
@@ -1080,7 +1543,7 @@ function ArticleEditorPage() {
             </div>
 
             <div className="mb-4 flex flex-wrap gap-2">
-              {["heading", "paragraph", "list", "quote", "callout", "image", "gif", "youtube"].map((type) => (
+              {BLOCK_TYPES.map((type) => (
                 <button
                   key={type}
                   className="inline-flex h-9 items-center rounded-[10px] border border-[color:var(--border-soft)] px-3 text-[13px] text-[var(--text-secondary)] transition-colors hover:border-[color:var(--border-strong)] hover:text-[var(--text-primary)]"
@@ -1100,6 +1563,8 @@ function ArticleEditorPage() {
                     block={block}
                     index={index}
                     onChange={updateBlock}
+                    onDuplicate={duplicateBlock}
+                    onTypeChange={changeBlockType}
                     onMoveUp={(blockIndex) => moveBlock(blockIndex, -1)}
                     onMoveDown={(blockIndex) => moveBlock(blockIndex, 1)}
                     onRemove={removeBlock}
