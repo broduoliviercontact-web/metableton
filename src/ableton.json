@@ -1,0 +1,2303 @@
+{
+  "project": "ableton-timeline",
+  "generatedOn": "2026-03-25",
+  "schemaVersion": "2.0",
+  "locale": "fr",
+  "meta": {
+    "dateFormat": "YYYY-MM-DD",
+    "statusValues": ["released", "public-beta", "historical-approx"],
+    "entryTypes": ["major", "update", "addon", "platform", "hardware"],
+    "featureCategoryValues": [
+      "instrument",
+      "audio_effect",
+      "midi_effect",
+      "workflow",
+      "performance",
+      "browser",
+      "warping",
+      "sampling",
+      "video",
+      "integration",
+      "sound_library",
+      "platform",
+      "hardware"
+    ]
+  },
+  "eras": [
+    {
+      "id": "era-early-live",
+      "label": "Les débuts de Live",
+      "startDate": "2001-10-01",
+      "endDate": "2004-12-31",
+      "color": "#A3A3A3"
+    },
+    {
+      "id": "era-audio-to-midi",
+      "label": "Audio + MIDI + devices internes",
+      "startDate": "2005-01-01",
+      "endDate": "2009-12-31",
+      "color": "#737373"
+    },
+    {
+      "id": "era-push-1",
+      "label": "L’ère Push 1",
+      "startDate": "2013-03-05",
+      "endDate": "2015-11-01",
+      "color": "#525252"
+    },
+    {
+      "id": "era-push-2",
+      "label": "L’ère Push 2",
+      "startDate": "2015-11-02",
+      "endDate": "2023-05-22",
+      "color": "#404040"
+    },
+    {
+      "id": "era-push-3-move",
+      "label": "Push 3, Move et l’écosystème moderne",
+      "startDate": "2023-05-23",
+      "endDate": null,
+      "color": "#171717"
+    }
+  ],
+  "products": [
+    {
+      "id": "ableton-live",
+      "slug": "ableton-live",
+      "name": "Ableton Live",
+      "family": "software",
+      "firstReleaseDate": "2001-10-01",
+      "status": "active",
+      "currentStableVersion": "12.3.6",
+      "currentStableDate": "2026-03-03",
+      "currentBetaVersion": "12.4",
+      "currentBetaStatus": "public-beta",
+      "description": "Logiciel de composition, production et performance musicale.",
+      "tags": ["software", "daw", "performance", "production"]
+    },
+    {
+      "id": "push-1",
+      "slug": "push-1",
+      "name": "Push",
+      "displayName": "Push 1",
+      "family": "hardware",
+      "firstReleaseDate": "2013-03-05",
+      "status": "legacy",
+      "description": "Premier instrument matériel d’Ableton, conçu pour jouer et composer avec Live.",
+      "tags": ["hardware", "controller", "push", "pads"]
+    },
+    {
+      "id": "push-2",
+      "slug": "push-2",
+      "name": "Push 2",
+      "displayName": "Push 2",
+      "family": "hardware",
+      "firstReleaseDate": "2015-11-02",
+      "status": "legacy",
+      "description": "Deuxième génération de Push, avec écran couleur et workflow visuel renforcé.",
+      "tags": ["hardware", "controller", "push", "display"]
+    },
+    {
+      "id": "push-3",
+      "slug": "push-3",
+      "name": "Push 3",
+      "displayName": "Push 3",
+      "family": "hardware",
+      "firstReleaseDate": "2023-05-23",
+      "status": "active",
+      "description": "Push 3 existe en version tethered ou standalone, avec pads MPE, interface audio intégrée et architecture évolutive.",
+      "tags": ["hardware", "push", "standalone", "mpe", "audio-interface"]
+    },
+    {
+      "id": "move",
+      "slug": "move",
+      "name": "Move",
+      "displayName": "Ableton Move",
+      "family": "hardware",
+      "firstReleaseDate": "2024-10-08",
+      "status": "active",
+      "description": "Instrument compact autonome pour sketch, beatmaking et création musicale nomade.",
+      "tags": ["hardware", "standalone", "move", "portable", "sketchpad"]
+    },
+    {
+      "id": "max-for-live",
+      "slug": "max-for-live",
+      "name": "Max for Live",
+      "family": "platform",
+      "firstReleaseDate": "2009-11-23",
+      "status": "active",
+      "description": "Plateforme d’extension et de création de devices à l’intérieur de Live.",
+      "tags": ["platform", "max-for-live", "devices", "custom"]
+    }
+  ],
+  "timelineVersions": [
+    {
+      "id": "live-1",
+      "slug": "live-1",
+      "sortOrder": 10,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 1",
+      "version": "1",
+      "date": "2001-10-01",
+      "datePrecision": "month",
+      "type": "major",
+      "status": "historical-approx",
+      "era": "era-early-live",
+      "headline": "Première version publique de Live",
+      "summary": "Première version publique d’Ableton Live, pensée pour la performance et la manipulation audio en temps réel.",
+      "tags": ["audio", "performance", "session", "early-live"],
+      "coverImage": null,
+      "editions": ["Live"],
+      "newInstruments": [],
+      "newAudioEffects": [],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Lancement de clips en temps réel",
+        "Approche performance/live centrée sur l’audio",
+        "Base de la Session View"
+      ],
+      "ecosystem": [],
+      "relatedIds": [],
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Ableton About",
+          "url": "https://www.ableton.com/en/about/",
+          "sourceType": "official"
+        },
+        {
+          "title": "CDM - Ableton Live through the years",
+          "url": "https://cdm.link/ableton-live-through-the-years-in-vintage-images-reviews-and-even-retro-installs/",
+          "sourceType": "editorial"
+        }
+      ]
+    },
+    {
+      "id": "live-2",
+      "slug": "live-2",
+      "sortOrder": 20,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 2",
+      "version": "2",
+      "date": "2002-12-01",
+      "datePrecision": "month",
+      "type": "major",
+      "status": "released",
+      "era": "era-early-live",
+      "headline": "Consolidation studio + scène",
+      "summary": "Live 2 renforce l’enregistrement multipiste audio et rend la Session View plus performative.",
+      "tags": ["audio", "recording", "session", "effects"],
+      "coverImage": null,
+      "editions": ["Live"],
+      "newInstruments": [],
+      "newAudioEffects": ["Gate", "Redux"],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Enregistrement multipiste audio",
+        "Crossfader en Session View",
+        "Presets d’effets",
+        "Tempo changes enregistrables et éditables",
+        "Mappings MIDI et clavier améliorés"
+      ],
+      "ecosystem": [],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 2 announcement",
+          "url": "https://www.ableton.com/en/pages/2002/live_2_announcement/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-3",
+      "slug": "live-3",
+      "sortOrder": 30,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 3",
+      "version": "3",
+      "date": "2003-10-02",
+      "datePrecision": "day",
+      "type": "major",
+      "status": "released",
+      "era": "era-early-live",
+      "headline": "Clip Envelopes et gros saut créatif",
+      "summary": "Live 3 introduit les Clip Envelopes et plusieurs effets devenus fondamentaux.",
+      "tags": ["audio", "clip", "modulation", "effects"],
+      "coverImage": null,
+      "editions": ["Live"],
+      "newInstruments": [],
+      "newAudioEffects": ["Resonators", "Compressor II", "EQ Three", "Utility"],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Clip Envelopes",
+        "Consolidate",
+        "MIDI key mapping avec vélocité",
+        "Insert Captured Scene",
+        "Nouvelles options de quantification"
+      ],
+      "ecosystem": [],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 3 press release",
+          "url": "https://www.ableton.com/de/pages/press/releases/2003_10_02/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-4",
+      "slug": "live-4",
+      "sortOrder": 40,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 4",
+      "version": "4",
+      "date": "2004-01-01",
+      "datePrecision": "year",
+      "type": "major",
+      "status": "historical-approx",
+      "era": "era-early-live",
+      "headline": "Arrivée du MIDI dans Live",
+      "summary": "Live 4 transforme Live en environnement complet audio + MIDI.",
+      "tags": ["midi", "instrument", "operator", "simpler", "impulse"],
+      "coverImage": null,
+      "editions": ["Live"],
+      "newInstruments": ["Simpler", "Impulse", "Operator"],
+      "newAudioEffects": [],
+      "newMidiEffects": ["Pitch", "Random", "Scale", "Velocity"],
+      "newFeatures": [
+        "Pistes MIDI",
+        "Clips MIDI",
+        "Enregistrement MIDI",
+        "Édition de notes MIDI",
+        "Import/export MIDI",
+        "Support VSTi/AU instruments",
+        "Follow Actions",
+        "Groove",
+        "Reverse",
+        "Scènes avec tempo"
+      ],
+      "ecosystem": [],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Ableton Live 4 manual",
+          "url": "https://downloads.ableton.com/manuals/40/ableton_live_4_manual_fr.pdf",
+          "sourceType": "official"
+        },
+        {
+          "title": "20 Years of Operator",
+          "url": "https://www.ableton.com/zh-cn/blog/20-years-of-operator/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-5",
+      "slug": "live-5",
+      "sortOrder": 50,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 5",
+      "version": "5",
+      "date": "2005-07-22",
+      "datePrecision": "day",
+      "type": "major",
+      "status": "released",
+      "era": "era-audio-to-midi",
+      "headline": "Complex Warp et nouveaux effets créatifs",
+      "summary": "Live 5 ajoute de nombreux effets internes et améliore fortement le warping et le workflow de clip.",
+      "tags": ["warp", "effects", "arpeggiator", "mp3"],
+      "coverImage": null,
+      "editions": ["Live"],
+      "newInstruments": [],
+      "newAudioEffects": ["Beat Repeat", "Phaser", "Flanger", "Auto Pan", "Saturator"],
+      "newMidiEffects": ["Arpeggiator"],
+      "newFeatures": [
+        "Complex Warp Mode",
+        "Automatic Tempo-Matching",
+        "Support MP3",
+        "Clip Freeze",
+        "Live Clips",
+        "Device Groups",
+        "Locators launchables en Arrangement",
+        "Presets et browser améliorés"
+      ],
+      "ecosystem": [],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 5 press release",
+          "url": "https://www.ableton.com/de/pages/press/releases/2005_07_22/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-6",
+      "slug": "live-6",
+      "sortOrder": 60,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 6",
+      "version": "6",
+      "date": "2006-09-28",
+      "datePrecision": "day",
+      "type": "major",
+      "status": "released",
+      "era": "era-audio-to-midi",
+      "headline": "Racks, vidéo et Sampler",
+      "summary": "Live 6 rend Live beaucoup plus modulaire avec les Racks et ouvre l’écosystème vidéo et multisample.",
+      "tags": ["racks", "video", "sampler", "multicore"],
+      "coverImage": null,
+      "editions": ["Live", "Suite/add-ons"],
+      "newInstruments": ["Sampler"],
+      "newAudioEffects": ["EQ Eight", "Dynamic Tube"],
+      "newMidiEffects": ["Note Length"],
+      "newFeatures": [
+        "Instrument Racks",
+        "Effect Racks",
+        "Support QuickTime video",
+        "Multicore support",
+        "Project management tools"
+      ],
+      "ecosystem": ["Essential Instrument Collection"],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 6 press release",
+          "url": "https://www.ableton.com/en/pages/press/releases/2006_09_29a/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-7",
+      "slug": "live-7",
+      "sortOrder": 70,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 7",
+      "version": "7",
+      "date": "2007-11-29",
+      "datePrecision": "day",
+      "type": "major",
+      "status": "released",
+      "era": "era-audio-to-midi",
+      "headline": "Drum Rack et sidechain intégré",
+      "summary": "Live 7 est une version clef pour la production moderne dans Live.",
+      "tags": ["drum-rack", "sidechain", "analog", "electric", "tension"],
+      "coverImage": null,
+      "editions": ["Live", "Suite/add-ons"],
+      "newInstruments": ["Drum Rack", "Analog", "Electric", "Tension"],
+      "newAudioEffects": ["Compressor", "Spectrum"],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Sidechain intégré",
+        "64-bit mix summing",
+        "POW-r dithering",
+        "Automation lanes multiples",
+        "Export vidéo",
+        "Time signature changes",
+        "Support REX"
+      ],
+      "ecosystem": ["Drum Machines", "Essential Instrument Collection 2", "Session Drums"],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 7 press archive",
+          "url": "https://www.ableton.com/en/press/press-archive/press-archive-release-7/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "orchestral-instruments-2008",
+      "slug": "orchestral-instruments",
+      "sortOrder": 80,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Orchestral Instruments",
+      "version": "Orchestral Instruments",
+      "date": "2008-05-05",
+      "datePrecision": "day",
+      "type": "addon",
+      "status": "released",
+      "era": "era-audio-to-midi",
+      "headline": "Extension orchestrale majeure",
+      "summary": "Collection orchestrale conçue pour Live.",
+      "tags": ["orchestral", "sound-library", "addon"],
+      "coverImage": null,
+      "editions": ["add-on"],
+      "newInstruments": ["Orchestral Strings", "Orchestral Brass", "Orchestral Woodwinds", "Orchestral Percussion"],
+      "newAudioEffects": [],
+      "newMidiEffects": [],
+      "newFeatures": [],
+      "ecosystem": ["SmartPriming", "Bibliothèque orchestrale dédiée"],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Orchestral Instruments release",
+          "url": "https://www.ableton.com/en/press/press-archive/press-archive-release-orchestra/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-8",
+      "slug": "live-8",
+      "sortOrder": 90,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 8",
+      "version": "8",
+      "date": "2009-04-02",
+      "datePrecision": "day",
+      "type": "major",
+      "status": "released",
+      "era": "era-audio-to-midi",
+      "headline": "Groove Engine, Looper et nouvelle génération d’effets",
+      "summary": "Live 8 ajoute beaucoup d’outils de groove, de performance et de sound design.",
+      "tags": ["groove", "looper", "vocoder", "group-tracks"],
+      "coverImage": null,
+      "editions": ["Live", "Suite"],
+      "newInstruments": ["Collision"],
+      "newAudioEffects": ["Vocoder", "Multiband Dynamics", "Overdrive", "Limiter", "Frequency Shifter", "Corpus"],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Groove Engine",
+        "Looper",
+        "Group Tracks",
+        "Crossfades en Arrangement",
+        "Nouveau warp engine",
+        "Éditeur MIDI remanié"
+      ],
+      "ecosystem": ["Latin Percussion"],
+      "relatedIds": ["max-for-live-2009"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 8 press archive",
+          "url": "https://www.ableton.com/en/press/press-archive/press-archive-release-8/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "max-for-live-2009",
+      "slug": "max-for-live",
+      "sortOrder": 100,
+      "productId": "max-for-live",
+      "productFamily": "platform",
+      "label": "Max for Live",
+      "version": "1.0",
+      "date": "2009-11-23",
+      "datePrecision": "day",
+      "type": "platform",
+      "status": "released",
+      "era": "era-audio-to-midi",
+      "headline": "Ouverture de Live comme plateforme",
+      "summary": "Max for Live transforme Live en environnement extensible pour instruments, effets et outils personnalisés.",
+      "tags": ["m4l", "devices", "platform", "custom"],
+      "coverImage": null,
+      "editions": ["Max for Live"],
+      "newInstruments": ["Devices Max for Live"],
+      "newAudioEffects": ["Effects Max for Live"],
+      "newMidiEffects": ["MIDI tools Max for Live"],
+      "newFeatures": [
+        "Création de devices personnalisés",
+        "Intégration Max dans Live",
+        "Nouveau niveau d’extension du logiciel"
+      ],
+      "ecosystem": ["Step Sequencer", "Convolution Reverb", "Buffer Shuffler"],
+      "relatedIds": ["live-8", "live-9"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Max for Live release",
+          "url": "https://www.ableton.com/en/press/press-archive/press-archive-mfl-release/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "amp-cabinet-2010",
+      "slug": "amp-cabinet",
+      "sortOrder": 110,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Amp / Cabinet",
+      "version": "8.x",
+      "date": "2010-09-22",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-audio-to-midi",
+      "headline": "Traitement guitare intégré",
+      "summary": "Ajout d’Amp et Cabinet à l’écosystème Live.",
+      "tags": ["guitar", "amp", "cabinet", "effects"],
+      "coverImage": null,
+      "editions": ["Suite"],
+      "newInstruments": [],
+      "newAudioEffects": ["Amp", "Cabinet"],
+      "newMidiEffects": [],
+      "newFeatures": [],
+      "ecosystem": [],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Amp release",
+          "url": "https://www.ableton.com/en/press/press-archive/press-archive-amp/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-9",
+      "slug": "live-9",
+      "sortOrder": 120,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 9",
+      "version": "9",
+      "date": "2013-03-05",
+      "datePrecision": "day",
+      "type": "major",
+      "status": "released",
+      "era": "era-push-1",
+      "headline": "Nouvelle ergonomie, automation Session, Audio-to-MIDI",
+      "summary": "Live 9 modernise profondément l’interface et la composition.",
+      "tags": ["browser", "audio-to-midi", "automation", "push"],
+      "coverImage": null,
+      "editions": ["Intro", "Standard", "Suite"],
+      "newInstruments": [],
+      "newAudioEffects": ["Glue Compressor"],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Automation dans les clips Session",
+        "Nouveau browser",
+        "Audio-to-MIDI",
+        "Max for Live inclus dans Suite"
+      ],
+      "ecosystem": ["Push 1"],
+      "relatedIds": ["push-1-release"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 9 and Push are here",
+          "url": "https://www.ableton.com/en/press/press-archive/press-archive-release-9-push/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-9-1",
+      "slug": "live-9-1",
+      "sortOrder": 130,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 9.1",
+      "version": "9.1",
+      "date": "2013-11-20",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-push-1",
+      "headline": "Dual monitor et progrès Push",
+      "summary": "Update workflow centrée sur le confort et Push.",
+      "tags": ["push", "dual-monitor", "step-sequencer"],
+      "coverImage": null,
+      "editions": ["Live 9"],
+      "newInstruments": [],
+      "newAudioEffects": [],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Dual monitor support",
+        "Melodic step sequencer sur Push",
+        "Tous les paramètres automatiques éditables depuis les encodeurs de Push",
+        "Rendering audio amélioré"
+      ],
+      "ecosystem": ["Push 1"],
+      "relatedIds": ["push-1-release"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 9.1 update out now",
+          "url": "https://www.ableton.com/en/press/press-archive/ableton-live-91-update-out-now-free-all-live-9-users/",
+          "sourceType": "official"
+        },
+        {
+          "title": "Live 9.1 beta announcement",
+          "url": "https://www.ableton.com/en/press/press-archive/press-archive-live-9-1/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-9-2",
+      "slug": "live-9-2",
+      "sortOrder": 140,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 9.2",
+      "version": "9.2",
+      "date": "2015-06-29",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-push-1",
+      "headline": "Warping amélioré, Tuner et gros bond pour Push 1",
+      "summary": "Grosse mise à jour de maturité pour Live 9 et Push 1.",
+      "tags": ["push", "warping", "tuner", "aftertouch"],
+      "coverImage": null,
+      "editions": ["Live 9"],
+      "newInstruments": [],
+      "newAudioEffects": ["Tuner"],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Warping amélioré",
+        "Latency-compensated automation",
+        "Max 7 dans Max for Live",
+        "64 pads drums sur Push",
+        "Touchstrip en modulation wheel et pitch bend",
+        "Aftertouch amélioré sur Push"
+      ],
+      "ecosystem": ["64 Pad Lab"],
+      "relatedIds": ["push-1-release"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Ableton Live 9.2 out now",
+          "url": "https://www.ableton.com/en/press/press-archive/ableton-live-9-2-out-now/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-9-5",
+      "slug": "live-9-5",
+      "sortOrder": 150,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 9.5",
+      "version": "9.5",
+      "date": "2015-11-02",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-push-2",
+      "headline": "Nouvelle ère du sampling avec Simpler et Push 2",
+      "summary": "Live 9.5 remet Simpler au centre du workflow créatif et accompagne l’arrivée de Push 2.",
+      "tags": ["push-2", "simpler", "sampling", "display"],
+      "coverImage": null,
+      "editions": ["Live 9"],
+      "newInstruments": [],
+      "newAudioEffects": [],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Simpler repensé",
+        "Slicing et sampling enrichis",
+        "Nouvelles fonctions pour Push 1",
+        "Arrivée de Push 2"
+      ],
+      "ecosystem": ["Push 2"],
+      "relatedIds": ["push-2-release", "push-1-live-9-5-features"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Press resources",
+          "url": "https://www.ableton.com/en/press/",
+          "sourceType": "official"
+        },
+        {
+          "title": "Try the new Push 2 and Live 9.5",
+          "url": "https://www.ableton.com/en/blog/try-new-push-at-events-worldwide/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-9-6",
+      "slug": "live-9-6",
+      "sortOrder": 160,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 9.6",
+      "version": "9.6",
+      "date": "2016-02-03",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-push-2",
+      "headline": "Ableton Link arrive dans Live",
+      "summary": "Synchronisation réseau simplifiée entre apps et machines.",
+      "tags": ["link", "network", "sync"],
+      "coverImage": null,
+      "editions": ["Live 9"],
+      "newInstruments": [],
+      "newAudioEffects": [],
+      "newMidiEffects": [],
+      "newFeatures": ["Ableton Link"],
+      "ecosystem": ["Sync réseau avec apps compatibles"],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Link now available in Live",
+          "url": "https://www.ableton.com/en/blog/link-now-available-in-live/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-9-7",
+      "slug": "live-9-7",
+      "sortOrder": 170,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 9.7",
+      "version": "9.7",
+      "date": "2016-10-11",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-push-2",
+      "headline": "Sampling et Push renforcés",
+      "summary": "Update axée sur les options de slicing et le workflow matériel.",
+      "tags": ["push-2", "sampling", "slicing"],
+      "coverImage": null,
+      "editions": ["Live 9"],
+      "newInstruments": [],
+      "newAudioEffects": [],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Plus d’options de slicing",
+        "Nouveau drum layout",
+        "Routing audio/MIDI depuis Push"
+      ],
+      "ecosystem": ["Push"],
+      "relatedIds": ["push-2-release"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 9.7 available now",
+          "url": "https://www.ableton.com/en/blog/live-9-7-available-now/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-10",
+      "slug": "live-10",
+      "sortOrder": 180,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 10",
+      "version": "10",
+      "date": "2018-02-06",
+      "datePrecision": "day",
+      "type": "major",
+      "status": "released",
+      "era": "era-push-2",
+      "headline": "Nouvelle génération d’interface et de devices",
+      "summary": "Live 10 modernise le look, le browser et ajoute plusieurs devices devenus essentiels.",
+      "tags": ["wavetable", "echo", "drum-buss", "capture-midi"],
+      "coverImage": null,
+      "editions": ["Intro", "Standard", "Suite"],
+      "newInstruments": ["Wavetable"],
+      "newAudioEffects": ["Echo", "Drum Buss", "Pedal"],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Capture MIDI",
+        "Collections dans le browser",
+        "Édition et arrangement améliorés",
+        "Nouvelle interface"
+      ],
+      "ecosystem": [],
+      "relatedIds": ["push-2-release"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Ableton press resources",
+          "url": "https://www.ableton.com/en/press/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-10-1",
+      "slug": "live-10-1",
+      "sortOrder": 190,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 10.1",
+      "version": "10.1",
+      "date": "2019-05-28",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-push-2",
+      "headline": "Channel EQ, nouveau Delay et automation enrichie",
+      "summary": "Update importante côté mix, modulation et édition.",
+      "tags": ["channel-eq", "delay", "automation", "wavetable"],
+      "coverImage": null,
+      "editions": ["Live 10"],
+      "newInstruments": ["Import de user wavetables dans Wavetable"],
+      "newAudioEffects": ["Channel EQ", "Delay"],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Stretch et skew des automations",
+        "Zoom et scrolling améliorés",
+        "Nouvelles formes d’automation"
+      ],
+      "ecosystem": [],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 10.1 is here",
+          "url": "https://www.ableton.com/fr/blog/live-10-1-is-here/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-11",
+      "slug": "live-11",
+      "sortOrder": 200,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 11",
+      "version": "11",
+      "date": "2021-02-23",
+      "datePrecision": "day",
+      "type": "major",
+      "status": "released",
+      "era": "era-push-2",
+      "headline": "Comping, MPE et nouveaux effets spatiaux/spectraux",
+      "summary": "Live 11 fait un grand saut expressif et d’édition.",
+      "tags": ["comping", "mpe", "hybrid-reverb", "spectral"],
+      "coverImage": null,
+      "editions": ["Intro", "Standard", "Suite"],
+      "newInstruments": [],
+      "newAudioEffects": ["Hybrid Reverb", "Spectral Resonator", "Spectral Time", "Chorus-Ensemble", "Phaser-Flanger", "Shifter"],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Comping",
+        "MPE",
+        "Follow Actions enrichies",
+        "Workflow de prise amélioré"
+      ],
+      "ecosystem": [],
+      "relatedIds": ["push-2-release", "push-3-release"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 11 coming / release info",
+          "url": "https://www.ableton.com/en/blog/live-11-coming-february-23-2021/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-11-1",
+      "slug": "live-11-1",
+      "sortOrder": 210,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 11.1",
+      "version": "11.1",
+      "date": "2022-02-01",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-push-2",
+      "headline": "Apple Silicon natif et outils M4L supplémentaires",
+      "summary": "Mise à jour importante pour la plateforme et le workflow.",
+      "tags": ["apple-silicon", "m4l", "align-delay"],
+      "coverImage": null,
+      "editions": ["Live 11"],
+      "newInstruments": [],
+      "newAudioEffects": ["Align Delay"],
+      "newMidiEffects": ["MIDI Shaper"],
+      "newFeatures": [
+        "Support natif Apple Silicon",
+        "Améliorations comping",
+        "Multi-clip editing amélioré"
+      ],
+      "ecosystem": ["Devices Max for Live supplémentaires"],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 11.1 update out now",
+          "url": "https://www.ableton.com/en/blog/free-live-11-1-update-apple-silicon-support-out-now/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-11-2",
+      "slug": "live-11-2",
+      "sortOrder": 220,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 11.2",
+      "version": "11.2",
+      "date": "2022-09-27",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-push-2",
+      "headline": "AUv3 et Reverb modernisée",
+      "summary": "Update ciblée plateforme et effets.",
+      "tags": ["auv3", "reverb"],
+      "coverImage": null,
+      "editions": ["Live 11"],
+      "newInstruments": [],
+      "newAudioEffects": ["Reverb (refonte/modernisation)"],
+      "newMidiEffects": [],
+      "newFeatures": ["Support AUv3 sur Mac Apple Silicon"],
+      "ecosystem": [],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 11.2 is out now",
+          "url": "https://www.ableton.com/en/blog/live-112-is-out-now/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-11-3",
+      "slug": "live-11-3",
+      "sortOrder": 230,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 11.3",
+      "version": "11.3",
+      "date": "2023-05-22",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-push-2",
+      "headline": "Drift et nouvelle phase MPE",
+      "summary": "Live 11.3 ajoute un nouveau synthé et étend l’expressivité MPE.",
+      "tags": ["drift", "mpe", "push"],
+      "coverImage": null,
+      "editions": ["Live 11"],
+      "newInstruments": ["Drift"],
+      "newAudioEffects": [],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Compatibilité MPE étendue",
+        "Améliorations Push",
+        "Auto-warping amélioré"
+      ],
+      "ecosystem": ["Support du nouveau Push"],
+      "relatedIds": ["push-3-release"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 11.3 is out now",
+          "url": "https://www.ableton.com/en/blog/live-113-is-out-now/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-12",
+      "slug": "live-12",
+      "sortOrder": 240,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 12",
+      "version": "12",
+      "date": "2024-03-05",
+      "datePrecision": "day",
+      "type": "major",
+      "status": "released",
+      "era": "era-push-3-move",
+      "headline": "Meld, Roar, MIDI Tools et navigateur refondu",
+      "summary": "Live 12 ajoute une couche générative/créative plus profonde et un browser beaucoup plus puissant.",
+      "tags": ["meld", "roar", "midi-tools", "browser", "tunings"],
+      "coverImage": null,
+      "editions": ["Intro", "Standard", "Suite"],
+      "newInstruments": ["Meld", "Granulator III"],
+      "newAudioEffects": ["Roar"],
+      "newMidiEffects": ["MIDI Tools"],
+      "newFeatures": [
+        "MIDI Transformations",
+        "MIDI Generators",
+        "Browser avec tags",
+        "Systèmes d’accordage/tunings",
+        "Navigation améliorée"
+      ],
+      "ecosystem": [],
+      "relatedIds": ["push-3-release", "move-release"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 12 out now",
+          "url": "https://www.ableton.com/en/blog/ableton-live-12-out-now/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-12-1",
+      "slug": "live-12-1",
+      "sortOrder": 250,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 12.1",
+      "version": "12.1",
+      "date": "2024-10-08",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-push-3-move",
+      "headline": "Drum Sampler, Auto Shift et gros confort MIDI",
+      "summary": "Update très dense côté beatmaking, voix, auto-tagging et Push.",
+      "tags": ["drum-sampler", "auto-shift", "push", "mpe"],
+      "coverImage": null,
+      "editions": ["Live 12"],
+      "newInstruments": ["Drum Sampler"],
+      "newAudioEffects": ["Auto Shift"],
+      "newMidiEffects": ["Glissando", "LFO (MPE tool)"],
+      "newFeatures": [
+        "Auto-tagging des samples",
+        "Filtre et sélection de notes MIDI",
+        "Limiter refondu",
+        "Saturator amélioré"
+      ],
+      "ecosystem": ["MIDI Tools by Philip Meyer", "Améliorations Push 2/3"],
+      "relatedIds": ["move-release"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 12.1 is out now",
+          "url": "https://www.ableton.com/en/blog/live-121-is-out-now/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-12-2",
+      "slug": "live-12-2",
+      "sortOrder": 260,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 12.2",
+      "version": "12.2",
+      "date": "2025-06-11",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-push-3-move",
+      "headline": "Bounce to New Track et nouveaux raffinements devices",
+      "summary": "Update majeure de workflow et de sound design.",
+      "tags": ["bounce", "expressive-chords", "auto-filter", "move"],
+      "coverImage": null,
+      "editions": ["Live 12"],
+      "newInstruments": ["Expressive Chords"],
+      "newAudioEffects": ["Auto Filter (refonte/modernisation)"],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Bounce to New Track",
+        "Bounce Track in Place",
+        "Meld enrichi",
+        "Roar amélioré",
+        "Spectral Resonator amélioré",
+        "Resonators amélioré",
+        "Browser amélioré"
+      ],
+      "ecosystem": ["Améliorations Push et Move"],
+      "relatedIds": ["move-release"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 12.2 is out now",
+          "url": "https://www.ableton.com/en/blog/live-12-2-is-out-now/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-12-3",
+      "slug": "live-12-3",
+      "sortOrder": 270,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 12.3",
+      "version": "12.3",
+      "date": "2025-11-25",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "released",
+      "era": "era-push-3-move",
+      "headline": "Stem Separation, Splice et Bounce Groups",
+      "summary": "Update axée sampling, browser et comparaison de devices.",
+      "tags": ["stem-separation", "splice", "device-a-b", "move"],
+      "coverImage": null,
+      "editions": ["Live 12"],
+      "newInstruments": [],
+      "newAudioEffects": ["Auto Pan-Tremolo"],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Stem Separation",
+        "Splice intégré au Browser",
+        "Bounce Groups",
+        "Paste Bounced Audio",
+        "Device A/B"
+      ],
+      "ecosystem": ["Generators by Iftah", "Nouveautés pour Move"],
+      "relatedIds": ["move-release"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 12.3 is here",
+          "url": "https://www.ableton.com/en/blog/live-12-3-is-here/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "live-12-4",
+      "slug": "live-12-4",
+      "sortOrder": 280,
+      "productId": "ableton-live",
+      "productFamily": "software",
+      "label": "Live 12.4",
+      "version": "12.4",
+      "date": "2026-02-10",
+      "datePrecision": "day",
+      "type": "update",
+      "status": "public-beta",
+      "era": "era-push-3-move",
+      "headline": "Link Audio, Learn View et refonte d’Erosion",
+      "summary": "Au 25 mars 2026, Live 12.4 est présenté comme une bêta publique.",
+      "tags": ["beta", "link-audio", "learn-view", "erosion"],
+      "coverImage": null,
+      "editions": ["Live 12"],
+      "newInstruments": [],
+      "newAudioEffects": ["Erosion (refonte/modernisation)"],
+      "newMidiEffects": [],
+      "newFeatures": [
+        "Link Audio",
+        "Learn View",
+        "Stem Separation améliorée",
+        "Chorus-Ensemble amélioré",
+        "Delay amélioré"
+      ],
+      "ecosystem": [],
+      "relatedIds": [],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 12.4 is coming",
+          "url": "https://www.ableton.com/en/blog/live-12-4-is-coming/",
+          "sourceType": "official"
+        }
+      ]
+    }
+  ],
+  "hardwareTimeline": [
+    {
+      "id": "push-1-release",
+      "slug": "push-1-release",
+      "sortOrder": 1000,
+      "productId": "push-1",
+      "productFamily": "hardware",
+      "label": "Push 1",
+      "date": "2013-03-05",
+      "datePrecision": "day",
+      "type": "hardware",
+      "status": "released",
+      "era": "era-push-1",
+      "headline": "Premier instrument matériel d’Ableton",
+      "summary": "Push sort en même temps que Live 9 comme premier hardware instrument d’Ableton.",
+      "tags": ["push", "controller", "pads", "live-9"],
+      "headlineFeatures": [
+        "Contrôle dédié de Live",
+        "Jeu par pads",
+        "Séquençage et composition depuis le hardware"
+      ],
+      "hardwareHighlights": [
+        "64 pads",
+        "Contrôle de clips et scènes",
+        "Intégration profonde avec Live"
+      ],
+      "relatedLiveVersions": ["live-9"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 9 and Push are here",
+          "url": "https://www.ableton.com/en/press/press-archive/press-archive-release-9-push/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "push-1-live-9-1-features",
+      "slug": "push-1-live-9-1-features",
+      "sortOrder": 1010,
+      "productId": "push-1",
+      "productFamily": "hardware",
+      "label": "Push 1 + Live 9.1",
+      "date": "2013-11-20",
+      "datePrecision": "day",
+      "type": "hardware",
+      "status": "released",
+      "era": "era-push-1",
+      "headline": "Melodic step sequencer et édition plus profonde",
+      "summary": "Live 9.1 apporte de nouvelles fonctions majeures à Push 1.",
+      "tags": ["push", "step-sequencer", "automation"],
+      "headlineFeatures": [
+        "Melodic step sequencer",
+        "Édition de paramètres automatiques depuis les encodeurs",
+        "Jeu/entrée de notes plus flexible"
+      ],
+      "hardwareHighlights": [],
+      "relatedLiveVersions": ["live-9-1"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Live 9.1 beta announcement",
+          "url": "https://www.ableton.com/en/press/press-archive/press-archive-live-9-1/",
+          "sourceType": "official"
+        },
+        {
+          "title": "Live 9.1 update out now",
+          "url": "https://www.ableton.com/en/press/press-archive/ableton-live-91-update-out-now-free-all-live-9-users/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "push-1-live-9-2-features",
+      "slug": "push-1-live-9-2-features",
+      "sortOrder": 1020,
+      "productId": "push-1",
+      "productFamily": "hardware",
+      "label": "Push 1 + Live 9.2",
+      "date": "2015-06-29",
+      "datePrecision": "day",
+      "type": "hardware",
+      "status": "released",
+      "era": "era-push-1",
+      "headline": "64 pads drums et meilleur aftertouch",
+      "summary": "Live 9.2 renforce beaucoup les capacités de jeu et de finger drumming de Push 1.",
+      "tags": ["push", "64-pads", "aftertouch", "touchstrip"],
+      "headlineFeatures": [
+        "64 pads pour jouer les drums",
+        "Retour rapide à 16 pads pour le step sequencing",
+        "Touchstrip utilisable en modulation wheel",
+        "Touchstrip utilisable en pitch bend",
+        "Aftertouch amélioré"
+      ],
+      "hardwareHighlights": [],
+      "relatedLiveVersions": ["live-9-2"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Ableton Live 9.2 out now",
+          "url": "https://www.ableton.com/en/press/press-archive/ableton-live-9-2-out-now/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "push-1-live-9-5-features",
+      "slug": "push-1-live-9-5-features",
+      "sortOrder": 1030,
+      "productId": "push-1",
+      "productFamily": "hardware",
+      "label": "Push 1 + Live 9.5",
+      "date": "2015-11-02",
+      "datePrecision": "day",
+      "type": "hardware",
+      "status": "released",
+      "era": "era-push-1",
+      "headline": "Dernière grande vague de fonctions pour Push 1",
+      "summary": "Live 9.5 apporte plusieurs fonctions demandées par les utilisateurs de Push 1.",
+      "tags": ["push", "plugins", "browser", "preview"],
+      "headlineFeatures": [
+        "Chargement de plug-ins VST/AU depuis Push",
+        "Navigation et préécoute de sons depuis le browser de Push",
+        "Duplication de pads dans Drum Rack",
+        "Scales enregistrées par Live Set"
+      ],
+      "hardwareHighlights": [],
+      "relatedLiveVersions": ["live-9-5"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "New features for original Push in Live 9.5",
+          "url": "https://www.ableton.com/en/blog/new-features-for-1st-generation-push/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "push-2-release",
+      "slug": "push-2-release",
+      "sortOrder": 1040,
+      "productId": "push-2",
+      "productFamily": "hardware",
+      "label": "Push 2",
+      "date": "2015-11-02",
+      "datePrecision": "day",
+      "type": "hardware",
+      "status": "released",
+      "era": "era-push-2",
+      "headline": "Deuxième génération de Push",
+      "summary": "Push 2 inaugure une nouvelle génération de workflow visuel et de jeu avec Live 9.5.",
+      "tags": ["push-2", "display", "sampling", "live-9-5"],
+      "headlineFeatures": [
+        "Écran couleur",
+        "Workflow visuel renforcé",
+        "Intégration étroite avec le nouveau Simpler et le sampling"
+      ],
+      "hardwareHighlights": [
+        "Pads 8x8",
+        "Écran couleur",
+        "Contrôle plus visuel du browser, du mix et des devices"
+      ],
+      "relatedLiveVersions": ["live-9-5", "live-9-7", "live-10", "live-11"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Press resources",
+          "url": "https://www.ableton.com/en/press/",
+          "sourceType": "official"
+        },
+        {
+          "title": "Try the new Push 2 and Live 9.5",
+          "url": "https://www.ableton.com/en/blog/try-new-push-at-events-worldwide/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "push-3-release",
+      "slug": "push-3-release",
+      "sortOrder": 1050,
+      "productId": "push-3",
+      "productFamily": "hardware",
+      "label": "Push 3",
+      "date": "2023-05-23",
+      "datePrecision": "day",
+      "type": "hardware",
+      "status": "released",
+      "era": "era-push-3-move",
+      "headline": "Push devient standalone",
+      "summary": "Push 3 marque le passage vers un instrument autonome, expressif et évolutif.",
+      "tags": ["push-3", "standalone", "mpe", "audio-interface", "upgrade-kit"],
+      "headlineFeatures": [
+        "Pads compatibles MPE",
+        "Fonctionnement standalone",
+        "Interface audio intégrée",
+        "Composants remplaçables",
+        "Possibilité d’upgrade du modèle tethered"
+      ],
+      "hardwareHighlights": [
+        "64 pads expressifs",
+        "Interface audio intégrée",
+        "Version standalone avec processeur, batterie et SSD",
+        "Version tethered upgradable"
+      ],
+      "relatedLiveVersions": ["live-11-3", "live-12", "live-12-1", "live-12-2"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Meet the new Push",
+          "url": "https://www.ableton.com/en/blog/meet-the-new-push/",
+          "sourceType": "official"
+        },
+        {
+          "title": "Push product page",
+          "url": "https://www.ableton.com/en/push/",
+          "sourceType": "official"
+        },
+        {
+          "title": "Learn about the making of Ableton Push",
+          "url": "https://www.ableton.com/en/blog/learn-about-the-making-of-ableton-push/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "move-release",
+      "slug": "move-release",
+      "sortOrder": 1060,
+      "productId": "move",
+      "productFamily": "hardware",
+      "label": "Move",
+      "date": "2024-10-08",
+      "datePrecision": "day",
+      "type": "hardware",
+      "status": "released",
+      "era": "era-push-3-move",
+      "headline": "Nouvel instrument compact autonome",
+      "summary": "Move est présenté comme un outil autonome, compact et orienté création rapide.",
+      "tags": ["move", "portable", "standalone", "battery", "sketchpad"],
+      "headlineFeatures": [
+        "Instrument autonome compact",
+        "Batterie rechargeable",
+        "Processeur intégré",
+        "Microphone intégré",
+        "Haut-parleur intégré"
+      ],
+      "hardwareHighlights": [
+        "Format compact",
+        "Création en mobilité",
+        "Intégration avec Live, Note et Push"
+      ],
+      "relatedLiveVersions": ["live-12-1", "live-12-2", "live-12-3"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Say Hello to Ableton Move",
+          "url": "https://www.ableton.com/en/blog/say-hello-to-ableton-move/",
+          "sourceType": "official"
+        },
+        {
+          "title": "Move manual",
+          "url": "https://cdn-resources.ableton.com/resources/pdfs/move-manual/1/2024-12-13/move1-manual-fr.pdf",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "move-1-1-2",
+      "slug": "move-1-1-2",
+      "sortOrder": 1070,
+      "productId": "move",
+      "productFamily": "hardware",
+      "label": "Move 1.1.2",
+      "date": "2024-10-08",
+      "datePrecision": "day",
+      "type": "hardware",
+      "status": "released",
+      "era": "era-push-3-move",
+      "headline": "16 Pitches, Arpeggiator et Control Live Mode",
+      "summary": "L’une des premières grosses évolutions fonctionnelles de Move.",
+      "tags": ["move", "16-pitches", "arpeggiator", "control-live"],
+      "headlineFeatures": [
+        "16 Pitches pour jouer les samples de drums mélodiquement",
+        "Arpeggiator",
+        "Control Live Mode",
+        "Envoi audio vers Live via USB-C"
+      ],
+      "hardwareHighlights": [],
+      "relatedLiveVersions": ["live-12-1"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Move release notes",
+          "url": "https://www.ableton.com/en/release-notes/move-1/",
+          "sourceType": "official"
+        }
+      ]
+    },
+    {
+      "id": "move-1-2-0",
+      "slug": "move-1-2-0",
+      "sortOrder": 1080,
+      "productId": "move",
+      "productFamily": "hardware",
+      "label": "Move 1.2.0",
+      "date": "2024-12-10",
+      "datePrecision": "day",
+      "type": "hardware",
+      "status": "released",
+      "era": "era-push-3-move",
+      "headline": "MIDI Sync out et confort de construction des kits",
+      "summary": "Move 1.2.0 ajoute un MIDI Sync plus souple et améliore plusieurs workflows de browser et de sound library.",
+      "tags": ["move", "midi-sync", "browser", "samples"],
+      "headlineFeatures": [
+        "MIDI Sync out",
+        "Construction de Drum Racks plus fluide",
+        "Améliorations de la sound library",
+        "Améliorations de presets"
+      ],
+      "hardwareHighlights": [],
+      "relatedLiveVersions": ["live-12-2"],
+      "confidence": "high",
+      "sources": [
+        {
+          "title": "Move release notes",
+          "url": "https://www.ableton.com/en/release-notes/move-1/",
+          "sourceType": "official"
+        }
+      ]
+    }
+  ],
+  "featureFirstAppearance": [
+    {
+      "name": "Gate",
+      "slug": "gate",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 2",
+      "firstAppearanceId": "live-2",
+      "date": "2002-12-01",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Redux",
+      "slug": "redux",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 2",
+      "firstAppearanceId": "live-2",
+      "date": "2002-12-01",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Resonators",
+      "slug": "resonators",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 3",
+      "firstAppearanceId": "live-3",
+      "date": "2003-10-02",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "EQ Three",
+      "slug": "eq-three",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 3",
+      "firstAppearanceId": "live-3",
+      "date": "2003-10-02",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Utility",
+      "slug": "utility",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 3",
+      "firstAppearanceId": "live-3",
+      "date": "2003-10-02",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Clip Envelopes",
+      "slug": "clip-envelopes",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 3",
+      "firstAppearanceId": "live-3",
+      "date": "2003-10-02",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Simpler",
+      "slug": "simpler",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 4",
+      "firstAppearanceId": "live-4",
+      "date": "2004-01-01",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Impulse",
+      "slug": "impulse",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 4",
+      "firstAppearanceId": "live-4",
+      "date": "2004-01-01",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Operator",
+      "slug": "operator",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 4",
+      "firstAppearanceId": "live-4",
+      "date": "2004-01-01",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Pistes MIDI",
+      "slug": "midi-tracks",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 4",
+      "firstAppearanceId": "live-4",
+      "date": "2004-01-01",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Follow Actions",
+      "slug": "follow-actions",
+      "category": "performance",
+      "firstAppearanceLabel": "Live 4",
+      "firstAppearanceId": "live-4",
+      "date": "2004-01-01",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Beat Repeat",
+      "slug": "beat-repeat",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 5",
+      "firstAppearanceId": "live-5",
+      "date": "2005-07-22",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Saturator",
+      "slug": "saturator",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 5",
+      "firstAppearanceId": "live-5",
+      "date": "2005-07-22",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Arpeggiator",
+      "slug": "arpeggiator",
+      "category": "midi_effect",
+      "firstAppearanceLabel": "Live 5",
+      "firstAppearanceId": "live-5",
+      "date": "2005-07-22",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Complex Warp Mode",
+      "slug": "complex-warp-mode",
+      "category": "warping",
+      "firstAppearanceLabel": "Live 5",
+      "firstAppearanceId": "live-5",
+      "date": "2005-07-22",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Sampler",
+      "slug": "sampler",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 6",
+      "firstAppearanceId": "live-6",
+      "date": "2006-09-28",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "EQ Eight",
+      "slug": "eq-eight",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 6",
+      "firstAppearanceId": "live-6",
+      "date": "2006-09-28",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Instrument Racks",
+      "slug": "instrument-racks",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 6",
+      "firstAppearanceId": "live-6",
+      "date": "2006-09-28",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Effect Racks",
+      "slug": "effect-racks",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 6",
+      "firstAppearanceId": "live-6",
+      "date": "2006-09-28",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Drum Rack",
+      "slug": "drum-rack",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 7",
+      "firstAppearanceId": "live-7",
+      "date": "2007-11-29",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Analog",
+      "slug": "analog",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 7",
+      "firstAppearanceId": "live-7",
+      "date": "2007-11-29",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Electric",
+      "slug": "electric",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 7",
+      "firstAppearanceId": "live-7",
+      "date": "2007-11-29",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Tension",
+      "slug": "tension",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 7",
+      "firstAppearanceId": "live-7",
+      "date": "2007-11-29",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Spectrum",
+      "slug": "spectrum",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 7",
+      "firstAppearanceId": "live-7",
+      "date": "2007-11-29",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Sidechain intégré",
+      "slug": "sidechain",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 7",
+      "firstAppearanceId": "live-7",
+      "date": "2007-11-29",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Collision",
+      "slug": "collision",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 8",
+      "firstAppearanceId": "live-8",
+      "date": "2009-04-02",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Vocoder",
+      "slug": "vocoder",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 8",
+      "firstAppearanceId": "live-8",
+      "date": "2009-04-02",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Corpus",
+      "slug": "corpus",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 8",
+      "firstAppearanceId": "live-8",
+      "date": "2009-04-02",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Looper",
+      "slug": "looper",
+      "category": "performance",
+      "firstAppearanceLabel": "Live 8",
+      "firstAppearanceId": "live-8",
+      "date": "2009-04-02",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Groove Engine",
+      "slug": "groove-engine",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 8",
+      "firstAppearanceId": "live-8",
+      "date": "2009-04-02",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Max for Live",
+      "slug": "max-for-live",
+      "category": "platform",
+      "firstAppearanceLabel": "Max for Live",
+      "firstAppearanceId": "max-for-live-2009",
+      "date": "2009-11-23",
+      "isSuiteOnly": true,
+      "isM4L": true
+    },
+    {
+      "name": "Amp",
+      "slug": "amp",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Amp / Cabinet",
+      "firstAppearanceId": "amp-cabinet-2010",
+      "date": "2010-09-22",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Cabinet",
+      "slug": "cabinet",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Amp / Cabinet",
+      "firstAppearanceId": "amp-cabinet-2010",
+      "date": "2010-09-22",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Push",
+      "slug": "push",
+      "category": "hardware",
+      "firstAppearanceLabel": "Push 1",
+      "firstAppearanceId": "push-1-release",
+      "date": "2013-03-05",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Glue Compressor",
+      "slug": "glue-compressor",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 9",
+      "firstAppearanceId": "live-9",
+      "date": "2013-03-05",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Automation dans les clips Session",
+      "slug": "session-clip-automation",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 9",
+      "firstAppearanceId": "live-9",
+      "date": "2013-03-05",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Audio-to-MIDI",
+      "slug": "audio-to-midi",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 9",
+      "firstAppearanceId": "live-9",
+      "date": "2013-03-05",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Melodic step sequencer sur Push",
+      "slug": "push-melodic-step-sequencer",
+      "category": "hardware",
+      "firstAppearanceLabel": "Push 1 + Live 9.1",
+      "firstAppearanceId": "push-1-live-9-1-features",
+      "date": "2013-11-20",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "64 pads drums sur Push",
+      "slug": "push-64-pad-drums",
+      "category": "hardware",
+      "firstAppearanceLabel": "Push 1 + Live 9.2",
+      "firstAppearanceId": "push-1-live-9-2-features",
+      "date": "2015-06-29",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Tuner",
+      "slug": "tuner",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 9.2",
+      "firstAppearanceId": "live-9-2",
+      "date": "2015-06-29",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Push 2",
+      "slug": "push-2",
+      "category": "hardware",
+      "firstAppearanceLabel": "Push 2",
+      "firstAppearanceId": "push-2-release",
+      "date": "2015-11-02",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Ableton Link",
+      "slug": "ableton-link",
+      "category": "integration",
+      "firstAppearanceLabel": "Live 9.6",
+      "firstAppearanceId": "live-9-6",
+      "date": "2016-02-03",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Wavetable",
+      "slug": "wavetable",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 10",
+      "firstAppearanceId": "live-10",
+      "date": "2018-02-06",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Echo",
+      "slug": "echo",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 10",
+      "firstAppearanceId": "live-10",
+      "date": "2018-02-06",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Drum Buss",
+      "slug": "drum-buss",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 10",
+      "firstAppearanceId": "live-10",
+      "date": "2018-02-06",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Capture MIDI",
+      "slug": "capture-midi",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 10",
+      "firstAppearanceId": "live-10",
+      "date": "2018-02-06",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Channel EQ",
+      "slug": "channel-eq",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 10.1",
+      "firstAppearanceId": "live-10-1",
+      "date": "2019-05-28",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Delay",
+      "slug": "delay",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 10.1",
+      "firstAppearanceId": "live-10-1",
+      "date": "2019-05-28",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Hybrid Reverb",
+      "slug": "hybrid-reverb",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 11",
+      "firstAppearanceId": "live-11",
+      "date": "2021-02-23",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Spectral Resonator",
+      "slug": "spectral-resonator",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 11",
+      "firstAppearanceId": "live-11",
+      "date": "2021-02-23",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Comping",
+      "slug": "comping",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 11",
+      "firstAppearanceId": "live-11",
+      "date": "2021-02-23",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "MPE",
+      "slug": "mpe",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 11",
+      "firstAppearanceId": "live-11",
+      "date": "2021-02-23",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Support natif Apple Silicon",
+      "slug": "apple-silicon-native",
+      "category": "platform",
+      "firstAppearanceLabel": "Live 11.1",
+      "firstAppearanceId": "live-11-1",
+      "date": "2022-02-01",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Drift",
+      "slug": "drift",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 11.3",
+      "firstAppearanceId": "live-11-3",
+      "date": "2023-05-22",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Push 3",
+      "slug": "push-3",
+      "category": "hardware",
+      "firstAppearanceLabel": "Push 3",
+      "firstAppearanceId": "push-3-release",
+      "date": "2023-05-23",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Pads MPE sur Push",
+      "slug": "push-mpe-pads",
+      "category": "hardware",
+      "firstAppearanceLabel": "Push 3",
+      "firstAppearanceId": "push-3-release",
+      "date": "2023-05-23",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Push standalone",
+      "slug": "push-standalone",
+      "category": "hardware",
+      "firstAppearanceLabel": "Push 3",
+      "firstAppearanceId": "push-3-release",
+      "date": "2023-05-23",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Meld",
+      "slug": "meld",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 12",
+      "firstAppearanceId": "live-12",
+      "date": "2024-03-05",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Granulator III",
+      "slug": "granulator-iii",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 12",
+      "firstAppearanceId": "live-12",
+      "date": "2024-03-05",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Roar",
+      "slug": "roar",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 12",
+      "firstAppearanceId": "live-12",
+      "date": "2024-03-05",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "MIDI Tools",
+      "slug": "midi-tools",
+      "category": "midi_effect",
+      "firstAppearanceLabel": "Live 12",
+      "firstAppearanceId": "live-12",
+      "date": "2024-03-05",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Tunings",
+      "slug": "tunings",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 12",
+      "firstAppearanceId": "live-12",
+      "date": "2024-03-05",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Move",
+      "slug": "move",
+      "category": "hardware",
+      "firstAppearanceLabel": "Move",
+      "firstAppearanceId": "move-release",
+      "date": "2024-10-08",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Drum Sampler",
+      "slug": "drum-sampler",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 12.1",
+      "firstAppearanceId": "live-12-1",
+      "date": "2024-10-08",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Auto Shift",
+      "slug": "auto-shift",
+      "category": "audio_effect",
+      "firstAppearanceLabel": "Live 12.1",
+      "firstAppearanceId": "live-12-1",
+      "date": "2024-10-08",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "16 Pitches sur Move",
+      "slug": "move-16-pitches",
+      "category": "hardware",
+      "firstAppearanceLabel": "Move 1.1.2",
+      "firstAppearanceId": "move-1-1-2",
+      "date": "2024-10-08",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Arpeggiator sur Move",
+      "slug": "move-arpeggiator",
+      "category": "hardware",
+      "firstAppearanceLabel": "Move 1.1.2",
+      "firstAppearanceId": "move-1-1-2",
+      "date": "2024-10-08",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Control Live Mode sur Move",
+      "slug": "move-control-live-mode",
+      "category": "hardware",
+      "firstAppearanceLabel": "Move 1.1.2",
+      "firstAppearanceId": "move-1-1-2",
+      "date": "2024-10-08",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Expressive Chords",
+      "slug": "expressive-chords",
+      "category": "instrument",
+      "firstAppearanceLabel": "Live 12.2",
+      "firstAppearanceId": "live-12-2",
+      "date": "2025-06-11",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Bounce to New Track",
+      "slug": "bounce-to-new-track",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 12.2",
+      "firstAppearanceId": "live-12-2",
+      "date": "2025-06-11",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "MIDI Sync out sur Move",
+      "slug": "move-midi-sync-out",
+      "category": "hardware",
+      "firstAppearanceLabel": "Move 1.2.0",
+      "firstAppearanceId": "move-1-2-0",
+      "date": "2024-12-10",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Stem Separation",
+      "slug": "stem-separation",
+      "category": "sampling",
+      "firstAppearanceLabel": "Live 12.3",
+      "firstAppearanceId": "live-12-3",
+      "date": "2025-11-25",
+      "isSuiteOnly": true,
+      "isM4L": false
+    },
+    {
+      "name": "Device A/B",
+      "slug": "device-a-b",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 12.3",
+      "firstAppearanceId": "live-12-3",
+      "date": "2025-11-25",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Link Audio",
+      "slug": "link-audio",
+      "category": "integration",
+      "firstAppearanceLabel": "Live 12.4",
+      "firstAppearanceId": "live-12-4",
+      "date": "2026-02-10",
+      "isSuiteOnly": false,
+      "isM4L": false
+    },
+    {
+      "name": "Learn View",
+      "slug": "learn-view",
+      "category": "workflow",
+      "firstAppearanceLabel": "Live 12.4",
+      "firstAppearanceId": "live-12-4",
+      "date": "2026-02-10",
+      "isSuiteOnly": false,
+      "isM4L": false
+    }
+  ]
+}

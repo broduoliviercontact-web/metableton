@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AbletonTimelinePage from "./components/AbletonTimelinePage";
 import ArticlePage from "./components/ArticlePage";
 import ArticleEditorPage from "./components/ArticleEditorPage";
 import HeroFeature from "./components/HeroFeature";
@@ -92,6 +93,8 @@ function App() {
           <ArticlePage article={currentArticle} sectionTitle={articleSection?.title} />
         ) : isEditorPage ? (
           <ArticleEditorPage />
+        ) : currentSection?.layout === "timeline" ? (
+          <AbletonTimelinePage page={currentSection} />
         ) : currentSection ? (
           <SectionPage
             currentPath={currentPath}
