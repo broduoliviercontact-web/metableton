@@ -1,0 +1,25 @@
+[
+  {
+    "source": {
+      "title": "Link now available in Live",
+      "url": "https://www.ableton.com/en/blog/link-now-available-in-live/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/ae/8e/ae8e61eb-037a-4546-9e46-a71ef43dd75e/link_blog_800px.jpg__800x533_q85_crop_subsampling-2_upscale.jpg",
+        "score": 35,
+        "discoveredFrom": "https://www.ableton.com/en/blog/link-now-available-in-live/",
+        "sourceType": "official",
+        "title": "Link now available in Live"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/Link-Live_PR_1.jpg",
+        "score": 30,
+        "discoveredFrom": "https://www.ableton.com/en/blog/link-now-available-in-live/",
+        "sourceType": "official",
+        "title": "Link now available in Live"
+      }
+    ]
+  }
+]

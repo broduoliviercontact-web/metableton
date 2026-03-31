@@ -14,42 +14,6 @@ const VIEW_MODES = [
   { id: "knightlab", label: "Vue Knight Lab" },
 ];
 
-const TEMP_VISUALS = {
-  entries: {
-    "live-1": "/articles/guides-ableton/session-view.jpg",
-    "live-2": "/articles/blog-news/arrangement-overview.jpg",
-    "live-3": "/articles/blog-news/ableton-interface-closeup.jpg",
-    "live-4": "/articles/guides-ableton/ableton-live-overview.jpg",
-    "live-5": "/articles/guides-ableton/clean-project-view.jpg",
-    "live-6": "/articles/guides-ableton/browser-and-session-view.jpg",
-    "max-for-live-2009": "/articles/max-for-live/max-like-interface.jpg",
-    "live-9": "/articles/max-for-live/creative-ableton-view.jpg",
-    "push-1-release": "/articles/blog-news/home-studio-ableton.jpg",
-    "push-2-release": "/articles/guides-ableton/clean-project-view.jpg",
-    "push-3-release": "/articles/max-for-live/device-workflow.jpg",
-    "move-release": "/articles/freebies/template-session.jpg",
-    "live-12": "/articles/guides-ableton/Meld-main.jpg",
-    "live-12-1": "/articles/guides-ableton/browser-and-session-view.jpg",
-    "live-12-2": "/articles/guides-ableton/clean-project-view.jpg",
-    "live-12-3": "/articles/blog-news/ableton-interface-closeup.jpg",
-    "live-12-4": "/articles/max-for-live/creative-ableton-view.jpg",
-  },
-  products: {
-    "ableton-live": "/articles/guides-ableton/ableton-live-overview.jpg",
-    "max-for-live": "/articles/max-for-live/max-like-interface.jpg",
-    "push-1": "/articles/blog-news/home-studio-ableton.jpg",
-    "push-2": "/articles/blog-news/ableton-interface-closeup.jpg",
-    "push-3": "/articles/max-for-live/device-workflow.jpg",
-    "move": "/articles/freebies/template-session.jpg",
-  },
-  eras: {
-    "era-early-live": "/articles/guides-ableton/session-view.jpg",
-    "era-audio-to-midi": "/articles/guides-ableton/browser-and-session-view.jpg",
-    "era-push-1": "/articles/blog-news/ableton-interface-closeup.jpg",
-    "era-push-2": "/articles/guides-ableton/clean-project-view.jpg",
-    "era-push-3-move": "/articles/guides-ableton/Meld-main.jpg",
-  },
-};
 
 const KNIGHT_LAB_CSS_ID = "knightlab-timeline-css";
 const KNIGHT_LAB_SCRIPT_ID = "knightlab-timeline-script";
@@ -285,25 +249,12 @@ function getDateParts(date, precision = "day") {
   return parts;
 }
 
-function getVisualForEntry(entry, product, era) {
-  const hero =
-    entry.coverImage ||
-    TEMP_VISUALS.entries[entry.id] ||
-    TEMP_VISUALS.products[product?.id] ||
-    TEMP_VISUALS.eras[era?.id] ||
-    null;
-
-  const secondary =
-    TEMP_VISUALS.products[product?.id] ||
-    TEMP_VISUALS.eras[era?.id] ||
-    TEMP_VISUALS.entries[entry.id] ||
-    null;
-
+function getVisualForEntry(entry) {
   return {
-    hero,
-    secondary,
+    hero: entry.coverImage || null,
+    secondary: entry.candidateImage || null,
     heroAlt: `${entry.label} — visuel de timeline`,
-    secondaryAlt: `${product?.displayName || product?.name || era?.label || entry.label} — visuel secondaire`,
+    secondaryAlt: `${entry.label} — visuel secondaire`,
   };
 }
 
@@ -318,9 +269,7 @@ function isKnightLabMilestone(entry) {
 function buildKnightLabTimelineData({ page, entries, eras, productIndex, eraIndex }) {
   const latestDate = entries[entries.length - 1]?.date || new Date().toISOString().slice(0, 10);
   const heroEntry = entries[0] || null;
-  const heroProduct = heroEntry ? productIndex[heroEntry.productId] : null;
-  const heroEra = heroEntry ? eraIndex[heroEntry.era] : null;
-  const heroVisuals = heroEntry ? getVisualForEntry(heroEntry, heroProduct, heroEra) : null;
+  const heroVisuals = heroEntry ? getVisualForEntry(heroEntry) : null;
 
   return {
     title: {
@@ -331,7 +280,7 @@ function buildKnightLabTimelineData({ page, entries, eras, productIndex, eraInde
       media: heroVisuals?.hero
         ? {
             url: heroVisuals.hero,
-            caption: "Visuel temporaire branché depuis le projet",
+            caption: heroEntry?.label || "Ableton",
             alt: heroVisuals.heroAlt,
           }
         : undefined,
@@ -351,7 +300,7 @@ function buildKnightLabTimelineData({ page, entries, eras, productIndex, eraInde
     events: entries.map((entry) => {
       const product = productIndex[entry.productId];
       const era = eraIndex[entry.era];
-      const visuals = getVisualForEntry(entry, product, era);
+      const visuals = getVisualForEntry(entry);
       const highlights = entry.highlights
         .slice(0, 4)
         .map((item) => `<li>${item}</li>`)
@@ -370,7 +319,7 @@ function buildKnightLabTimelineData({ page, entries, eras, productIndex, eraInde
           ? {
               url: visuals.hero,
               thumbnail: visuals.secondary || visuals.hero,
-              caption: `${era?.label || "Ableton"} · visuel temporaire`,
+              caption: era?.label || "Ableton",
               alt: visuals.heroAlt,
             }
           : undefined,
@@ -384,23 +333,25 @@ function buildKnightLabTimelineData({ page, entries, eras, productIndex, eraInde
   };
 }
 
-function ArchiveImage({ src, alt, year, caption, accentColor, compact = false }) {
+function ArchiveImage({ src, alt, year, caption, accentColor, compact = false, animKey }) {
   if (src) {
     return (
-      <figure className="relative overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-subtle)]">
+      <figure className="group relative overflow-hidden rounded-card border border-[color:var(--border-soft)] bg-black">
         <img
+          key={animKey}
           src={src}
           alt={alt}
-          className={`h-full w-full object-cover ${compact ? "min-h-[170px]" : "min-h-[320px]"}`}
+          className={`timeline-image-enter h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] ${compact ? "min-h-[180px]" : "min-h-[380px]"}`}
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent px-4 py-4 text-white">
-          <p className={`${compact ? "text-[28px]" : "text-[48px]"} font-[var(--font-display)] leading-none tracking-[-0.06em]`}>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/88 via-black/20 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 px-5 py-5">
+          <p className={`${compact ? "text-title-sm" : "text-display-md"} font-[var(--font-display)] leading-none tracking-display-xl text-white`}>
             {year}
           </p>
-          {caption ? <p className="mt-2 max-w-[28ch] text-[12px] leading-5 text-white/82">{caption}</p> : null}
+          {caption ? <p className="mt-2 max-w-[28ch] text-label leading-5 text-white/60">{caption}</p> : null}
         </div>
         <span
-          className="absolute inset-x-0 top-0 h-[4px]"
+          className="absolute inset-x-0 top-0 h-[3px]"
           style={{ backgroundColor: accentColor || "var(--text-primary)" }}
           aria-hidden="true"
         />
@@ -410,24 +361,33 @@ function ArchiveImage({ src, alt, year, caption, accentColor, compact = false })
 
   return (
     <div
-      className="relative overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-subtle)]"
-      style={{
-        backgroundImage: `linear-gradient(180deg, ${(accentColor || "#171717")}2f 0%, transparent 100%)`,
-      }}
+      className="relative overflow-hidden rounded-card border border-[color:var(--border-soft)] bg-[var(--panel-subtle)]"
+      style={{ backgroundImage: `radial-gradient(ellipse at 15% 85%, ${accentColor || "#171717"}25 0%, transparent 65%)` }}
     >
-      <div className={`${compact ? "min-h-[170px] p-4" : "min-h-[320px] p-5"} flex flex-col justify-between`}>
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: "radial-gradient(circle, var(--text-primary) 1px, transparent 1px)",
+          backgroundSize: "18px 18px",
+        }}
+        aria-hidden="true"
+      />
+      <div className={`${compact ? "min-h-[180px] p-4" : "min-h-[380px] p-6"} relative flex flex-col justify-between`}>
+        <p className="text-label uppercase tracking-caps-wider text-[var(--text-muted)]">Archive</p>
         <div>
-          <p className="text-[12px] uppercase tracking-[0.08em] text-[var(--text-muted)]">Visuel à remplacer</p>
-          <p className="mt-4 font-[var(--font-display)] text-[56px] leading-none tracking-[-0.07em] text-[var(--text-primary)]">
+          <p
+            className="font-[var(--font-display)] leading-none tracking-display-2xl text-[var(--text-primary)]"
+            style={{ fontSize: compact ? "3.5rem" : "5.5rem" }}
+          >
             {year}
           </p>
+          {caption ? (
+            <p className="mt-3 max-w-[28ch] text-ui leading-6 text-[var(--text-secondary)]">{caption}</p>
+          ) : null}
         </div>
-        {caption ? (
-          <p className="max-w-[28ch] text-[13px] leading-6 text-[var(--text-secondary)]">{caption}</p>
-        ) : null}
       </div>
       <span
-        className="absolute inset-x-0 top-0 h-[4px]"
+        className="absolute inset-x-0 top-0 h-[3px]"
         style={{ backgroundColor: accentColor || "var(--text-primary)" }}
         aria-hidden="true"
       />
@@ -529,16 +489,16 @@ function KnightLabTimelinePreview({ page, entries, activeId, eras, productIndex,
 
   if (!timelineEntries.length) {
     return (
-      <div className="rounded-[10px] border border-[color:var(--border-soft)] px-5 py-6 text-sm leading-7 text-[var(--text-secondary)]">
+      <div className="rounded-card border border-[color:var(--border-soft)] px-5 py-6 text-body leading-7 text-[var(--text-secondary)]">
         Aucun jalon compatible à afficher dans la vue Knight Lab avec les filtres actuels.
       </div>
     );
   }
 
   return (
-    <section className="overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)]">
+    <section className="overflow-hidden rounded-card border border-[color:var(--border-soft)] bg-[var(--panel-bg)]">
       <div className="border-b border-[color:var(--border-soft)] px-5 py-4 sm:px-6">
-        <p className="text-sm leading-7 text-[var(--text-secondary)]">
+        <p className="text-body leading-7 text-[var(--text-secondary)]">
           Aperçu TimelineJS avec une sélection resserrée de jalons majeurs pour rester proche de son usage éditorial.
         </p>
       </div>
@@ -569,7 +529,7 @@ function TimelineArrow({ direction, onClick, disabled }) {
       onClick={onClick}
       disabled={disabled}
       aria-label={isPrevious ? "Événement précédent" : "Événement suivant"}
-      className="inline-flex h-10 w-10 items-center justify-center rounded-[8px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)] text-[var(--text-secondary)] transition-colors hover:border-[color:var(--border-strong)] hover:text-[var(--text-primary)] disabled:cursor-not-allowed disabled:opacity-40"
+      className="inline-flex h-10 w-10 items-center justify-center rounded-tag border border-[color:var(--border-soft)] bg-[var(--panel-bg)] text-[var(--text-secondary)] transition-colors hover:border-[color:var(--border-strong)] hover:text-[var(--text-primary)] disabled:cursor-not-allowed disabled:opacity-40"
     >
       <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 16 16" fill="none">
         {isPrevious ? (
@@ -687,7 +647,7 @@ function AbletonTimelinePage({ page }) {
   const relatedEntries = activeEntry
     ? (activeEntry.relatedIds || []).map((relatedId) => entryIndex[relatedId]).filter(Boolean)
     : [];
-  const activeVisuals = activeEntry ? getVisualForEntry(activeEntry, activeProduct, activeEra) : null;
+  const activeVisuals = activeEntry ? getVisualForEntry(activeEntry) : null;
 
   const focusEntry = (entry) => {
     if (!entry) {
@@ -717,33 +677,31 @@ function AbletonTimelinePage({ page }) {
       <header className="border-b border-[color:var(--border-soft)] pb-6 lg:pb-8">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-end">
           <div className="space-y-4">
-            <h1 className="font-[var(--font-display)] text-[40px] leading-[0.95] tracking-[-0.05em] text-[var(--text-primary)] sm:text-[54px] lg:text-[68px]">
+            <h1 className="font-[var(--font-display)] text-display-sm leading-[0.95] tracking-display-lg text-[var(--text-primary)] sm:text-[54px] lg:text-[68px]">
               {page.title}
             </h1>
-            <p className="max-w-[820px] text-[15px] leading-7 text-[var(--text-secondary)] sm:text-base">
+            <p className="max-w-[820px] text-body leading-7 text-[var(--text-secondary)]">
               {page.intro}
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-px overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-[color:var(--border-soft)]">
-            <div className="bg-[var(--panel-bg)] px-4 py-4">
-              <p className="text-[12px] text-[var(--text-muted)]">Jalons</p>
-              <p className="mt-2 text-[24px] font-medium tracking-[-0.04em] text-[var(--text-primary)]">
-                {entries.length}
-              </p>
-            </div>
-            <div className="bg-[var(--panel-bg)] px-4 py-4">
-              <p className="text-[12px] text-[var(--text-muted)]">Ères</p>
-              <p className="mt-2 text-[24px] font-medium tracking-[-0.04em] text-[var(--text-primary)]">
-                {eras.length}
-              </p>
-            </div>
-            <div className="bg-[var(--panel-bg)] px-4 py-4">
-              <p className="text-[12px] text-[var(--text-muted)]">Features</p>
-              <p className="mt-2 text-[24px] font-medium tracking-[-0.04em] text-[var(--text-primary)]">
-                {featureFirstAppearance.length}
-              </p>
-            </div>
+          <div className="grid grid-cols-3 gap-px overflow-hidden rounded-card border border-[color:var(--border-soft)] bg-[color:var(--border-soft)]">
+            {[
+              { label: "Jalons", value: entries.length },
+              { label: "Ères", value: eras.length },
+              { label: "Features", value: featureFirstAppearance.length },
+            ].map(({ label, value }, i) => (
+              <div
+                key={label}
+                className="bg-[var(--panel-bg)] px-4 py-4"
+                style={{ borderTop: `2px solid ${eras[i % eras.length]?.color || "var(--border-soft)"}` }}
+              >
+                <p className="text-label uppercase tracking-caps-wide text-[var(--text-muted)]">{label}</p>
+                <p className="mt-2 font-[var(--font-display)] text-title-sm leading-none tracking-display-md text-[var(--text-primary)]">
+                  {value}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -754,7 +712,7 @@ function AbletonTimelinePage({ page }) {
                 key={mode.id}
                 type="button"
                 onClick={() => setViewMode(mode.id)}
-                className={`rounded-[8px] border px-3 py-2 text-sm transition-colors ${
+                className={`rounded-tag border px-3 py-2 text-sm transition-colors ${
                   viewMode === mode.id
                     ? "border-[color:var(--border-strong)] bg-[var(--panel-bg)] text-[var(--text-primary)]"
                     : "border-[color:var(--border-soft)] bg-[var(--panel-subtle)] text-[var(--text-secondary)] hover:border-[color:var(--border-strong)] hover:bg-[var(--panel-bg)]"
@@ -769,7 +727,7 @@ function AbletonTimelinePage({ page }) {
                 key={filter.id}
                 type="button"
                 onClick={() => setChannelFilter(filter.id)}
-                className={`rounded-[8px] border px-3 py-2 text-sm transition-colors ${
+                className={`rounded-tag border px-3 py-2 text-sm transition-colors ${
                   channelFilter === filter.id
                     ? "border-[color:var(--border-strong)] bg-[var(--panel-bg)] text-[var(--text-primary)]"
                     : "border-[color:var(--border-soft)] bg-[var(--panel-subtle)] text-[var(--text-secondary)] hover:border-[color:var(--border-strong)] hover:bg-[var(--panel-bg)]"
@@ -782,7 +740,7 @@ function AbletonTimelinePage({ page }) {
             <button
               type="button"
               onClick={() => setEraFilter("all")}
-              className={`rounded-[8px] border px-3 py-2 text-sm transition-colors ${
+              className={`rounded-tag border px-3 py-2 text-sm transition-colors ${
                 eraFilter === "all"
                   ? "border-[color:var(--border-strong)] bg-[var(--panel-bg)] text-[var(--text-primary)]"
                   : "border-[color:var(--border-soft)] bg-[var(--panel-subtle)] text-[var(--text-secondary)] hover:border-[color:var(--border-strong)] hover:bg-[var(--panel-bg)]"
@@ -796,7 +754,7 @@ function AbletonTimelinePage({ page }) {
                 key={era.id}
                 type="button"
                 onClick={() => setEraFilter(era.id)}
-                className={`inline-flex items-center gap-2 rounded-[8px] border px-3 py-2 text-sm transition-colors ${
+                className={`inline-flex items-center gap-2 rounded-tag border px-3 py-2 text-sm transition-colors ${
                   eraFilter === era.id
                     ? "border-[color:var(--border-strong)] bg-[var(--panel-bg)] text-[var(--text-primary)]"
                     : "border-[color:var(--border-soft)] bg-[var(--panel-subtle)] text-[var(--text-secondary)] hover:border-[color:var(--border-strong)] hover:bg-[var(--panel-bg)]"
@@ -820,7 +778,7 @@ function AbletonTimelinePage({ page }) {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Rechercher une version ou une fonction"
-              className="h-11 w-full rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)] px-4 text-sm text-[var(--text-primary)] outline-none transition-colors placeholder:text-[var(--text-muted)] focus:border-[color:var(--border-strong)]"
+              className="h-11 w-full rounded-card border border-[color:var(--border-soft)] bg-[var(--panel-bg)] px-4 text-sm text-[var(--text-primary)] outline-none transition-colors placeholder:text-[var(--text-muted)] focus:border-[color:var(--border-strong)]"
             />
           </label>
         </div>
@@ -836,7 +794,11 @@ function AbletonTimelinePage({ page }) {
           eraIndex={eraIndex}
         />
       ) : activeEntry ? (
-        <section className="overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)]">
+        <section
+          key={activeEntry.id}
+          className="timeline-panel-enter overflow-hidden rounded-card border border-[color:var(--border-soft)] bg-[var(--panel-bg)]"
+          style={{ borderLeftColor: activeEra?.color, borderLeftWidth: "3px" }}
+        >
           <div className="grid gap-px bg-[color:var(--border-soft)] lg:grid-cols-[minmax(0,1.3fr)_360px]">
             <div className="bg-[var(--panel-bg)]">
               <div className="grid gap-6 px-5 py-5 sm:px-6 sm:py-6 lg:px-7 lg:py-7">
@@ -848,30 +810,29 @@ function AbletonTimelinePage({ page }) {
                       year={getEntryYear(activeEntry)}
                       caption={`${activeProduct?.displayName || activeProduct?.name || "Ableton"} · ${formatDateLabel(activeEntry.date, activeEntry.datePrecision)}`}
                       accentColor={activeEra?.color}
+                      animKey={activeEntry.id}
                     />
 
                     <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_220px]">
                       <div
-                        className="relative overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-subtle)] px-5 py-5"
-                        style={{
-                          backgroundImage: `linear-gradient(180deg, ${activeEra?.color || "#171717"}22 0%, transparent 100%)`,
-                        }}
+                        className="relative overflow-hidden rounded-card border border-[color:var(--border-soft)] bg-[var(--panel-subtle)] px-5 py-5"
+                        style={{ backgroundImage: `radial-gradient(ellipse at 0% 100%, ${activeEra?.color || "#171717"}30 0%, transparent 60%)` }}
                       >
                         <div
-                          className="absolute inset-x-0 top-0 h-[4px]"
+                          className="absolute inset-y-0 left-0 w-[3px]"
                           style={{ backgroundColor: activeEra?.color || "var(--text-primary)" }}
                           aria-hidden="true"
                         />
-                        <p className="text-[12px] text-[var(--text-muted)]">
+                        <p className="text-label uppercase tracking-caps-wide text-[var(--text-muted)]">
                           {activeProduct?.displayName || activeProduct?.name || "Ableton"}
                         </p>
-                        <p className="mt-6 font-[var(--font-display)] text-[56px] leading-none tracking-[-0.07em] text-[var(--text-primary)] sm:text-[72px]">
+                        <p className="mt-5 font-[var(--font-display)] leading-none tracking-display-2xl text-[var(--text-primary)]" style={{ fontSize: "4.5rem" }}>
                           {getEntryYear(activeEntry)}
                         </p>
-                        <p className="mt-3 text-[13px] leading-6 text-[var(--text-secondary)]">
+                        <p className="mt-3 text-ui leading-6 text-[var(--text-secondary)]">
                           {formatDateLabel(activeEntry.date, activeEntry.datePrecision)}
                         </p>
-                        <div className="mt-6 flex flex-wrap gap-2">
+                        <div className="mt-5 flex flex-wrap gap-2">
                           <EditorialTag>{getTypeLabel(activeEntry)}</EditorialTag>
                           <EditorialTag>{getStatusLabel(activeEntry.status)}</EditorialTag>
                         </div>
@@ -881,44 +842,57 @@ function AbletonTimelinePage({ page }) {
                         src={activeVisuals?.secondary}
                         alt={activeVisuals?.secondaryAlt}
                         year={getEntryYear(activeEntry)}
-                        caption={activeEra?.label || "Archive visuelle"}
+                        caption={activeEra?.label || "Archive"}
                         accentColor={activeEra?.color}
                         compact
+                        animKey={activeEntry.id}
                       />
                     </div>
                   </div>
 
                   <div className="flex flex-col justify-between gap-6">
                     <div>
-                      <div className="flex flex-wrap items-center gap-2 text-[12px] text-[var(--text-muted)]">
+                      <div className="flex flex-wrap items-center gap-2 text-label uppercase tracking-caps-wide text-[var(--text-muted)]">
+                        <span
+                          className="inline-block h-[6px] w-[6px] rounded-full"
+                          style={{ backgroundColor: activeEra?.color || "var(--text-muted)" }}
+                          aria-hidden="true"
+                        />
                         <span>{activeEra?.label}</span>
-                        <span aria-hidden="true">/</span>
+                        <span aria-hidden="true">·</span>
                         <span>{activeEntry.channel === "software" ? "Software" : activeEntry.channel === "hardware" ? "Hardware" : "Platform"}</span>
                       </div>
 
-                      <h2 className="mt-4 font-[var(--font-display)] text-[34px] leading-[0.98] tracking-[-0.045em] text-[var(--text-primary)] sm:text-[46px]">
+                      <h2 className="mt-4 font-[var(--font-display)] text-title leading-[0.97] tracking-display-md text-[var(--text-primary)] sm:text-[46px]">
                         {activeEntry.label}
                       </h2>
                       <p className="mt-4 max-w-[740px] text-[17px] leading-8 text-[var(--text-primary)]">
                         {activeEntry.headline}
                       </p>
-                      <p className="mt-4 max-w-[760px] text-[15px] leading-7 text-[var(--text-secondary)] sm:text-base">
+                      <p className="mt-3 max-w-[760px] text-body leading-7 text-[var(--text-secondary)]">
                         {activeEntry.summary}
                       </p>
                     </div>
 
                     <div className="grid gap-6 lg:grid-cols-2">
                       <div>
-                        <p className="text-sm font-medium text-[var(--text-primary)]">Points clés</p>
-                        <ul className="mt-3 grid gap-2 text-sm leading-6 text-[var(--text-secondary)]">
+                        <p className="text-label uppercase tracking-caps-wide text-[var(--text-muted)]">Points clés</p>
+                        <ul className="mt-3 grid gap-[10px]">
                           {activeEntry.highlights.slice(0, 5).map((highlight) => (
-                            <li key={highlight}>{highlight}</li>
+                            <li key={highlight} className="flex items-start gap-3 text-sm leading-6 text-[var(--text-secondary)]">
+                              <span
+                                className="mt-[7px] inline-block h-[5px] w-[5px] shrink-0 rounded-full"
+                                style={{ backgroundColor: activeEra?.color || "var(--text-muted)" }}
+                                aria-hidden="true"
+                              />
+                              {highlight}
+                            </li>
                           ))}
                         </ul>
                       </div>
 
                       <div>
-                        <p className="text-sm font-medium text-[var(--text-primary)]">Tags</p>
+                        <p className="text-label uppercase tracking-caps-wide text-[var(--text-muted)]">Tags</p>
                         <div className="mt-3 flex flex-wrap gap-2">
                           {(activeEntry.tags || []).slice(0, 6).map((tag) => (
                             <EditorialTag key={tag}>{tag}</EditorialTag>
@@ -927,25 +901,21 @@ function AbletonTimelinePage({ page }) {
                       </div>
                     </div>
 
-                    <div className="grid gap-4 sm:grid-cols-3">
-                      <div className="rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-subtle)] px-4 py-4">
-                        <p className="text-[12px] text-[var(--text-muted)]">Produit</p>
-                        <p className="mt-2 text-sm leading-6 text-[var(--text-primary)]">
-                          {activeProduct?.displayName || activeProduct?.name || "Ableton"}
-                        </p>
-                      </div>
-                      <div className="rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-subtle)] px-4 py-4">
-                        <p className="text-[12px] text-[var(--text-muted)]">Ère</p>
-                        <p className="mt-2 text-sm leading-6 text-[var(--text-primary)]">
-                          {activeEra?.label || "Période"}
-                        </p>
-                      </div>
-                      <div className="rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-subtle)] px-4 py-4">
-                        <p className="text-[12px] text-[var(--text-muted)]">Statut</p>
-                        <p className="mt-2 text-sm leading-6 text-[var(--text-primary)]">
-                          {getStatusLabel(activeEntry.status)}
-                        </p>
-                      </div>
+                    <div className="grid gap-3 sm:grid-cols-3">
+                      {[
+                        { label: "Produit", value: activeProduct?.displayName || activeProduct?.name || "Ableton" },
+                        { label: "Ère", value: activeEra?.label || "Période" },
+                        { label: "Statut", value: getStatusLabel(activeEntry.status) },
+                      ].map(({ label, value }) => (
+                        <div
+                          key={label}
+                          className="rounded-card border border-[color:var(--border-soft)] bg-[var(--panel-subtle)] px-4 py-4"
+                          style={{ borderTopColor: activeEra?.color, borderTopWidth: "2px" }}
+                        >
+                          <p className="text-label uppercase tracking-caps-wide text-[var(--text-muted)]">{label}</p>
+                          <p className="mt-2 text-sm leading-6 text-[var(--text-primary)]">{value}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -970,7 +940,7 @@ function AbletonTimelinePage({ page }) {
               </div>
 
               {activeProduct ? (
-                <div className="rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-subtle)] px-4 py-4">
+                <div className="rounded-card border border-[color:var(--border-soft)] bg-[var(--panel-subtle)] px-4 py-4">
                   <p className="text-sm font-medium text-[var(--text-primary)]">
                     {activeProduct.displayName || activeProduct.name}
                   </p>
@@ -1000,7 +970,7 @@ function AbletonTimelinePage({ page }) {
                         key={entry.id}
                         type="button"
                         onClick={() => focusEntry(entry)}
-                        className="rounded-[8px] border border-[color:var(--border-soft)] px-3 py-2 text-sm text-[var(--text-secondary)] transition-colors hover:border-[color:var(--border-strong)] hover:text-[var(--text-primary)]"
+                        className="rounded-tag border border-[color:var(--border-soft)] px-3 py-2 text-sm text-[var(--text-secondary)] transition-colors hover:border-[color:var(--border-strong)] hover:text-[var(--text-primary)]"
                       >
                         {entry.label}
                       </button>
@@ -1019,7 +989,7 @@ function AbletonTimelinePage({ page }) {
                     value={featureQuery}
                     onChange={(event) => setFeatureQuery(event.target.value)}
                     placeholder="Operator, Drum Rack, Stem Separation…"
-                    className="h-11 w-full rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)] px-4 text-sm text-[var(--text-primary)] outline-none transition-colors placeholder:text-[var(--text-muted)] focus:border-[color:var(--border-strong)]"
+                    className="h-11 w-full rounded-card border border-[color:var(--border-soft)] bg-[var(--panel-bg)] px-4 text-sm text-[var(--text-primary)] outline-none transition-colors placeholder:text-[var(--text-muted)] focus:border-[color:var(--border-strong)]"
                   />
                 </label>
                 <div className="mt-3 grid gap-2">
@@ -1031,7 +1001,7 @@ function AbletonTimelinePage({ page }) {
                         key={feature.slug}
                         type="button"
                         onClick={() => featureEntry && focusEntry(featureEntry)}
-                        className="rounded-[8px] border border-[color:var(--border-soft)] px-3 py-3 text-left transition-colors hover:border-[color:var(--border-strong)]"
+                        className="rounded-tag border border-[color:var(--border-soft)] px-3 py-3 text-left transition-colors hover:border-[color:var(--border-strong)]"
                       >
                         <span className="block text-sm font-medium text-[var(--text-primary)]">
                           {feature.name}
@@ -1060,7 +1030,7 @@ function AbletonTimelinePage({ page }) {
                     href={source.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-[8px] border border-[color:var(--border-soft)] px-3 py-2 text-sm text-[var(--text-secondary)] transition-colors hover:border-[color:var(--border-strong)] hover:text-[var(--text-primary)]"
+                    className="rounded-tag border border-[color:var(--border-soft)] px-3 py-2 text-sm text-[var(--text-secondary)] transition-colors hover:border-[color:var(--border-strong)] hover:text-[var(--text-primary)]"
                   >
                     {source.title}
                   </a>
@@ -1070,13 +1040,13 @@ function AbletonTimelinePage({ page }) {
           ) : null}
         </section>
       ) : (
-        <div className="rounded-[10px] border border-[color:var(--border-soft)] px-5 py-6 text-sm leading-7 text-[var(--text-secondary)]">
+        <div className="rounded-card border border-[color:var(--border-soft)] px-5 py-6 text-body leading-7 text-[var(--text-secondary)]">
           Aucun jalon ne correspond aux filtres actuels.
         </div>
       )}
 
       {viewMode === "archive" && filteredEntries.length ? (
-        <section className="overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)]">
+        <section className="overflow-hidden rounded-card border border-[color:var(--border-soft)] bg-[var(--panel-bg)]">
           <div className="border-b border-[color:var(--border-soft)] px-5 py-4 sm:px-6">
             <p className="text-sm text-[var(--text-secondary)]">
               Frise horizontale inspirée d’un viewer éditorial: sélectionne un jalon pour faire évoluer le panneau principal.
@@ -1091,7 +1061,7 @@ function AbletonTimelinePage({ page }) {
                     key={era.id}
                     type="button"
                     onClick={() => setEraFilter(era.id)}
-                    className={`min-w-[220px] rounded-[10px] border px-4 py-3 text-left transition-colors ${
+                    className={`min-w-[220px] rounded-card border px-4 py-3 text-left transition-colors ${
                       eraFilter === era.id
                         ? "border-[color:var(--border-strong)] bg-[var(--panel-subtle)]"
                         : "border-[color:var(--border-soft)] bg-transparent hover:bg-[var(--panel-subtle)]"
@@ -1112,8 +1082,35 @@ function AbletonTimelinePage({ page }) {
             </div>
 
             <div className="relative mt-6 min-w-max px-5 pb-8 sm:px-6">
+              {/* Era bands — style pistes DAW */}
+              <div className="mb-3 flex gap-4">
+                {eraGroups.map((era) => (
+                  <div
+                    key={era.id}
+                    className="shrink-0 overflow-hidden rounded-tag"
+                    style={{
+                      width: `${era.items.length * 250 + Math.max(0, era.items.length - 1) * 16}px`,
+                      borderTop: `2px solid ${era.color}`,
+                      backgroundColor: `${era.color}10`,
+                    }}
+                  >
+                    <div className="flex items-center gap-2 px-3 py-2">
+                      <span
+                        className="h-[6px] w-[6px] shrink-0 rounded-full"
+                        style={{ backgroundColor: era.color }}
+                        aria-hidden="true"
+                      />
+                      <span className="truncate text-label uppercase tracking-caps-wide" style={{ color: era.color }}>
+                        {era.label}
+                      </span>
+                      <span className="ml-auto shrink-0 text-label text-[var(--text-muted)]">{era.items.length}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               <span
-                className="absolute left-6 right-6 top-[172px] h-px bg-[color:var(--border-soft)]"
+                className="absolute left-6 right-6 top-[222px] h-px bg-[color:var(--border-soft)]"
                 aria-hidden="true"
               />
 
@@ -1122,7 +1119,7 @@ function AbletonTimelinePage({ page }) {
                   const isActive = entry.id === activeEntry?.id;
                   const product = productIndex[entry.productId];
                   const era = eraIndex[entry.era];
-                  const visuals = getVisualForEntry(entry, product, era);
+                  const visuals = getVisualForEntry(entry);
 
                   return (
                     <li key={entry.id} className="w-[250px] shrink-0">
@@ -1132,50 +1129,59 @@ function AbletonTimelinePage({ page }) {
                         }}
                         type="button"
                         onClick={() => setActiveId(entry.id)}
-                        className={`group relative flex h-full w-full flex-col rounded-[10px] border bg-[var(--panel-bg)] px-4 pb-4 pt-4 text-left transition-colors ${
+                        className={`group relative flex h-full w-full flex-col rounded-card border bg-[var(--panel-bg)] px-4 pb-4 pt-4 text-left transition-all duration-200 ${
                           isActive
-                            ? "border-[color:var(--border-strong)]"
-                            : "border-[color:var(--border-soft)] hover:bg-[var(--panel-subtle)]"
+                            ? "border-[color:var(--border-strong)] scale-[1.01]"
+                            : "border-[color:var(--border-soft)] hover:bg-[var(--panel-subtle)] hover:scale-[1.01]"
                         }`}
-                        style={{ scrollSnapAlign: "center" }}
+                        style={{
+                          scrollSnapAlign: "center",
+                          boxShadow: isActive ? `0 4px 20px ${era?.color || "transparent"}30, 0 0 0 1px ${era?.color || "transparent"}40` : undefined,
+                        }}
                       >
                         <div className="mb-10">
-                          <div className="overflow-hidden rounded-[8px] border border-[color:var(--border-soft)] bg-[var(--panel-subtle)]">
+                          <div className="overflow-hidden rounded-tag border border-[color:var(--border-soft)] bg-[var(--panel-subtle)]">
                             {visuals.hero ? (
                               <img
                                 src={visuals.hero}
                                 alt={visuals.heroAlt}
-                                className="h-[132px] w-full object-cover"
+                                className="h-[155px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                               />
                             ) : (
                               <div
-                                className="flex h-[132px] items-end px-4 py-4"
-                                style={{
-                                  backgroundImage: `linear-gradient(180deg, ${(era?.color || "#171717")}2f 0%, transparent 100%)`,
-                                }}
+                                className="relative flex h-[155px] items-end overflow-hidden px-4 py-4"
+                                style={{ backgroundImage: `radial-gradient(ellipse at 10% 90%, ${era?.color || "#171717"}22 0%, transparent 65%)` }}
                               >
-                                <p className="font-[var(--font-display)] text-[38px] leading-none tracking-[-0.06em] text-[var(--text-primary)]">
+                                <div
+                                  className="pointer-events-none absolute inset-0 opacity-[0.04]"
+                                  style={{
+                                    backgroundImage: "radial-gradient(circle, var(--text-primary) 1px, transparent 1px)",
+                                    backgroundSize: "14px 14px",
+                                  }}
+                                  aria-hidden="true"
+                                />
+                                <p className="relative font-[var(--font-display)] text-display-xs leading-none tracking-display-xl text-[var(--text-primary)]">
                                   {getEntryYear(entry)}
                                 </p>
                               </div>
                             )}
                           </div>
 
-                          <div className="flex items-center justify-between gap-3">
-                            <span className="text-[12px] text-[var(--text-muted)]">
+                          <div className="mt-3 flex items-center justify-between gap-3">
+                            <span className="font-[var(--font-display)] text-title-xs leading-none tracking-display-lg text-[var(--text-primary)]">
                               {getEntryYear(entry)}
                             </span>
                             <span
-                              className="h-[3px] w-10 rounded-full"
-                              style={{ backgroundColor: era?.color || "var(--text-primary)" }}
+                              className="h-[2px] grow rounded-full opacity-70"
+                              style={{ backgroundColor: era?.color || "var(--border-soft)" }}
                               aria-hidden="true"
                             />
                           </div>
 
-                          <h3 className="mt-4 font-[var(--font-display)] text-[28px] leading-[1] tracking-[-0.04em] text-[var(--text-primary)]">
+                          <h3 className="mt-3 font-[var(--font-display)] text-title-sm leading-[1.02] tracking-display text-[var(--text-primary)]">
                             {entry.label}
                           </h3>
-                          <p className="mt-3 text-sm leading-6 text-[var(--text-primary)]">
+                          <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
                             {entry.headline}
                           </p>
                         </div>
@@ -1183,20 +1189,17 @@ function AbletonTimelinePage({ page }) {
                         <div className="mt-auto">
                           <div className="absolute bottom-[34px] left-6 h-[42px] w-px bg-[color:var(--border-soft)]" />
                           <span
-                            className={`absolute bottom-[28px] left-[19px] h-[13px] w-[13px] rounded-full border ${
-                              isActive
-                                ? "border-[color:var(--border-strong)]"
-                                : "border-[color:var(--border-soft)]"
-                            }`}
+                            className="absolute bottom-[28px] left-[19px] h-[13px] w-[13px] rounded-full border transition-colors"
                             style={{
+                              borderColor: isActive ? era?.color || "var(--border-strong)" : "var(--border-soft)",
                               backgroundColor: isActive ? era?.color || "var(--text-primary)" : "var(--panel-bg)",
                             }}
                             aria-hidden="true"
                           />
 
-                          <div className="flex flex-wrap items-center gap-2 text-[12px] text-[var(--text-muted)]">
+                          <div className="flex flex-wrap items-center gap-1 text-label text-[var(--text-muted)]">
                             <span>{getTypeLabel(entry)}</span>
-                            <span aria-hidden="true">/</span>
+                            <span aria-hidden="true">·</span>
                             <span>{product?.displayName || product?.name || entry.label}</span>
                           </div>
                         </div>

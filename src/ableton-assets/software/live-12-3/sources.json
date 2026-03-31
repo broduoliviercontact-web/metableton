@@ -1,0 +1,25 @@
+[
+  {
+    "source": {
+      "title": "Live 12.3 is here",
+      "url": "https://www.ableton.com/en/blog/live-12-3-is-here/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/press/press-releases/12-3-blog_1600x800_QTmVNhb.jpg__1600x800_q85_subsampling-2.jpg",
+        "score": 35,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-12-3-is-here/",
+        "sourceType": "official",
+        "title": "Live 12.3 is here"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/12-3-blog_600x340.jpg",
+        "score": 35,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-12-3-is-here/",
+        "sourceType": "official",
+        "title": "Live 12.3 is here"
+      }
+    ]
+  }
+]

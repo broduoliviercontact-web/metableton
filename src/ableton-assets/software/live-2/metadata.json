@@ -1,0 +1,30 @@
+{
+  "id": "live-2",
+  "label": "Live 2",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-2/cover.gif",
+    "url": "https://cdn-resources.ableton.com/80bA26cPQ1hEJDFjpUKntxfqdmG3ZykO/static/images/archives/2002_live_2_announcement_live2_green_livelogo.gif",
+    "contentType": "image/gif",
+    "bytes": 1881,
+    "score": 150,
+    "sourceType": "official",
+    "title": "Live 2 announcement",
+    "discoveredFrom": "https://www.ableton.com/en/pages/2002/live_2_announcement/"
+  },
+  "imageCandidates": [],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/pages/2002/live_2_announcement/: 1 URL(s) image extraites",
+    "https://www.ableton.com/en/pages/2002/live_2_announcement/: 1 image(s) extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-2",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-2/cover.gif",
+    "candidates": [],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-2/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-2/sources.json"
+  }
+}

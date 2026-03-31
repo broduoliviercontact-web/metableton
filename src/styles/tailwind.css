@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+@theme {
+  /* ── Font sizes — UI scale ────────────────────────── */
+  --text-2xs: 0.75rem;        /* 12px — captions / uppercase labels */
+  --text-label: 0.8125rem;    /* 13px — field labels */
+  --text-ui: 0.9375rem;       /* 15px — small UI / secondary buttons */
+  --text-body: 1.0625rem;     /* 17px — primary body / inputs / nav */
+
+  /* ── Font sizes — Display scale ──────────────────── */
+  --text-quote: 1.25rem;      /* 20px — blockquote */
+  --text-quote-lg: 1.375rem;  /* 22px — blockquote desktop / hero desktop */
+  --text-title-xs: 1.5rem;    /* 24px — small headings / timeline stats */
+  --text-title-sm: 1.75rem;   /* 28px — article h2 mobile / card titles */
+  --text-title: 2.125rem;     /* 34px — article h2 desktop */
+  --text-display-xs: 2.375rem; /* 38px — hero mobile / timeline items */
+  --text-display-sm: 2.5rem;  /* 40px — h1 mobile */
+  --text-display-md: 3rem;    /* 48px — timeline compact view */
+  --text-display: 3.25rem;    /* 52px — h1 desktop / hero desktop */
+  --text-display-lg: 3.75rem; /* 60px — secondary page h1 lg */
+  --text-display-xl: 4rem;    /* 64px — article page h1 xl */
+
+  /* ── Letter spacing — caps / labels ──────────────── */
+  --tracking-caps-loose: 0.08em;   /* timeline muted labels */
+  --tracking-caps-wide: 0.14em;    /* editor field labels */
+  --tracking-caps: 0.16em;         /* captions / article labels */
+  --tracking-caps-wider: 0.18em;   /* section / secondary page labels */
+
+  /* ── Letter spacing — display headings ───────────── */
+  --tracking-display-2xs: -0.02em;   /* blockquote / small headings */
+  --tracking-display-xs: -0.03em;    /* title-xs headings */
+  --tracking-display-sm: -0.035em;   /* card titles / medium headings */
+  --tracking-display: -0.04em;       /* primary display headings */
+  --tracking-display-md: -0.045em;   /* h1 sections / hero */
+  --tracking-display-lg: -0.05em;    /* timeline h1 */
+  --tracking-display-xl: -0.06em;    /* timeline large numbers */
+  --tracking-display-2xl: -0.07em;   /* timeline very large */
+
+  /* ── Border radius ────────────────────────────────── */
+  --radius-tag: 0.5rem;    /* 8px — tags / small image containers */
+  --radius-card: 0.625rem; /* 10px — cards / panels / inputs */
+}

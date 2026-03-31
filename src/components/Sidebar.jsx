@@ -28,7 +28,7 @@ function Sidebar({ navigationGroups, currentPath, onNavigate, theme, onToggleThe
               {navigationGroups.primary.map((item) => (
                 <li key={item.label}>
                   <AppLink
-                    className={`block border-b py-2 pl-3 text-[15px] leading-6 transition-colors duration-150 ${
+                    className={`block border-b py-2.5 pl-3 text-body leading-6 transition-colors duration-150 ${
                       currentPath === item.href
                         ? "border-[color:var(--border-strong)] text-[var(--text-primary)]"
                         : "border-[color:var(--border-soft)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
@@ -52,7 +52,7 @@ function Sidebar({ navigationGroups, currentPath, onNavigate, theme, onToggleThe
               {navigationGroups.secondary.map((item) => (
                 <li key={item.label}>
                   <AppLink
-                    className={`block border-b py-2 pl-3 text-[14px] leading-6 transition-colors duration-150 ${
+                    className={`block border-b py-2 pl-3 text-ui leading-6 transition-colors duration-150 ${
                       currentPath === item.href
                         ? "border-[color:var(--border-strong)] text-[var(--text-secondary)]"
                         : "border-[color:var(--border-soft)] text-[var(--text-muted)] hover:text-[var(--text-secondary)]"

@@ -1,0 +1,33 @@
+[
+  {
+    "source": {
+      "title": "Press resources",
+      "url": "https://www.ableton.com/en/press/",
+      "sourceType": "official"
+    },
+    "imageUrls": []
+  },
+  {
+    "source": {
+      "title": "Try the new Push 2 and Live 9.5",
+      "url": "https://www.ableton.com/en/blog/try-new-push-at-events-worldwide/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/f2/66/f266c9e9-c446-4821-89cd-49645de665f7/community-events-2000px-wide.jpg",
+        "score": 30,
+        "discoveredFrom": "https://www.ableton.com/en/blog/try-new-push-at-events-worldwide/",
+        "sourceType": "official",
+        "title": "Try the new Push 2 and Live 9.5"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/community-events-2000px-wide.jpg",
+        "score": 30,
+        "discoveredFrom": "https://www.ableton.com/en/blog/try-new-push-at-events-worldwide/",
+        "sourceType": "official",
+        "title": "Try the new Push 2 and Live 9.5"
+      }
+    ]
+  }
+]

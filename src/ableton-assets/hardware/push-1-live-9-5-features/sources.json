@@ -1,0 +1,25 @@
+[
+  {
+    "source": {
+      "title": "New features for original Push in Live 9.5",
+      "url": "https://www.ableton.com/en/blog/new-features-for-1st-generation-push/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/82/7c/827c261d-55d3-4b67-82fc-e3fdaafc136a/push1-2000px-wide.jpg__800x533_q85_crop_subsampling-2_upscale.jpg",
+        "score": 60,
+        "discoveredFrom": "https://www.ableton.com/en/blog/new-features-for-1st-generation-push/",
+        "sourceType": "official",
+        "title": "New features for original Push in Live 9.5"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/push1-2000px-wide.jpg",
+        "score": 60,
+        "discoveredFrom": "https://www.ableton.com/en/blog/new-features-for-1st-generation-push/",
+        "sourceType": "official",
+        "title": "New features for original Push in Live 9.5"
+      }
+    ]
+  }
+]

@@ -1,0 +1,105 @@
+{
+  "id": "live-8",
+  "label": "Live 8",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-8/cover.tif",
+    "url": null,
+    "contentType": "image/tif",
+    "bytes": 652722,
+    "score": 21,
+    "sourceType": "official",
+    "title": "Extracted from live__live-8-en",
+    "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-8-en.pdf",
+    "manualSource": {
+      "manualKey": "live__live-8-en",
+      "relativePdf": "live/live-8-en.pdf",
+      "page": 313,
+      "num": 337,
+      "width": 500,
+      "height": 326
+    }
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-8/candidate-1.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 131213,
+      "score": 22,
+      "sourceType": "official",
+      "title": "Extracted from live__live-8-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-8-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-8-en",
+        "relativePdf": "live/live-8-en.pdf",
+        "page": 234,
+        "num": 275,
+        "width": 1106,
+        "height": 194
+      }
+    },
+    {
+      "slot": "candidate-2",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-8/candidate-2.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 98161,
+      "score": 11,
+      "sourceType": "official",
+      "title": "Extracted from live__live-8-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-8-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-8-en",
+        "relativePdf": "live/live-8-en.pdf",
+        "page": 244,
+        "num": 285,
+        "width": 831,
+        "height": 194
+      }
+    },
+    {
+      "slot": "candidate-3",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-8/candidate-3.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 82658,
+      "score": 6,
+      "sourceType": "official",
+      "title": "Extracted from live__live-8-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-8-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-8-en",
+        "relativePdf": "live/live-8-en.pdf",
+        "page": 202,
+        "num": 239,
+        "width": 577,
+        "height": 242
+      }
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/press/press-archive/press-archive-release-8/: 3 URL(s) image extraites",
+    "Manual extraction used from live__live-8-en (live/live-8-en.pdf)",
+    "Selected extracted image nums for live-8: [24, 47, 48, 95]",
+    "Manual extraction used from live__live-8-en (live/live-8-en.pdf)",
+    "Selected extracted image nums for live-8: [337, 275, 285, 239]",
+    "Manual extraction used from live__live-8-en",
+    "Selected extracted image nums for live-8: [337, 275, 285, 239]"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-8",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-8/cover.tif",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-8/candidate-1.png",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-8/candidate-2.png",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-8/candidate-3.png"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-8/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-8/sources.json"
+  }
+}

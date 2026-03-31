@@ -1,0 +1,71 @@
+{
+  "method": "manual-extraction",
+  "manual": {
+    "pdf": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/move/move-1-en.pdf",
+    "relativePdf": "move/move-1-en.pdf",
+    "manualKey": "move__move-1-en",
+    "listedImages": 294
+  },
+  "selected": [
+    {
+      "manualKey": "move__move-1-en",
+      "relativePdf": "move/move-1-en.pdf",
+      "page": 7,
+      "num": 2,
+      "width": 3734,
+      "height": 1762,
+      "ratio": 2.119,
+      "xPpi": 610,
+      "yPpi": 610,
+      "encoding": "image",
+      "color": "rgb",
+      "score": 98,
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manual-images/move__move-1-en/img-002.png"
+    },
+    {
+      "manualKey": "move__move-1-en",
+      "relativePdf": "move/move-1-en.pdf",
+      "page": 29,
+      "num": 49,
+      "width": 2558,
+      "height": 1604,
+      "ratio": 1.595,
+      "xPpi": 418,
+      "yPpi": 418,
+      "encoding": "image",
+      "color": "rgb",
+      "score": 89,
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manual-images/move__move-1-en/img-049.png"
+    },
+    {
+      "manualKey": "move__move-1-en",
+      "relativePdf": "move/move-1-en.pdf",
+      "page": 31,
+      "num": 53,
+      "width": 2560,
+      "height": 1606,
+      "ratio": 1.594,
+      "xPpi": 418,
+      "yPpi": 418,
+      "encoding": "image",
+      "color": "rgb",
+      "score": 89,
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manual-images/move__move-1-en/img-053.png"
+    },
+    {
+      "manualKey": "move__move-1-en",
+      "relativePdf": "move/move-1-en.pdf",
+      "page": 18,
+      "num": 24,
+      "width": 2552,
+      "height": 1600,
+      "ratio": 1.595,
+      "xPpi": 417,
+      "yPpi": 417,
+      "encoding": "image",
+      "color": "rgb",
+      "score": 88,
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manual-images/move__move-1-en/img-024.png"
+    }
+  ]
+}

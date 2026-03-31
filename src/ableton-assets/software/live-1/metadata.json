@@ -1,0 +1,68 @@
+{
+  "id": "live-1",
+  "label": "Live 1",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-1/cover.gif",
+    "url": "https://cdm.link/app/uploads/2022/01/abletonlive-15-300x225.gif",
+    "contentType": "image/gif",
+    "bytes": 41254,
+    "score": 50,
+    "discoveredFrom": "https://cdm.link/ableton-live-through-the-years-in-vintage-images-reviews-and-even-retro-installs/",
+    "sourceType": "editorial",
+    "title": "CDM - Ableton Live through the years"
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-1/candidate-1.gif",
+      "url": "https://cdm.link/app/uploads/2022/01/abletonlive-15-768x576.gif",
+      "contentType": "image/gif",
+      "bytes": 225596,
+      "score": 50,
+      "discoveredFrom": "https://cdm.link/ableton-live-through-the-years-in-vintage-images-reviews-and-even-retro-installs/",
+      "sourceType": "editorial",
+      "title": "CDM - Ableton Live through the years"
+    },
+    {
+      "slot": "candidate-2",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-1/candidate-2.gif",
+      "url": "https://cdm.link/app/uploads/2022/01/abletonlive-15-800x600.gif",
+      "contentType": "image/gif",
+      "bytes": 247702,
+      "score": 50,
+      "discoveredFrom": "https://cdm.link/ableton-live-through-the-years-in-vintage-images-reviews-and-even-retro-installs/",
+      "sourceType": "editorial",
+      "title": "CDM - Ableton Live through the years"
+    },
+    {
+      "slot": "candidate-3",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-1/candidate-3.gif",
+      "url": "https://cdm.link/app/uploads/2022/01/abletonlive-15.gif",
+      "contentType": "image/gif",
+      "bytes": 326279,
+      "score": 50,
+      "discoveredFrom": "https://cdm.link/ableton-live-through-the-years-in-vintage-images-reviews-and-even-retro-installs/",
+      "sourceType": "editorial",
+      "title": "CDM - Ableton Live through the years"
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/about/: 79 URL(s) image extraites",
+    "https://cdm.link/ableton-live-through-the-years-in-vintage-images-reviews-and-even-retro-installs/: 22 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-1",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-1/cover.gif",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-1/candidate-1.gif",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-1/candidate-2.gif",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-1/candidate-3.gif"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-1/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-1/sources.json"
+  }
+}

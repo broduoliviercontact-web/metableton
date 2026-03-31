@@ -1,0 +1,43 @@
+{
+  "id": "live-12-1",
+  "label": "Live 12.1",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-1/cover.jpg",
+    "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/l12-1_1600x800.jpg__1600x800_q85_subsampling-2.jpg",
+    "contentType": "image/jpeg",
+    "bytes": 187059,
+    "score": 30,
+    "discoveredFrom": "https://www.ableton.com/en/blog/live-121-is-out-now/",
+    "sourceType": "official",
+    "title": "Live 12.1 is out now"
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-1/candidate-1.jpg",
+      "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/L12-1_800x400.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 221076,
+      "score": 30,
+      "discoveredFrom": "https://www.ableton.com/en/blog/live-121-is-out-now/",
+      "sourceType": "official",
+      "title": "Live 12.1 is out now"
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/blog/live-121-is-out-now/: 4 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-1",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-1/cover.jpg",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-1/candidate-1.jpg"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-1/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-1/sources.json"
+  }
+}

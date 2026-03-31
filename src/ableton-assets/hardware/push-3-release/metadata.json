@@ -1,0 +1,45 @@
+{
+  "id": "push-3-release",
+  "label": "Push 3",
+  "section": "hardwareTimeline",
+  "productFamily": "hardware",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-3-release/cover.jpg",
+    "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/Push_3_Anniv_Blog_800_x_400px.jpg",
+    "contentType": "image/jpeg",
+    "bytes": 267145,
+    "score": 90,
+    "discoveredFrom": "https://www.ableton.com/en/blog/learn-about-the-making-of-ableton-push/",
+    "sourceType": "official",
+    "title": "Learn about the making of Ableton Push"
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-3-release/candidate-1.jpg",
+      "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/P3_Blog-800x400_1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 167912,
+      "score": 35,
+      "discoveredFrom": "https://www.ableton.com/en/blog/meet-the-new-push/",
+      "sourceType": "official",
+      "title": "Meet the new Push"
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/blog/meet-the-new-push/: 3 URL(s) image extraites",
+    "https://www.ableton.com/en/push/: 30 URL(s) image extraites",
+    "https://www.ableton.com/en/blog/learn-about-the-making-of-ableton-push/: 3 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-3-release",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-3-release/cover.jpg",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-3-release/candidate-1.jpg"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-3-release/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-3-release/sources.json"
+  }
+}

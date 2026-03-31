@@ -1,0 +1,20 @@
+{
+  "id": "orchestral-instruments-2008",
+  "label": "Orchestral Instruments",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": null,
+  "imageCandidates": [],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/press/press-archive/press-archive-release-orchestra/: 3 URL(s) image extraites",
+    "https://www.ableton.com/en/press/press-archive/press-archive-release-orchestra/: 3 image(s) extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/orchestral-instruments-2008",
+    "cover": null,
+    "candidates": [],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/orchestral-instruments-2008/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/orchestral-instruments-2008/sources.json"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "live-11-2",
+  "label": "Live 11.2",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11-2/cover.jpg",
+    "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/screenshot_2022-08-19_at_174945.png__1440x718_q85_subsampling-2.jpg",
+    "contentType": "image/jpeg",
+    "bytes": 114378,
+    "score": 30,
+    "discoveredFrom": "https://www.ableton.com/en/blog/live-112-is-out-now/",
+    "sourceType": "official",
+    "title": "Live 11.2 is out now"
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11-2/candidate-1.png",
+      "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/Screenshot_2022-08-19_at_17.49.45.png",
+      "contentType": "image/png",
+      "bytes": 1419724,
+      "score": 30,
+      "discoveredFrom": "https://www.ableton.com/en/blog/live-112-is-out-now/",
+      "sourceType": "official",
+      "title": "Live 11.2 is out now"
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/blog/live-112-is-out-now/: 4 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11-2",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11-2/cover.jpg",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11-2/candidate-1.png"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11-2/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11-2/sources.json"
+  }
+}

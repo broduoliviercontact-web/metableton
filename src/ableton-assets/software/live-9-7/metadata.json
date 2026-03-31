@@ -1,0 +1,43 @@
+{
+  "id": "live-9-7",
+  "label": "Live 9.7",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-7/cover.jpg",
+    "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/8f/05/8f05e69a-754e-43c7-a81c-dbcdfdfc857e/live9_7_hphwhiteturq.jpg__800x533_q85_crop_subsampling-2_upscale.jpg",
+    "contentType": "image/jpeg",
+    "bytes": 116037,
+    "score": 40,
+    "discoveredFrom": "https://www.ableton.com/en/blog/live-9-7-available-now/",
+    "sourceType": "official",
+    "title": "Live 9.7 available now"
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-7/candidate-1.jpg",
+      "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/Live9_7_HPHWhiteTurq.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 4664567,
+      "score": 30,
+      "discoveredFrom": "https://www.ableton.com/en/blog/live-9-7-available-now/",
+      "sourceType": "official",
+      "title": "Live 9.7 available now"
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/blog/live-9-7-available-now/: 4 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-7",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-7/cover.jpg",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-7/candidate-1.jpg"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-7/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-7/sources.json"
+  }
+}

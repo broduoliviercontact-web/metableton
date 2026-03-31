@@ -1,0 +1,56 @@
+{
+  "id": "live-4",
+  "label": "Live 4",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-4/cover.jpg",
+    "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/470_operator_birthday_image_2.jpg__1600x800_q85_subsampling-2.jpg",
+    "contentType": "image/jpeg",
+    "bytes": 106712,
+    "score": 50,
+    "discoveredFrom": "https://www.ableton.com/zh-cn/blog/20-years-of-operator/",
+    "sourceType": "official",
+    "title": "20 Years of Operator"
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-4/candidate-1.jpg",
+      "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/470_operator_birthday_image_3.jpg__1600x1096_q85_subsampling-2.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 178907,
+      "score": 50,
+      "discoveredFrom": "https://www.ableton.com/zh-cn/blog/20-years-of-operator/",
+      "sourceType": "official",
+      "title": "20 Years of Operator"
+    },
+    {
+      "slot": "candidate-2",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-4/candidate-2.jpg",
+      "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/470_Operator_Birthday_Image_1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 184682,
+      "score": 50,
+      "discoveredFrom": "https://www.ableton.com/zh-cn/blog/20-years-of-operator/",
+      "sourceType": "official",
+      "title": "20 Years of Operator"
+    }
+  ],
+  "imageSearchNotes": [
+    "https://downloads.ableton.com/manuals/40/ableton_live_4_manual_fr.pdf: PDF détecté, aucune extraction image faite",
+    "https://www.ableton.com/zh-cn/blog/20-years-of-operator/: 5 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-4",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-4/cover.jpg",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-4/candidate-1.jpg",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-4/candidate-2.jpg"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-4/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-4/sources.json"
+  }
+}

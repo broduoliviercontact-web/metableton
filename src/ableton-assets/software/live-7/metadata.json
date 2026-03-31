@@ -1,0 +1,105 @@
+{
+  "id": "live-7",
+  "label": "Live 7",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-7/cover.png",
+    "url": null,
+    "contentType": "image/png",
+    "bytes": 131213,
+    "score": 22,
+    "sourceType": "official",
+    "title": "Extracted from live__live-7-en",
+    "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-7-en.pdf",
+    "manualSource": {
+      "manualKey": "live__live-7-en",
+      "relativePdf": "live/live-7-en.pdf",
+      "page": 219,
+      "num": 257,
+      "width": 1106,
+      "height": 194
+    }
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-7/candidate-1.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 53016,
+      "score": 11,
+      "sourceType": "official",
+      "title": "Extracted from live__live-7-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-7-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-7-en",
+        "relativePdf": "live/live-7-en.pdf",
+        "page": 219,
+        "num": 256,
+        "width": 812,
+        "height": 194
+      }
+    },
+    {
+      "slot": "candidate-2",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-7/candidate-2.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 98161,
+      "score": 11,
+      "sourceType": "official",
+      "title": "Extracted from live__live-7-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-7-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-7-en",
+        "relativePdf": "live/live-7-en.pdf",
+        "page": 229,
+        "num": 267,
+        "width": 831,
+        "height": 194
+      }
+    },
+    {
+      "slot": "candidate-3",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-7/candidate-3.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 82658,
+      "score": 6,
+      "sourceType": "official",
+      "title": "Extracted from live__live-7-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-7-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-7-en",
+        "relativePdf": "live/live-7-en.pdf",
+        "page": 189,
+        "num": 224,
+        "width": 577,
+        "height": 242
+      }
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/press/press-archive/press-archive-release-7/: 3 URL(s) image extraites",
+    "Manual extraction used from live__live-7-en (live/live-7-en.pdf)",
+    "Selected extracted image nums for live-7: [44, 45, 46, 47]",
+    "Manual extraction used from live__live-7-en (live/live-7-en.pdf)",
+    "Selected extracted image nums for live-7: [257, 256, 267, 224]",
+    "Manual extraction used from live__live-7-en",
+    "Selected extracted image nums for live-7: [257, 256, 267, 224]"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-7",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-7/cover.png",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-7/candidate-1.png",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-7/candidate-2.png",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-7/candidate-3.png"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-7/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-7/sources.json"
+  }
+}

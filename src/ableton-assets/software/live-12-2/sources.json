@@ -1,0 +1,32 @@
+[
+  {
+    "source": {
+      "title": "Live 12.2 is out now",
+      "url": "https://www.ableton.com/en/blog/live-12-2-is-out-now/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/l12-2_blog-r_1600x800.jpg__1600x800_q85_subsampling-2.jpg",
+        "score": 35,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-12-2-is-out-now/",
+        "sourceType": "official",
+        "title": "Live 12.2 is out now"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/l12-2_move_blog_1600x800-2.jpg__1600x800_q85_subsampling-2.jpg",
+        "score": 35,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-12-2-is-out-now/",
+        "sourceType": "official",
+        "title": "Live 12.2 is out now"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/L12-2_Blog-R_1600x800.jpg",
+        "score": 35,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-12-2-is-out-now/",
+        "sourceType": "official",
+        "title": "Live 12.2 is out now"
+      }
+    ]
+  }
+]

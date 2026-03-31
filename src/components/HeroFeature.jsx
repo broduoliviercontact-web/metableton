@@ -219,7 +219,7 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
     >
       <div
         ref={viewportRef}
-        className="relative overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-transparent lg:h-full lg:min-h-0"
+        className="relative overflow-hidden rounded-card border border-[color:var(--border-soft)] bg-transparent lg:h-full lg:min-h-0"
       >
         <div
           className={`flex h-full ${isAnimating ? "transition-transform duration-500 ease-out" : "transition-none"} will-change-transform`}
@@ -232,7 +232,7 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
             return (
               <div className="shrink-0" style={{ width: slideWidth }} key={`${slide.path}-${index}`}>
                 <AppLink
-                  className="relative block h-full overflow-hidden rounded-[10px] bg-transparent"
+                  className="relative block h-full overflow-hidden rounded-card bg-transparent"
                   currentPath={currentPath}
                   href={slide.path}
                   onNavigate={onNavigate}
@@ -250,8 +250,8 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
                       className="flex h-[340px] items-end border border-[color:var(--border-soft)] bg-[var(--panel-bg)] p-4 sm:h-[500px] lg:h-full"
                       aria-label="Image éditoriale à venir"
                     >
-                      <div className="grid gap-1 rounded-[8px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)] px-3 py-3">
-                        <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                      <div className="grid gap-1 rounded-tag border border-[color:var(--border-soft)] bg-[var(--panel-bg)] px-3 py-3">
+                        <span className="text-2xs font-medium uppercase tracking-caps text-[var(--text-muted)]">
                           METABLETON
                         </span>
                         <span className="text-sm leading-6 text-[var(--text-secondary)]">
@@ -269,9 +269,9 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
         <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden lg:block">
           <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-end px-8 pb-8">
             <div className="max-w-[420px]">
-              <div className="inline-flex max-w-full rounded-[10px] border border-white/14 bg-black/58 px-4 py-3 backdrop-blur-[2px]">
+              <div className="inline-flex max-w-full rounded-card border border-white/14 bg-black/58 px-4 py-3 backdrop-blur-[2px]">
                 <h1
-                  className="text-left font-[var(--font-ui)] text-[22px] font-normal leading-[1.12] tracking-[-0.02em] text-white"
+                  className="text-left font-[var(--font-ui)] text-quote-lg font-normal leading-[1.12] tracking-display-2xs text-white"
                   id="hero-title"
                 >
                   {activeSlide.title}
@@ -292,7 +292,7 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
 
             {hasMultipleSlides ? (
               <div className="justify-self-end">
-                <div className="pointer-events-auto inline-flex overflow-hidden rounded-[10px] border border-white/18 bg-black/65">
+                <div className="pointer-events-auto inline-flex overflow-hidden rounded-card border border-white/18 bg-black/65">
                   <HeroArrowButton direction="previous" onClick={goToPrevious} theme="light" />
                   <HeroArrowButton direction="next" onClick={goToNext} theme="light" />
                 </div>
@@ -309,11 +309,11 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
         onNavigate={onNavigate}
       >
         <article className="mx-auto grid w-full max-w-[760px] gap-2 text-center">
-          <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
+          <p className="text-2xs font-medium uppercase tracking-caps text-[var(--text-muted)]">
             {sectionTitle}
           </p>
           <h1
-            className="mx-auto max-w-[13ch] font-[var(--font-display)] text-[38px] leading-[0.96] tracking-[-0.045em] text-[var(--text-primary)] sm:text-[52px]"
+            className="mx-auto max-w-[13ch] font-[var(--font-display)] text-display-xs leading-[0.96] tracking-display-md text-[var(--text-primary)] sm:text-display"
             id="hero-title-mobile"
           >
             {activeSlide.title}
@@ -331,7 +331,7 @@ function HeroFeature({ article, slides = [], currentPath, onNavigate, sectionTit
           className="mx-auto flex w-full max-w-[760px] items-center justify-center gap-3 border-t border-[color:var(--border-soft)] pt-3 lg:hidden"
           aria-label="Navigation du carousel hero"
         >
-          <div className="inline-flex overflow-hidden rounded-[10px] border border-[color:var(--border-soft)] bg-[var(--panel-bg)]">
+          <div className="inline-flex overflow-hidden rounded-card border border-[color:var(--border-soft)] bg-[var(--panel-bg)]">
             <HeroArrowButton direction="previous" onClick={goToPrevious} />
             <HeroArrowButton direction="next" onClick={goToNext} />
           </div>

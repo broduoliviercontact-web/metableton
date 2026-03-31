@@ -1,0 +1,29 @@
+{
+  "id": "live-9-2",
+  "label": "Live 9.2",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-2/cover.jpg",
+    "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/53/77/53775272-c274-45b0-bc6d-503f55cefbf1/blog_header.jpg__615x322_q85_crop_subsampling-2_upscale.jpg",
+    "contentType": "image/jpeg",
+    "bytes": 60326,
+    "score": 35,
+    "discoveredFrom": "https://www.ableton.com/en/press/press-archive/ableton-live-9-2-out-now/",
+    "sourceType": "official",
+    "title": "Ableton Live 9.2 out now"
+  },
+  "imageCandidates": [],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/press/press-archive/ableton-live-9-2-out-now/: 4 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-2",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-2/cover.jpg",
+    "candidates": [],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-2/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-2/sources.json"
+  }
+}

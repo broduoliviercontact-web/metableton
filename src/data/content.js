@@ -653,14 +653,14 @@ export const articleEntries = [
 //////FREE M4L : STING!64//////
 ///FREE M4L : STING!64//////
 
- {
+{
   "id": "m4l-par-ou-commencer",
   "slug": "max-for-live-par-ou-commencer",
   "section": "max-for-live",
   "type": "Introduction",
   "label": "Max for Live",
   "title": "FREE M4L : STING!64",
-  "summary": "Une porte d’entrée simple pour comprendre ce qu’est Max for Live, à quoi il sert, et comment l’utiliser sans complexifier ton setup.",
+  "summary": "Sting : un générateur de patterns acid gratuit pour Max for Live",
   "heroImage": "/articles/max-for-live/sting-1.0_hero.gif",
   "heroImagePosition": "50% 50%",
   "thumbnail": "/articles/max-for-live/max-like-interface.jpg",
@@ -675,8 +675,13 @@ export const articleEntries = [
   ],
   "content": [
     {
+      "type": "link",
+      "url": "https://maxforlive.com/library/device/4260/sting-by-skinnerbox",
+      "label": "STING FREE DOWNLOAD"
+    },
+    {
       "type": "paragraph",
-      "content": "Max for Live peut sembler intimidant au départ parce qu’il ouvre énormément de possibilités. Pourtant, son usage le plus intéressant est souvent très concret : ajouter un outil précis à un workflow déjà stable."
+      "content": "Dans l’univers Max for Live, certains outils sont complexes, profonds, presque labyrinthiques. Et puis il y a ceux qui vont droit au but. Sting, développé par le duo berlinois Skinnerbox, fait clairement partie de cette deuxième catégorie : un petit device MIDI pensé pour générer rapidement des patterns acid avec une approche à la fois ludique et efficace."
     },
     {
       "type": "paragraph",
@@ -684,7 +689,7 @@ export const articleEntries = [
     },
     {
       "type": "paragraph",
-      "content": "L’objectif n’est pas de tout explorer. Il s’agit d’apprendre à reconnaître les devices qui clarifient un geste, un son ou une méthode de travail."
+      "content": "Le principe est simple : on charge le device, on clique pour générer une nouvelle proposition mélodico-rythmique, puis on affine le résultat avec les différents contrôles. Ableton résume très bien l’idée : il suffit de cliquer sur les “yeux” du smiley pour créer un nouveau pattern, puis d’utiliser les autres paramètres pour modeler le rendu.\n\nCe qui rend Sting intéressant, ce n’est pas seulement son côté immédiat. C’est surtout sa capacité à produire des séquences qui évoquent instantanément l’esthétique acid, avec ce mélange de répétition hypnotique, de variations nerveuses et de potentiel expressif. On n’est pas obligé de rester dans un registre purement rétro ou hommage à la TB-303 : utilisé avec d’autres synthés, d’autres traitements, ou même sur des instruments inattendus, Sting peut devenir un excellent point de départ pour explorer des idées de motifs plus larges. C’est un générateur, mais aussi un déclencheur d’inspiration.\n\nLe device s’inscrit bien dans la philosophie de Skinnerbox, connu pour ses outils Max for Live à la fois expérimentaux et musicaux. Ableton rappelle d’ailleurs que le duo s’était déjà fait remarquer avec d’autres créations comme la drum machine sbx 2049, avant de proposer Sting comme nouvel outil gratuit dédié aux patterns acid."
     }
   ],
   "extraSections": [

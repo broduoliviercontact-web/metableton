@@ -1,0 +1,25 @@
+[
+  {
+    "source": {
+      "title": "Live 11.3 is out now",
+      "url": "https://www.ableton.com/en/blog/live-113-is-out-now/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/abletonlive113-drift-blog.jpg__800x400_q85_subsampling-2.jpg",
+        "score": 95,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-113-is-out-now/",
+        "sourceType": "official",
+        "title": "Live 11.3 is out now"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/AbletonLive113-Drift-Blog.jpg",
+        "score": 95,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-113-is-out-now/",
+        "sourceType": "official",
+        "title": "Live 11.3 is out now"
+      }
+    ]
+  }
+]

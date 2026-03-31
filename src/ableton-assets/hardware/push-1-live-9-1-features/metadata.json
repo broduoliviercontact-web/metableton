@@ -1,0 +1,22 @@
+{
+  "id": "push-1-live-9-1-features",
+  "label": "Push 1 + Live 9.1",
+  "section": "hardwareTimeline",
+  "productFamily": "hardware",
+  "selectedAt": "2026-03-26",
+  "coverImage": null,
+  "imageCandidates": [],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/press/press-archive/press-archive-live-9-1/: 3 URL(s) image extraites",
+    "https://www.ableton.com/en/press/press-archive/ableton-live-91-update-out-now-free-all-live-9-users/: 3 URL(s) image extraites",
+    "https://www.ableton.com/en/press/press-archive/press-archive-live-9-1/: 3 image(s) extraites",
+    "https://www.ableton.com/en/press/press-archive/ableton-live-91-update-out-now-free-all-live-9-users/: 3 image(s) extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-1-live-9-1-features",
+    "cover": null,
+    "candidates": [],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-1-live-9-1-features/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-1-live-9-1-features/sources.json"
+  }
+}

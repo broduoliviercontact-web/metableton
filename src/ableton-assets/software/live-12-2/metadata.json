@@ -1,0 +1,55 @@
+{
+  "id": "live-12-2",
+  "label": "Live 12.2",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-2/cover.jpg",
+    "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/l12-2_blog-r_1600x800.jpg__1600x800_q85_subsampling-2.jpg",
+    "contentType": "image/jpeg",
+    "bytes": 190195,
+    "score": 35,
+    "discoveredFrom": "https://www.ableton.com/en/blog/live-12-2-is-out-now/",
+    "sourceType": "official",
+    "title": "Live 12.2 is out now"
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-2/candidate-1.jpg",
+      "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/l12-2_move_blog_1600x800-2.jpg__1600x800_q85_subsampling-2.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 311078,
+      "score": 35,
+      "discoveredFrom": "https://www.ableton.com/en/blog/live-12-2-is-out-now/",
+      "sourceType": "official",
+      "title": "Live 12.2 is out now"
+    },
+    {
+      "slot": "candidate-2",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-2/candidate-2.jpg",
+      "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/L12-2_Blog-R_1600x800.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 875255,
+      "score": 35,
+      "discoveredFrom": "https://www.ableton.com/en/blog/live-12-2-is-out-now/",
+      "sourceType": "official",
+      "title": "Live 12.2 is out now"
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/blog/live-12-2-is-out-now/: 5 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-2",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-2/cover.jpg",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-2/candidate-1.jpg",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-2/candidate-2.jpg"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-2/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-2/sources.json"
+  }
+}

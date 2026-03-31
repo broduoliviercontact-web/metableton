@@ -1,0 +1,42 @@
+[
+  {
+    "source": {
+      "title": "Meet the new Push",
+      "url": "https://www.ableton.com/en/blog/meet-the-new-push/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/P3_Blog-800x400_1.jpg",
+        "score": 35,
+        "discoveredFrom": "https://www.ableton.com/en/blog/meet-the-new-push/",
+        "sourceType": "official",
+        "title": "Meet the new Push"
+      }
+    ]
+  },
+  {
+    "source": {
+      "title": "Push product page",
+      "url": "https://www.ableton.com/en/push/",
+      "sourceType": "official"
+    },
+    "imageUrls": []
+  },
+  {
+    "source": {
+      "title": "Learn about the making of Ableton Push",
+      "url": "https://www.ableton.com/en/blog/learn-about-the-making-of-ableton-push/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/Push_3_Anniv_Blog_800_x_400px.jpg",
+        "score": 90,
+        "discoveredFrom": "https://www.ableton.com/en/blog/learn-about-the-making-of-ableton-push/",
+        "sourceType": "official",
+        "title": "Learn about the making of Ableton Push"
+      }
+    ]
+  }
+]

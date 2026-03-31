@@ -1,0 +1,101 @@
+{
+  "id": "move-1-2-0",
+  "label": "Move 1.2.0",
+  "section": "hardwareTimeline",
+  "productFamily": "hardware",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/move-1-2-0/cover.png",
+    "url": null,
+    "contentType": "image/png",
+    "bytes": 507922,
+    "score": 89,
+    "sourceType": "official",
+    "title": "Extracted from move__move-1-en",
+    "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/move/move-1-en.pdf",
+    "manualSource": {
+      "manualKey": "move__move-1-en",
+      "relativePdf": "move/move-1-en.pdf",
+      "page": 31,
+      "num": 53,
+      "width": 2560,
+      "height": 1606
+    }
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/move-1-2-0/candidate-1.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 143313,
+      "score": 89,
+      "sourceType": "official",
+      "title": "Extracted from move__move-1-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/move/move-1-en.pdf",
+      "manualSource": {
+        "manualKey": "move__move-1-en",
+        "relativePdf": "move/move-1-en.pdf",
+        "page": 29,
+        "num": 49,
+        "width": 2558,
+        "height": 1604
+      }
+    },
+    {
+      "slot": "candidate-2",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/move-1-2-0/candidate-2.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 112259,
+      "score": 82,
+      "sourceType": "official",
+      "title": "Extracted from move__move-1-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/move/move-1-en.pdf",
+      "manualSource": {
+        "manualKey": "move__move-1-en",
+        "relativePdf": "move/move-1-en.pdf",
+        "page": 29,
+        "num": 47,
+        "width": 2544,
+        "height": 1364
+      }
+    },
+    {
+      "slot": "candidate-3",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/move-1-2-0/candidate-3.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 186553,
+      "score": 85,
+      "sourceType": "official",
+      "title": "Extracted from move__move-1-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/move/move-1-en.pdf",
+      "manualSource": {
+        "manualKey": "move__move-1-en",
+        "relativePdf": "move/move-1-en.pdf",
+        "page": 24,
+        "num": 36,
+        "width": 2550,
+        "height": 1486
+      }
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/release-notes/move-1/: 18 URL(s) image extraites",
+    "Manual extraction used from move__move-1-en (move/move-1-en.pdf)",
+    "Selected extracted image nums for move-1-2-0: [53, 49, 47, 36]"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/move-1-2-0",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/move-1-2-0/cover.png",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/move-1-2-0/candidate-1.png",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/move-1-2-0/candidate-2.png",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/move-1-2-0/candidate-3.png"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/move-1-2-0/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/move-1-2-0/sources.json"
+  }
+}

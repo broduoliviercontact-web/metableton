@@ -1,0 +1,20 @@
+{
+  "id": "max-for-live-2009",
+  "label": "Max for Live",
+  "section": "timelineVersions",
+  "productFamily": "platform",
+  "selectedAt": "2026-03-26",
+  "coverImage": null,
+  "imageCandidates": [],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/press/press-archive/press-archive-mfl-release/: 3 URL(s) image extraites",
+    "https://www.ableton.com/en/press/press-archive/press-archive-mfl-release/: 3 image(s) extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/max-for-live/max-for-live-2009",
+    "cover": null,
+    "candidates": [],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/max-for-live/max-for-live-2009/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/max-for-live/max-for-live-2009/sources.json"
+  }
+}

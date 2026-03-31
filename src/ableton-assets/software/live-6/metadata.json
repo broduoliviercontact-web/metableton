@@ -1,0 +1,106 @@
+{
+  "id": "live-6",
+  "label": "Live 6",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-6/cover.png",
+    "url": null,
+    "contentType": "image/png",
+    "bytes": 19386,
+    "score": 90,
+    "sourceType": "official",
+    "title": "Extracted from live__live-6-en",
+    "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-6-en.pdf",
+    "manualSource": {
+      "manualKey": "live__live-6-en",
+      "relativePdf": "live/live-6-en.pdf",
+      "page": 282,
+      "num": 319,
+      "width": 3071,
+      "height": 1654
+    }
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-6/candidate-1.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 51435,
+      "score": 80,
+      "sourceType": "official",
+      "title": "Extracted from live__live-6-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-6-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-6-en",
+        "relativePdf": "live/live-6-en.pdf",
+        "page": 281,
+        "num": 315,
+        "width": 9600,
+        "height": 1654
+      }
+    },
+    {
+      "slot": "candidate-2",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-6/candidate-2.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 56040,
+      "score": 80,
+      "sourceType": "official",
+      "title": "Extracted from live__live-6-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-6-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-6-en",
+        "relativePdf": "live/live-6-en.pdf",
+        "page": 281,
+        "num": 316,
+        "width": 10575,
+        "height": 1654
+      }
+    },
+    {
+      "slot": "candidate-3",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-6/candidate-3.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 59834,
+      "score": 80,
+      "sourceType": "official",
+      "title": "Extracted from live__live-6-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-6-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-6-en",
+        "relativePdf": "live/live-6-en.pdf",
+        "page": 282,
+        "num": 320,
+        "width": 11500,
+        "height": 1654
+      }
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/pages/press/releases/2006_09_29a/: 1 URL(s) image extraites",
+    "Téléchargement échoué http://www.ableton.com/common/a_spacer.gif: HTTPError: HTTP Error 404: Not Found",
+    "Manual extraction used from live__live-6-en (live/live-6-en.pdf)",
+    "Selected extracted image nums for live-6: [18, 20, 54, 71]",
+    "Manual extraction used from live__live-6-en (live/live-6-en.pdf)",
+    "Selected extracted image nums for live-6: [319, 315, 316, 320]",
+    "Manual extraction used from live__live-6-en",
+    "Selected extracted image nums for live-6: [319, 315, 316, 320]"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-6",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-6/cover.png",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-6/candidate-1.png",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-6/candidate-2.png",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-6/candidate-3.png"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-6/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-6/sources.json"
+  }
+}

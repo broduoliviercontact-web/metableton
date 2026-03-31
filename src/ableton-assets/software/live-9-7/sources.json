@@ -1,0 +1,25 @@
+[
+  {
+    "source": {
+      "title": "Live 9.7 available now",
+      "url": "https://www.ableton.com/en/blog/live-9-7-available-now/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/8f/05/8f05e69a-754e-43c7-a81c-dbcdfdfc857e/live9_7_hphwhiteturq.jpg__800x533_q85_crop_subsampling-2_upscale.jpg",
+        "score": 40,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-9-7-available-now/",
+        "sourceType": "official",
+        "title": "Live 9.7 available now"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/Live9_7_HPHWhiteTurq.jpg",
+        "score": 30,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-9-7-available-now/",
+        "sourceType": "official",
+        "title": "Live 9.7 available now"
+      }
+    ]
+  }
+]

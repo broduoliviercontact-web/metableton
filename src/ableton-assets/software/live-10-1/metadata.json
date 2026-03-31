@@ -1,0 +1,29 @@
+{
+  "id": "live-10-1",
+  "label": "Live 10.1",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-10-1/cover.jpg",
+    "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/ABL471-Live10.1_Release_assets_homepage.jpg",
+    "contentType": "image/jpeg",
+    "bytes": 5275513,
+    "score": 50,
+    "discoveredFrom": "https://www.ableton.com/fr/blog/live-10-1-is-here/",
+    "sourceType": "official",
+    "title": "Live 10.1 is here"
+  },
+  "imageCandidates": [],
+  "imageSearchNotes": [
+    "https://www.ableton.com/fr/blog/live-10-1-is-here/: 3 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-10-1",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-10-1/cover.jpg",
+    "candidates": [],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-10-1/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-10-1/sources.json"
+  }
+}

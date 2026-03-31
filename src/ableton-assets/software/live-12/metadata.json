@@ -1,0 +1,101 @@
+{
+  "id": "live-12",
+  "label": "Live 12",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12/cover.png",
+    "url": null,
+    "contentType": "image/png",
+    "bytes": 565522,
+    "score": 98,
+    "sourceType": "official",
+    "title": "Extracted from live__live-12-en",
+    "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-12-en.pdf",
+    "manualSource": {
+      "manualKey": "live__live-12-en",
+      "relativePdf": "live/live-12-en.pdf",
+      "page": 28,
+      "num": 5,
+      "width": 2940,
+      "height": 1837
+    }
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12/candidate-1.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 609724,
+      "score": 98,
+      "sourceType": "official",
+      "title": "Extracted from live__live-12-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-12-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-12-en",
+        "relativePdf": "live/live-12-en.pdf",
+        "page": 30,
+        "num": 6,
+        "width": 2940,
+        "height": 1837
+      }
+    },
+    {
+      "slot": "candidate-2",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12/candidate-2.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 523375,
+      "score": 90,
+      "sourceType": "official",
+      "title": "Extracted from live__live-12-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-12-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-12-en",
+        "relativePdf": "live/live-12-en.pdf",
+        "page": 44,
+        "num": 34,
+        "width": 2938,
+        "height": 1835
+      }
+    },
+    {
+      "slot": "candidate-3",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12/candidate-3.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 458879,
+      "score": 84,
+      "sourceType": "official",
+      "title": "Extracted from live__live-12-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-12-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-12-en",
+        "relativePdf": "live/live-12-en.pdf",
+        "page": 145,
+        "num": 180,
+        "width": 3058,
+        "height": 1461
+      }
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/blog/ableton-live-12-out-now/: 4 URL(s) image extraites",
+    "Manual extraction used from live__live-12-en (live/live-12-en.pdf)",
+    "Selected extracted image nums for live-12: [5, 6, 34, 180]"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12/cover.png",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12/candidate-1.png",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12/candidate-2.png",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12/candidate-3.png"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12/sources.json"
+  }
+}

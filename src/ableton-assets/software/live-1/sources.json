@@ -1,0 +1,54 @@
+[
+  {
+    "source": {
+      "title": "Ableton About",
+      "url": "https://www.ableton.com/en/about/",
+      "sourceType": "official"
+    },
+    "imageUrls": []
+  },
+  {
+    "source": {
+      "title": "CDM - Ableton Live through the years",
+      "url": "https://cdm.link/ableton-live-through-the-years-in-vintage-images-reviews-and-even-retro-installs/",
+      "sourceType": "editorial"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdm.link/app/uploads/2022/01/abletonlive-15-300x225.gif",
+        "score": 50,
+        "discoveredFrom": "https://cdm.link/ableton-live-through-the-years-in-vintage-images-reviews-and-even-retro-installs/",
+        "sourceType": "editorial",
+        "title": "CDM - Ableton Live through the years"
+      },
+      {
+        "url": "https://cdm.link/app/uploads/2022/01/abletonlive-15-768x576.gif",
+        "score": 50,
+        "discoveredFrom": "https://cdm.link/ableton-live-through-the-years-in-vintage-images-reviews-and-even-retro-installs/",
+        "sourceType": "editorial",
+        "title": "CDM - Ableton Live through the years"
+      },
+      {
+        "url": "https://cdm.link/app/uploads/2022/01/abletonlive-15-800x600.gif",
+        "score": 50,
+        "discoveredFrom": "https://cdm.link/ableton-live-through-the-years-in-vintage-images-reviews-and-even-retro-installs/",
+        "sourceType": "editorial",
+        "title": "CDM - Ableton Live through the years"
+      },
+      {
+        "url": "https://cdm.link/app/uploads/2022/01/abletonlive-15.gif",
+        "score": 50,
+        "discoveredFrom": "https://cdm.link/ableton-live-through-the-years-in-vintage-images-reviews-and-even-retro-installs/",
+        "sourceType": "editorial",
+        "title": "CDM - Ableton Live through the years"
+      },
+      {
+        "url": "https://cdm.link/app/uploads/2022/01/abletonlive-15.jpg",
+        "score": 50,
+        "discoveredFrom": "https://cdm.link/ableton-live-through-the-years-in-vintage-images-reviews-and-even-retro-installs/",
+        "sourceType": "editorial",
+        "title": "CDM - Ableton Live through the years"
+      }
+    ]
+  }
+]

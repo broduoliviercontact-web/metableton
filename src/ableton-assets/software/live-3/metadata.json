@@ -1,0 +1,20 @@
+{
+  "id": "live-3",
+  "label": "Live 3",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": null,
+  "imageCandidates": [],
+  "imageSearchNotes": [
+    "https://www.ableton.com/de/pages/press/releases/2003_10_02/: 0 URL(s) image extraites",
+    "https://www.ableton.com/de/pages/press/releases/2003_10_02/: 0 image(s) extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-3",
+    "cover": null,
+    "candidates": [],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-3/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-3/sources.json"
+  }
+}

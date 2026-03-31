@@ -1,0 +1,40 @@
+[
+  {
+    "source": {
+      "title": "Ableton Live 4 manual",
+      "url": "https://downloads.ableton.com/manuals/40/ableton_live_4_manual_fr.pdf",
+      "sourceType": "official"
+    },
+    "imageUrls": []
+  },
+  {
+    "source": {
+      "title": "20 Years of Operator",
+      "url": "https://www.ableton.com/zh-cn/blog/20-years-of-operator/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/470_operator_birthday_image_2.jpg__1600x800_q85_subsampling-2.jpg",
+        "score": 50,
+        "discoveredFrom": "https://www.ableton.com/zh-cn/blog/20-years-of-operator/",
+        "sourceType": "official",
+        "title": "20 Years of Operator"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/470_operator_birthday_image_3.jpg__1600x1096_q85_subsampling-2.jpg",
+        "score": 50,
+        "discoveredFrom": "https://www.ableton.com/zh-cn/blog/20-years-of-operator/",
+        "sourceType": "official",
+        "title": "20 Years of Operator"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/470_Operator_Birthday_Image_1.jpg",
+        "score": 50,
+        "discoveredFrom": "https://www.ableton.com/zh-cn/blog/20-years-of-operator/",
+        "sourceType": "official",
+        "title": "20 Years of Operator"
+      }
+    ]
+  }
+]

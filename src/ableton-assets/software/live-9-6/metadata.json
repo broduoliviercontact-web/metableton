@@ -1,0 +1,43 @@
+{
+  "id": "live-9-6",
+  "label": "Live 9.6",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-6/cover.jpg",
+    "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/ae/8e/ae8e61eb-037a-4546-9e46-a71ef43dd75e/link_blog_800px.jpg__800x533_q85_crop_subsampling-2_upscale.jpg",
+    "contentType": "image/jpeg",
+    "bytes": 60011,
+    "score": 35,
+    "discoveredFrom": "https://www.ableton.com/en/blog/link-now-available-in-live/",
+    "sourceType": "official",
+    "title": "Link now available in Live"
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-6/candidate-1.jpg",
+      "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/Link-Live_PR_1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 2737135,
+      "score": 30,
+      "discoveredFrom": "https://www.ableton.com/en/blog/link-now-available-in-live/",
+      "sourceType": "official",
+      "title": "Link now available in Live"
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/blog/link-now-available-in-live/: 4 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-6",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-6/cover.jpg",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-6/candidate-1.jpg"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-6/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-6/sources.json"
+  }
+}

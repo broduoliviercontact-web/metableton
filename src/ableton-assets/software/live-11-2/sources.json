@@ -1,0 +1,25 @@
+[
+  {
+    "source": {
+      "title": "Live 11.2 is out now",
+      "url": "https://www.ableton.com/en/blog/live-112-is-out-now/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/screenshot_2022-08-19_at_174945.png__1440x718_q85_subsampling-2.jpg",
+        "score": 30,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-112-is-out-now/",
+        "sourceType": "official",
+        "title": "Live 11.2 is out now"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/Screenshot_2022-08-19_at_17.49.45.png",
+        "score": 30,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-112-is-out-now/",
+        "sourceType": "official",
+        "title": "Live 11.2 is out now"
+      }
+    ]
+  }
+]

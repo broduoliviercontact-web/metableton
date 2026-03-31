@@ -1,0 +1,25 @@
+[
+  {
+    "source": {
+      "title": "Live 12.1 is out now",
+      "url": "https://www.ableton.com/en/blog/live-121-is-out-now/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/l12-1_1600x800.jpg__1600x800_q85_subsampling-2.jpg",
+        "score": 30,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-121-is-out-now/",
+        "sourceType": "official",
+        "title": "Live 12.1 is out now"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/L12-1_800x400.jpg",
+        "score": 30,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-121-is-out-now/",
+        "sourceType": "official",
+        "title": "Live 12.1 is out now"
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "id": "live-10",
+  "label": "Live 10",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": null,
+  "imageCandidates": [],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/press/: 3 URL(s) image extraites",
+    "https://www.ableton.com/en/press/: 3 image(s) extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-10",
+    "cover": null,
+    "candidates": [],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-10/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-10/sources.json"
+  }
+}

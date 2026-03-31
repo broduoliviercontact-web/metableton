@@ -1,0 +1,104 @@
+{
+  "id": "live-5",
+  "label": "Live 5",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-5/cover.png",
+    "url": null,
+    "contentType": "image/png",
+    "bytes": 19386,
+    "score": 90,
+    "sourceType": "official",
+    "title": "Extracted from live__live-5-en",
+    "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-5-en.pdf",
+    "manualSource": {
+      "manualKey": "live__live-5-en",
+      "relativePdf": "live/live-5-en.pdf",
+      "page": 276,
+      "num": 277,
+      "width": 3071,
+      "height": 1654
+    }
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-5/candidate-1.jpg",
+      "url": null,
+      "contentType": "image/jpg",
+      "bytes": 136409,
+      "score": 31,
+      "sourceType": "official",
+      "title": "Extracted from live__live-5-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-5-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-5-en",
+        "relativePdf": "live/live-5-en.pdf",
+        "page": 27,
+        "num": 16,
+        "width": 1188,
+        "height": 306
+      }
+    },
+    {
+      "slot": "candidate-2",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-5/candidate-2.jpg",
+      "url": null,
+      "contentType": "image/jpg",
+      "bytes": 71082,
+      "score": 30,
+      "sourceType": "official",
+      "title": "Extracted from live__live-5-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-5-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-5-en",
+        "relativePdf": "live/live-5-en.pdf",
+        "page": 27,
+        "num": 15,
+        "width": 1023,
+        "height": 226
+      }
+    },
+    {
+      "slot": "candidate-3",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-5/candidate-3.png",
+      "url": null,
+      "contentType": "image/png",
+      "bytes": 46903,
+      "score": 20,
+      "sourceType": "official",
+      "title": "Extracted from live__live-5-en",
+      "discoveredFrom": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-manuals/live/live-5-en.pdf",
+      "manualSource": {
+        "manualKey": "live__live-5-en",
+        "relativePdf": "live/live-5-en.pdf",
+        "page": 34,
+        "num": 26,
+        "width": 781,
+        "height": 307
+      }
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/de/pages/press/releases/2005_07_22/: 1 URL(s) image extraites",
+    "Téléchargement échoué http://www.ableton.com/common/a_spacer.gif: HTTPError: HTTP Error 404: Not Found",
+    "Manual extraction used from live__live-5-en (live/live-5-en.pdf)",
+    "Selected extracted image nums for live-5: [15, 16, 37, 52]",
+    "Manual extraction used from live__live-5-en",
+    "Selected extracted image nums for live-5: [277, 16, 15, 26]"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-5",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-5/cover.png",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-5/candidate-1.jpg",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-5/candidate-2.jpg",
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-5/candidate-3.png"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-5/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-5/sources.json"
+  }
+}

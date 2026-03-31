@@ -1,0 +1,44 @@
+{
+  "id": "push-2-release",
+  "label": "Push 2",
+  "section": "hardwareTimeline",
+  "productFamily": "hardware",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-2-release/cover.jpg",
+    "url": "https://cdn-resources.ableton.com/resources/f2/66/f266c9e9-c446-4821-89cd-49645de665f7/community-events-2000px-wide.jpg",
+    "contentType": "image/jpeg",
+    "bytes": 905321,
+    "score": 30,
+    "discoveredFrom": "https://www.ableton.com/en/blog/try-new-push-at-events-worldwide/",
+    "sourceType": "official",
+    "title": "Try the new Push 2 and Live 9.5"
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-2-release/candidate-1.jpg",
+      "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/community-events-2000px-wide.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 905321,
+      "score": 30,
+      "discoveredFrom": "https://www.ableton.com/en/blog/try-new-push-at-events-worldwide/",
+      "sourceType": "official",
+      "title": "Try the new Push 2 and Live 9.5"
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/press/: 3 URL(s) image extraites",
+    "https://www.ableton.com/en/blog/try-new-push-at-events-worldwide/: 4 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-2-release",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-2-release/cover.jpg",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-2-release/candidate-1.jpg"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-2-release/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-2-release/sources.json"
+  }
+}

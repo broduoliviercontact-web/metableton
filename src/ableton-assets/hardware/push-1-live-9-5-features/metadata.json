@@ -1,0 +1,43 @@
+{
+  "id": "push-1-live-9-5-features",
+  "label": "Push 1 + Live 9.5",
+  "section": "hardwareTimeline",
+  "productFamily": "hardware",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-1-live-9-5-features/cover.jpg",
+    "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/82/7c/827c261d-55d3-4b67-82fc-e3fdaafc136a/push1-2000px-wide.jpg__800x533_q85_crop_subsampling-2_upscale.jpg",
+    "contentType": "image/jpeg",
+    "bytes": 33253,
+    "score": 60,
+    "discoveredFrom": "https://www.ableton.com/en/blog/new-features-for-1st-generation-push/",
+    "sourceType": "official",
+    "title": "New features for original Push in Live 9.5"
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-1-live-9-5-features/candidate-1.jpg",
+      "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/push1-2000px-wide.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 727126,
+      "score": 60,
+      "discoveredFrom": "https://www.ableton.com/en/blog/new-features-for-1st-generation-push/",
+      "sourceType": "official",
+      "title": "New features for original Push in Live 9.5"
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/blog/new-features-for-1st-generation-push/: 4 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-1-live-9-5-features",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-1-live-9-5-features/cover.jpg",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-1-live-9-5-features/candidate-1.jpg"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-1-live-9-5-features/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/hardware/push-1-live-9-5-features/sources.json"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "live-12-4",
+  "label": "Live 12.4",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": null,
+  "imageCandidates": [],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/blog/live-12-4-is-coming/: 19 URL(s) image extraites",
+    "https://www.ableton.com/en/blog/live-12-4-is-coming/: 19 image(s) extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-4",
+    "cover": null,
+    "candidates": [],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-4/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-12-4/sources.json"
+  }
+}

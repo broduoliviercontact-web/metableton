@@ -1,0 +1,22 @@
+{
+  "id": "live-9-5",
+  "label": "Live 9.5",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": null,
+  "imageCandidates": [],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/press/: 3 URL(s) image extraites",
+    "https://www.ableton.com/en/blog/try-new-push-at-events-worldwide/: 4 URL(s) image extraites",
+    "https://www.ableton.com/en/press/: 3 image(s) extraites",
+    "https://www.ableton.com/en/blog/try-new-push-at-events-worldwide/: 4 image(s) extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-5",
+    "cover": null,
+    "candidates": [],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-5/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-9-5/sources.json"
+  }
+}

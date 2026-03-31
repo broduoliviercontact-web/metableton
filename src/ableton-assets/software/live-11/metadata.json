@@ -1,0 +1,43 @@
+{
+  "id": "live-11",
+  "label": "Live 11",
+  "section": "timelineVersions",
+  "productFamily": "software",
+  "selectedAt": "2026-03-26",
+  "coverImage": {
+    "slot": "cover",
+    "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11/cover.jpg",
+    "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/press/l11-800x400-beta.jpg__800x400_q85_subsampling-2.jpg",
+    "contentType": "image/jpeg",
+    "bytes": 82158,
+    "score": 35,
+    "discoveredFrom": "https://www.ableton.com/en/blog/live-11-coming-february-23-2021/",
+    "sourceType": "official",
+    "title": "Live 11 coming / release info"
+  },
+  "imageCandidates": [
+    {
+      "slot": "candidate-1",
+      "path": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11/candidate-1.jpg",
+      "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/L11-800x400-Beta.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 334807,
+      "score": 30,
+      "discoveredFrom": "https://www.ableton.com/en/blog/live-11-coming-february-23-2021/",
+      "sourceType": "official",
+      "title": "Live 11 coming / release info"
+    }
+  ],
+  "imageSearchNotes": [
+    "https://www.ableton.com/en/blog/live-11-coming-february-23-2021/: 4 URL(s) image extraites"
+  ],
+  "assetPaths": {
+    "directory": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11",
+    "cover": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11/cover.jpg",
+    "candidates": [
+      "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11/candidate-1.jpg"
+    ],
+    "metadata": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11/metadata.json",
+    "sources": "/Users/supervie/Documents/METABLETON FINAL/src/ableton-assets/software/live-11/sources.json"
+  }
+}

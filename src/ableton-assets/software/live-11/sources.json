@@ -1,0 +1,25 @@
+[
+  {
+    "source": {
+      "title": "Live 11 coming / release info",
+      "url": "https://www.ableton.com/en/blog/live-11-coming-february-23-2021/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/press/l11-800x400-beta.jpg__800x400_q85_subsampling-2.jpg",
+        "score": 35,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-11-coming-february-23-2021/",
+        "sourceType": "official",
+        "title": "Live 11 coming / release info"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/L11-800x400-Beta.jpg",
+        "score": 30,
+        "discoveredFrom": "https://www.ableton.com/en/blog/live-11-coming-february-23-2021/",
+        "sourceType": "official",
+        "title": "Live 11 coming / release info"
+      }
+    ]
+  }
+]

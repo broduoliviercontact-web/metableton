@@ -1,0 +1,25 @@
+[
+  {
+    "source": {
+      "title": "Live 11.1 update out now",
+      "url": "https://www.ableton.com/en/blog/free-live-11-1-update-apple-silicon-support-out-now/",
+      "sourceType": "official"
+    },
+    "imageUrls": [
+      {
+        "url": "https://cdn-resources.ableton.com/resources/filer_thumbnails/misc-downloads/1_l11-1_release_blog-800x400.jpg__800x400_q85_subsampling-2.jpg",
+        "score": 35,
+        "discoveredFrom": "https://www.ableton.com/en/blog/free-live-11-1-update-apple-silicon-support-out-now/",
+        "sourceType": "official",
+        "title": "Live 11.1 update out now"
+      },
+      {
+        "url": "https://cdn-resources.ableton.com/resources/uploads/zinnia/1_L11-1_Release_Blog-800x400.jpg",
+        "score": 35,
+        "discoveredFrom": "https://www.ableton.com/en/blog/free-live-11-1-update-apple-silicon-support-out-now/",
+        "sourceType": "official",
+        "title": "Live 11.1 update out now"
+      }
+    ]
+  }
+]
