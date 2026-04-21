@@ -650,7 +650,137 @@ export const articleEntries = [
 },
 
 
-//////FREE M4L : STING!64//////
+/////////////////PROTILITY : L'Utility d'Ableton Live pour toutes les DAW/////////
+/////////PROTILITY : L'Utility d'Ableton Live pour toutes les DAW/////////
+
+{
+  "id": "protility-utility-daw",
+  "slug": "protility-utility-daw",
+  "section": "freebies",
+  "type": "Freebies",
+  "label": "Plugin",
+  "title": "Protility : L'Utility d'Ableton Live pour Toutes les DAW — et en Mieux",
+  "summary": "Ableton Live propose Utility : 6 fonctions basiques. Protility en propose 13, gratuites, dans n'importe quelle DAW.",
+  "heroImage": "/articles/freebies/protility/protility-gui-dark.png",
+  "heroImagePosition": "50% 50%",
+  "thumbnail": "/articles/freebies/protility/protility-gui-dark.png",
+  "thumbnailPosition": "50% 50%",
+  "imageAlt": "Interface du plugin Protility en mode sombre",
+  "tags": [
+    "free vst",
+    "utility",
+    "gain staging",
+    "mixing",
+    "DAW"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "content": "Le gain staging est l'étape invisible qui précède tout mixage. Pourtant, il est fréquent d'observer des signaux entrant trop fort, saturant en interne, ou au contraire trop faibles, noyés dans le bruit de fond. L'équilibre général d'une session repose davantage sur cette préparation que sur l'ajustement fréquentiel final."
+    },
+    {
+      "type": "heading",
+      "content": "Le Problème : L'Utility d'Ableton Live est excellent, mais limité"
+    },
+    {
+      "type": "paragraph",
+      "content": "Ableton Live propose un device natif nommé Utility, disponible gratuitement dans chaque installation. Il offre six fonctions essentielles : gain réglable de -inf à +35 dB, inversion de phase gauche et droite, contrôle de la largeur stéréo de 0 % à 200 %, un bass mono configurable, un panoramique L/R, et un filtre DC offset."
+    },
+    {
+      "type": "paragraph",
+      "content": "Cependant, cette solution présente deux limites structurelles. Premièrement, elle est exclusive à Ableton Live : aucun utilisateur de Logic Pro, FL Studio, Cubase, Studio One, Reaper ou Pro Tools n'y a accès. Deuxièmement, même au sein de Live, les six modules couvrent les besoins élémentaires mais laissent de côté plusieurs fonctions utiles à un gain staging rigoureux."
+    },
+    {
+      "type": "heading",
+      "content": "Protility comme Solution Universelle"
+    },
+    {
+      "type": "paragraph",
+      "content": "Protility est un plugin utilitaire développé par Process.Audio, fondé par l'ingénieur du son Fab Dupont. Il reprend la philosophie de l'Utility d'Ableton — un outil de préparation rapide, léger, sans artifice — mais l'étend à l'ensemble des DAW et enrichit considérablement le panel de fonctions. Il est distribué gratuitement, sans watermark ni limitation technique."
+    },
+    {
+      "type": "image",
+      "src": "/articles/freebies/protility/protility-gui-light.png",
+      "alt": "Interface du plugin Protility en mode clair",
+      "position": "50% 50%"
+    },
+    {
+      "type": "heading",
+      "content": "Comparaison Technique : Utility vs. Protility"
+    },
+    {
+      "type": "image",
+      "src": "/articles/freebies/protility/protility-vs-psp.png",
+      "alt": "Tableau comparatif des fonctionnalités",
+      "position": "50% 50%"
+    },
+    {
+      "type": "heading",
+      "content": "Modules Clés en Détail"
+    },
+    {
+      "type": "paragraph",
+      "content": "Bass Mono — Consolidation du Fond de Mix : Le module Bass Mono permet de convertir en mono les fréquences situées sous une valeur réglable, de 10 Hz à 1 kHz. En pratique, un réglage autour de 100 Hz est généralement suffisant."
+    },
+    {
+      "type": "image",
+      "src": "/articles/freebies/protility/protility-bass-mono.png",
+      "alt": "Schéma du traitement Bass Mono",
+      "position": "50% 50%"
+    },
+    {
+      "type": "paragraph",
+      "content": "High-Pass — Propreté Spectrale : Deux pentes sont disponibles : 12 et 18 dB par octave. Lors de l'enregistrement d'une guitare acoustique capturant du souffle de ventilation vers 30 Hz, un réglage à 80 Hz avec pente douce libère de l'espace pour le kick et la basse sans altérer le caractère de l'instrument."
+    },
+    {
+      "type": "paragraph",
+      "content": "Width et Mid/Side — Contrôle de l'Image Stéréo : Le module Width règle la stéréophonie de -100 % (mono total) à +200 % (ultra-wide). Associé au traitement Mid/Side séparé, il devient possible d'ajuster indépendamment le centre et les côtés du signal."
+    },
+    {
+      "type": "paragraph",
+      "content": "Phase Shifter et Correlation Meter — Détection Précoce : Le Phase Shifter décale la phase du signal pour aligner des pistes multi-microphonées. Le Correlation Meter affiche en temps réel la cohérence stéréo : une valeur proche de +1 indique une stéréo stable, une valeur négative signale un risque d'annulation en mono."
+    },
+    {
+      "type": "paragraph",
+      "content": "Gain et Trim — Calibration de Niveau : Le module Gain règle le niveau d'entrée dans la chaîne de traitement. Le Trim ajuste finement le niveau de sortie. Ensemble, ils garantissent que chaque plugin suivant reçoit un signal dans sa zone de fonctionnement optimale."
+    },
+    {
+      "type": "heading",
+      "content": "Workflow Pratique : Premier Insert sur Chaque Piste"
+    },
+    {
+      "type": "paragraph",
+      "content": "L'intégration de Protility dans un template de mix repose sur un principe simple : placer le plugin en première position sur chaque piste audio ou instrument, effectuer les ajustements de base, puis verrouiller la configuration."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Insertion de Protility en première position",
+        "Ajustement du gain d'entrée pour cibler une plage de travail cohérente",
+        "Application d'un high-pass si la piste n'a pas de contenu pertinent dans l'extrême grave",
+        "Activation du bass mono sur les fréquences adaptées pour les éléments de basse",
+        "Vérification de la corrélation stéréo et ajustement de la largeur si nécessaire",
+        "Correction de phase sur les prises multi-microphonées"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Conclusion : Une Pratique Saine de Préparation"
+    },
+    {
+      "type": "paragraph",
+      "content": "Protility ne vise pas à impressionner à la première écoute. Sa fonction est plus discrète et plus fondamentale : préparer chaque piste à un traitement optimal, en résolvant à la source les problèmes qui compromettent un mix avant même qu'il ne commence."
+    },
+    {
+      "type": "link",
+      "url": "https://process.audio/products/protility",
+      "label": "TÉLÉCHARGER PROTILITY (GRATUIT)"
+    }
+  ],
+  "featured": true
+},
+
+//////FREE M4L : STING!64//////////////
 ///FREE M4L : STING!64//////
 
 {
