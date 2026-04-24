@@ -1180,6 +1180,158 @@ const secondaryPageEntries = [
       },
     ],
   },
+  {
+    "id": "veille-mao-24-avril-2026",
+    "slug": "veille-mao-24-avril-2026",
+    "section": "blog-news",
+    "type": "Article",
+    "label": "Veille",
+    "title": "Les 4 plugins de la semaine — 24 avril 2026",
+    "summary": "Cette semaine : un générateur MIDI intelligent, des textures Kontakt uniques, une reverb spectrale et une reverb immersive pro. Plus un bonus M4L.",
+    "heroImage": "/articles/blog-news/veille-mao-24-avril-2026/header.jpg",
+    "heroImagePosition": "50% 50%",
+    "thumbnail": "/articles/blog-news/veille-mao-24-avril-2026/thumbnail.jpg",
+    "thumbnailPosition": "50% 50%",
+    "imageAlt": "Veille MAO du 24 avril 2026",
+    "tags": ["plugins", "veille", "midi", "reverb", "kontakt", "m4l"],
+    "content": [
+      {
+        "type": "paragraph",
+        "content": "Cette semaine, 4 nouveaux plugins qui changent la donne : un générateur MIDI intelligent, des textures Kontakt uniques, une reverb spectrale et une reverb immersive pro."
+      },
+      {
+        "type": "heading",
+        "content": "1. Sampleson Predictor — Le MIDI qui apprend de toi"
+      },
+      {
+        "type": "paragraph",
+        "content": "Tu drop un fichier MIDI, il analyse les progressions, les vélocités, les modulations… et génère des notes + accords cohérents à chaque clic. Tu contrôles le rythme, Predictor gère l'harmonie. Parfait pour sortir d'un bloc créatif."
+      },
+      {
+        "type": "link",
+        "href": "https://sampleson.com/predictor.html",
+        "text": "Sampleson Predictor — $19 (promo)"
+      },
+      {
+        "type": "heading",
+        "content": "2. VOID \u0026 VISTA FRAMES — Des moments capturés"
+      },
+      {
+        "type": "paragraph",
+        "content": "Instrument Kontakt basé sur des samples de sources uniques et expérimentales. Des textures qui vont de l'ambient au cinématique. Utilisé par Michael Stein (Stranger Things), Son Lux, Nine Inch Nails…"
+      },
+      {
+        "type": "link",
+        "href": "https://www.voidandvista.com/products/frames",
+        "text": "VOID \u0026 VISTA FRAMES — ~€153"
+      },
+      {
+        "type": "heading",
+        "content": "3. ADPTR Audio Utopia — La reverb spectrale"
+      },
+      {
+        "type": "paragraph",
+        "content": "Première reverb spectrale de Plugin Alliance. Au-delà des réverbs classiques : elle transforme le contenu harmonique en temps réel pour des espaces évolutifs, denses, cinématiques."
+      },
+      {
+        "type": "link",
+        "href": "https://www.plugin-alliance.com/products/utopia",
+        "text": "ADPTR Utopia — $99.99"
+      },
+      {
+        "type": "heading",
+        "content": "4. iZotope Equinox — Reverb immersive pro"
+      },
+      {
+        "type": "paragraph",
+        "content": "Conçue pour le surround et l'immersif. Un moteur de reverb chirurgical : neutre, transparent, qui taille l'espace avec précision. 'The surgical solution' selon les ingénieurs du son pro."
+      },
+      {
+        "type": "link",
+        "href": "https://www.izotope.com/en/products/equinox",
+        "text": "iZotope Equinox — Sur demande"
+      },
+      {
+        "type": "heading",
+        "content": "BONUS — Iftah Pyra (M4L)"
+      },
+      {
+        "type": "paragraph",
+        "content": "Synthé à modélisation physique 12 voix pour Ableton Live \u0026 Push 3. Cordes acoustiques, électriques, pincées, frottées — tout en MPE pour du jeu expressif. Et c'est pay-what-you-want."
+      },
+      {
+        "type": "link",
+        "href": "https://www.if-tah.com/devices/pyra",
+        "text": "Iftah Pyra — Pay-what-you-want"
+      }
+    ],
+    "featured": false
+  },
+  {
+    "id": "3-outils-qui-sauvent-tes-sessions",
+    "slug": "3-outils-qui-sauvent-tes-sessions",
+    "section": "blog-news",
+    "type": "Article",
+    "label": "Guide",
+    "title": "3 Outils Gratuits Qui Sauvent Tes Sessions Ableton",
+    "summary": "Ableton qui crash ? Projets corrompus ? Voici 3 outils invisibles mais essentiels : Abletoolz, LiveSaver et Voxengo SPAN. Gratuits, open-source, et salvateurs.",
+    "heroImage": "/articles/blog-news/3-outils-utilitaires/header.jpg",
+    "heroImagePosition": "50% 50%",
+    "thumbnail": "/articles/blog-news/3-outils-utilitaires/thumbnail.jpg",
+    "thumbnailPosition": "50% 50%",
+    "imageAlt": "3 outils utilitaires gratuits pour Ableton Live",
+    "tags": ["plugins", "utilitaires", "gratuits", "ableton", "backup", "mixing"],
+    "content": [
+      {
+        "type": "paragraph",
+        "content": "Ableton qui crash. Projets corrompus. Samples perdus. La panique du producteur, on la connaît tous. Voici 3 outils gratuits — invisibles mais essentiels — qui sauvent tes sessions."
+      },
+      {
+        "type": "heading",
+        "content": "1. Abletoolz — Le Réparateur"
+      },
+      {
+        "type": "paragraph",
+        "content": "Projets corrompus ? Samples manquants ? Plugins absents ? Abletoolz répare, retrouve, sauvegarde auto. Open-source, gratuit, indispensable."
+      },
+      {
+        "type": "link",
+        "href": "https://github.com/abletoolz",
+        "text": "Abletoolz sur GitHub"
+      },
+      {
+        "type": "heading",
+        "content": "2. LiveSaver — Le Sauvegardeur"
+      },
+      {
+        "type": "paragraph",
+        "content": "Ableton ne sauvegarde pas dans le cloud. LiveSaver oui. Chiffré. Cross-machine. Tu changes d'ordi ? Tu retrouves tout. Gratuit."
+      },
+      {
+        "type": "link",
+        "href": "https://livesaver-app.com",
+        "text": "LiveSaver — Backup cloud"
+      },
+      {
+        "type": "heading",
+        "content": "3. Voxengo SPAN — Le Diagnostic"
+      },
+      {
+        "type": "paragraph",
+        "content": "Analyseur spectre FFT pro. Phase. Fréquences. CPU. Tu vois ce que tu entends — et ce qui cloche. Gratuit depuis des années."
+      },
+      {
+        "type": "link",
+        "href": "https://voxengo.com/span",
+        "text": "Voxengo SPAN — Analyseur gratuit"
+      },
+      {
+        "type": "quote",
+        "content": "Personne ne parle de ces outils. Pourtant ils sauvent des heures de travail."
+      }
+    ],
+    "featured": false
+  },
 ];
 
 export const secondaryPages = secondaryPageEntries.reduce((accumulator, page) => {
