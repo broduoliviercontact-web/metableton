@@ -1378,12 +1378,12 @@ export const featuredArticle =
   allArticles.find((article) => article.featured) || allArticles[0];
 
 const heroCarouselSlugs = [
+  "uad-explore-alternatives",
+  "veille-mao-24-avril-2026",
+  "3-outils-qui-sauvent-tes-sessions",
   "meld",
   "mdv-ii-la-reverb-gratuite-qui-ressuscite-la-legendaire-alesis-midiverb-ii",
   "max-for-live-par-ou-commencer",
-  "organiser-ses-samples-dans-ableton-live",
-  "3-devices-max-for-live-utiles",
-  "freebie-template-ableton-live",
 ];
 
 export const heroCarouselSlides = heroCarouselSlugs
