@@ -39,6 +39,162 @@ export const sections = [
 
 export const articleEntries = [
 
+//////////// ARTICLE BLOG NEWS     //////////////////////////
+//////////// ARTICLE BLOG NEWS     //////////////////////////
+
+{
+  "id": "uad-explore-alternatives",
+  "slug": "uad-explore-alternatives",
+  "section": "blog-news",
+  "type": "Article",
+  "label": "Article",
+  "title": "UAD Explore : Gratuit mais Piégé ? Voici 7 Alternatives Sans iLok",
+  "summary": "UAD Explore offre 8 plugins gratuits mais impose iLok et un écosystème fermé. Découvrez 7 alternatives gratuites qui offrent la même qualité pro sans contraintes.",
+  "heroImage": "/articles/blog-news/uad-explore-alternatives/header.jpg",
+  "heroImagePosition": "50% 50%",
+  "thumbnail": "/articles/blog-news/uad-explore-alternatives/thumbnail.jpg",
+  "thumbnailPosition": "50% 50%",
+  "imageAlt": "Comparaison UAD Explore vs alternatives gratuites",
+  "tags": [
+    "plugins",
+    "gratuits",
+    "uad",
+    "alternatives",
+    "ilok",
+    "compression",
+    "reverb",
+    "synthé"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "content": "UAD a récemment lancé UAD Explore : un bundle de 8 plugins gratuits représentant environ 1000€ de valeur. Pour un débutant en MAO, c'est une offre alléchante. Pourtant, derrière cette gratuité se cache un écosystème fermé : compte UA obligatoire, iLok obligatoire, et questionnaire à remplir."
+    },
+    {
+      "type": "quote",
+      "content": "UAD te vend un écosystème. Les autres te donnent des outils."
+    },
+    {
+      "type": "heading",
+      "content": "Qu'est-ce que UAD Explore ?"
+    },
+    {
+      "type": "paragraph",
+      "content": "UAD Explore est un bundle de plugins audio signé Universal Audio, disponible gratuitement sous conditions : 8 plugins (compresseurs, preamp, EQ, reverb, amp sim, synthé), valeur estimée ~1000€, mais conditions strictes : compte UA + iLok + questionnaire."
+    },
+    {
+      "type": "heading",
+      "content": "Les 7 Alternatives Gratuites"
+    },
+    {
+      "type": "heading",
+      "content": "1. Compression : FETish (AnalogObsession)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Le FETish reproduit le caractère agressif et rapide du 1176, célèbre compresseur FET. Même chaleur analogique, même comportement de gain reduction, sans la taxe ecosystem. Gratuit, sans compte, sans dongle."
+    },
+    {
+      "type": "link",
+      "href": "https://www.patreon.com/analogobsession",
+      "text": "AnalogObsession sur Patreon"
+    },
+    {
+      "type": "heading",
+      "content": "2. Compression Optique : LALA (AnalogObsession)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Le LA-2A est le compresseur optique par excellence, adoré pour sa douceur sur les voix et basses. LALA capture cette courbe de compression optique avec une précision surprenante pour un plugin gratuit."
+    },
+    {
+      "type": "heading",
+      "content": "3. Preamp/EQ : BritChannel (AnalogObsession)"
+    },
+    {
+      "type": "paragraph",
+      "content": "BritChannel combine préamp + EQ dans un seul plugin, offrant la saturation tube douce et l'égalisation musicale. Parfait pour donner du corps aux pistes."
+    },
+    {
+      "type": "heading",
+      "content": "4. EQ Dynamique : TDR Nova (Tokyo Dawn Labs)"
+    },
+    {
+      "type": "paragraph",
+      "content": "TDR Nova est un EQ dynamique gratuit qui surpasse même certains plugins payants. 4 bandes EQ dynamiques indépendantes, interface professionnelle, utilisé par des ingénieurs du son pro."
+    },
+    {
+      "type": "link",
+      "href": "https://www.tokyodawn.net/tdr-nova/",
+      "text": "TDR Nova sur Tokyo Dawn"
+    },
+    {
+      "type": "heading",
+      "content": "5. Reverb Plate : epicPLATE mkII (Variety of Sound)"
+    },
+    {
+      "type": "paragraph",
+      "content": "La reverb plate est un classique des studios des années 60-70. epicPLATE mkII offre cette ambiance brillante et dense sans les inconvénients d'une vraie plaque métallique."
+    },
+    {
+      "type": "heading",
+      "content": "6. Amp Simulation IA : NeuralAmpModeler"
+    },
+    {
+      "type": "paragraph",
+      "content": "NeuralAmpModeler révolutionne la simulation d'ampli grâce à l'IA. Capturez n'importe quel ampli réel avec une précision quasi-parfaite. Des milliers de modèles gratuits disponibles."
+    },
+    {
+      "type": "link",
+      "href": "https://neuralampmodeler.com/",
+      "text": "NeuralAmpModeler officiel"
+    },
+    {
+      "type": "heading",
+      "content": "7. Synthé : Surge XT (Surge Synth Team)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Surge XT est un synthétiseur hybride open source considéré comme l'un des meilleurs gratuits au monde. 12 types d'oscillateurs, 3000+ presets, FX intégrés, mises à jour constantes."
+    },
+    {
+      "type": "link",
+      "href": "https://surge-synthesizer.github.io/",
+      "text": "Surge XT officiel"
+    },
+    {
+      "type": "heading",
+      "content": "Tableau Comparatif"
+    },
+    {
+      "type": "table",
+      "headers": ["Type", "UAD Explore", "Alternative Gratuite", "Développeur"],
+      "rows": [
+        ["Compresseur FET", "UAD 1176", "FETish", "AnalogObsession"],
+        ["Compresseur Optique", "UAD LA-2A", "LALA", "AnalogObsession"],
+        ["Preamp/EQ", "UAD 610", "BritChannel", "AnalogObsession"],
+        ["EQ Dynamique", "UAD Precision", "TDR Nova", "TokyoDawn"],
+        ["Reverb Plate", "UAD Plate 140", "epicPLATE", "Variety of Sound"],
+        ["Amp Sim", "UAD Ampeg/Fender", "NeuralAmpModeler", "Neural DSP"],
+        ["Synthé", "UAD Moog/Prophet", "Surge XT", "Surge Team"]
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Quel Profil Choisit Quoi ?"
+    },
+    {
+      "type": "paragraph",
+      "content": "Débutant pressé → UAD Explore (pack clé-en-main). Curieux autonome → Les alternatives (liberté, apprentissage). Puriste du workflow → UAD Explore (écosystème intégré)."
+    },
+    {
+      "type": "quote",
+      "content": "UAD te vend un écosystème. Les autres te donnent des outils. Le choix dépend de ce que vous préférez : confort ou liberté."
+    }
+  ],
+  "featured": true
+},
+
 //////////// ARTICLES GUIDES ABLETON LIVE     //////////////////////////
 //////////// ARTICLES GUIDES ABLETON LIVE     //////////////////////////      
     
