@@ -100,6 +100,26 @@ Puis pour la production :
 vercel --prod
 ```
 
+## Brancher Ghost
+
+Le site peut lire les articles publies depuis Ghost pour la section `Blog / News`.
+
+Variables d'environnement a ajouter :
+
+```env
+VITE_GHOST_CONTENT_API_URL=https://votre-ghost/ghost/api/content
+VITE_GHOST_CONTENT_API_KEY=votre_content_api_key
+```
+
+En local avec ton Ghost actuel :
+
+```env
+VITE_GHOST_CONTENT_API_URL=http://127.0.0.1:2368/ghost/api/content
+VITE_GHOST_CONTENT_API_KEY=votre_content_api_key
+```
+
+Si ces variables sont absentes, le site continue d'utiliser le contenu local historique.
+
 ## Structure du projet
 
 ```text

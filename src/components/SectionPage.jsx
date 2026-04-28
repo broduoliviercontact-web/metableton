@@ -69,13 +69,21 @@ function SectionPage({ page, currentPath, onNavigate }) {
             >
               <article className="grid gap-4 px-0 py-5 transition-colors duration-150 md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 md:py-6">
                 <div className="overflow-hidden rounded-tag border border-[color:var(--border-soft)] bg-[var(--panel-muted)]">
-                  <img
-                    src={article.thumbnail || article.heroImage}
-                    alt={article.imageAlt}
-                    className="aspect-[16/10] h-full w-full object-cover transition-transform duration-200 group-hover:scale-[1.01]"
-                    style={{ objectPosition: article.thumbnailPosition || article.heroImagePosition || "50% 50%" }}
-                    loading="lazy"
-                  />
+                  {article.thumbnail || article.heroImage ? (
+                    <img
+                      src={article.thumbnail || article.heroImage}
+                      alt={article.imageAlt}
+                      className="aspect-[16/10] h-full w-full object-cover transition-transform duration-200 group-hover:scale-[1.01]"
+                      style={{ objectPosition: article.thumbnailPosition || article.heroImagePosition || "50% 50%" }}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="flex aspect-[16/10] h-full w-full items-end bg-[var(--panel-bg)] p-4">
+                      <span className="rounded-tag border border-[color:var(--border-soft)] px-3 py-2 text-2xs uppercase tracking-caps text-[var(--text-muted)]">
+                        Ghost article
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="min-w-0">

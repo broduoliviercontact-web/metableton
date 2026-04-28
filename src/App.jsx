@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import AbletonTimelinePage from "./components/AbletonTimelinePage";
 import ArticlePage from "./components/ArticlePage";
 import ArticleEditorPage from "./components/ArticleEditorPage";
+import GhostArticlePage from "./components/GhostArticlePage";
 import HeroFeature from "./components/HeroFeature";
 import SecondaryPage from "./components/SecondaryPage";
 import SectionPage from "./components/SectionPage";
@@ -15,6 +16,7 @@ import {
   sectionPages,
   sections,
 } from "./data/content";
+import { getGhostPosts, isGhostConfigured } from "./lib/ghost";
 
 function normalizePath(pathname) {
   if (!pathname || pathname === "/") {
@@ -26,6 +28,7 @@ function normalizePath(pathname) {
 
 function App() {
   const [currentPath, setCurrentPath] = useState(() => normalizePath(window.location.pathname));
+  const [ghostArticles, setGhostArticles] = useState([]);
   const [theme, setTheme] = useState(() => {
     const savedTheme = window.localStorage.getItem("metableton-theme");
 
@@ -51,6 +54,28 @@ function App() {
     document.documentElement.style.colorScheme = theme;
   }, [theme]);
 
+  useEffect(() => {
+    let isMounted = true;
+
+    if (!isGhostConfigured()) {
+      return undefined;
+    }
+
+    getGhostPosts()
+      .then((posts) => {
+        if (isMounted) {
+          setGhostArticles(posts);
+        }
+      })
+      .catch((error) => {
+        console.error("Ghost fetch failed", error);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   const handleNavigate = (href) => {
     const nextPath = normalizePath(href);
 
@@ -62,13 +87,21 @@ function App() {
     setCurrentPath(nextPath);
   };
 
+  const ghostArticlesByPath = ghostArticles.reduce((accumulator, article) => {
+    accumulator[article.path] = article;
+    return accumulator;
+  }, {});
+
   const currentSection = sectionPages[currentPath];
   const currentSecondaryPage = secondaryPages[currentPath];
   const currentArticle = articlesByPath[currentPath];
+  const currentGhostArticle = ghostArticlesByPath[currentPath];
   const isEditorPage = currentPath === "/editor";
-  const isHomepage = !isEditorPage && !currentSection && !currentSecondaryPage && !currentArticle;
-  const articleSection = currentArticle
-    ? sections.find((section) => section.id === currentArticle.section)
+  const isHomepage =
+    !isEditorPage && !currentSection && !currentSecondaryPage && !currentArticle && !currentGhostArticle;
+  const resolvedArticle = currentArticle || currentGhostArticle;
+  const articleSection = resolvedArticle
+    ? sections.find((section) => section.id === resolvedArticle.section)
     : null;
   const featuredSection = sections.find((section) => section.id === featuredArticle.section);
   const navigationPath = currentSection
@@ -91,6 +124,8 @@ function App() {
       >
         {currentArticle ? (
           <ArticlePage article={currentArticle} sectionTitle={articleSection?.title} />
+        ) : currentGhostArticle ? (
+          <GhostArticlePage article={currentGhostArticle} />
         ) : isEditorPage ? (
           <ArticleEditorPage />
         ) : currentSection?.layout === "timeline" ? (
@@ -99,7 +134,11 @@ function App() {
           <SectionPage
             currentPath={currentPath}
             onNavigate={handleNavigate}
-            page={currentSection}
+            page={
+              currentSection.id === "blog-news" && ghostArticles.length
+                ? { ...currentSection, items: ghostArticles }
+                : currentSection
+            }
           />
         ) : currentSecondaryPage ? (
           <SecondaryPage page={currentSecondaryPage} />
